@@ -10,6 +10,16 @@ github_username: amirkarimi
 
 excerpt_separator: <!--more-->
 
+comments :
+  provider : disqus
+  disqus :
+    short_name : amirkarimigithub
+
+analytics :
+  provider : google
+  google : 
+      tracking_id : 'UA-49671611-5'
+
 # Build settings
 markdown: kramdown
 
