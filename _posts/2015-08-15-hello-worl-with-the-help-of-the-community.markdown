@@ -9,7 +9,7 @@ I've always liked to have an international blog. I'm not very fluent in English 
 
 Yeah! Writing the above block took me more than 10 minutes and obviously I couldn't get it done without Google!
 
-One of the main reasons that I could say no to my fear is the **community**. When I moved to the open source community (about one years ago) I found out how the communtiy brings people together to learn and improve their skills. I expect the same behaviour about writing. I strongly believe that the community will help me improve my skills, even in writing. At least they will tolerate my mistakes and encourage me to share my ideas and experiences.
+One of the main reasons that I could say no to my fear is the **community**. When I moved to the open source community (about one years ago) I found out how the community brings people together to learn and improve their skills. I expect the same behavior about writing. I strongly believe that the community will help me improve my skills, even in writing. At least they will tolerate my mistakes and encourage me to share my ideas and experiences.
 
 As a result, this weblog is published on Github and your kind pull requests for correcting my mistakes are very very welcomed.
 
