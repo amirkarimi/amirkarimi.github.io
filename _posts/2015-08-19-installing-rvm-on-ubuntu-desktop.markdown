@@ -18,7 +18,7 @@ curl -sSL https://get.rvm.io | bash -s stable --ruby
 
 But ruby is not available at the terminal (Gnome Terminal).
 
-The problem is that the installer will update `~/.profile` to add the required paths to PATH. In Bash shell, `~/.profile` or `~/.bash_profile` will be loaded only when the terminal is running as a login shell, otherwise just `~/.bashrc` will be executed.
+The problem is that the installer only updates `~/.profile` not `~/.bashrc`. In Bash shell, `~/.profile` or `~/.bash_profile` will be loaded only when the terminal is running as a login shell, otherwise just `~/.bashrc` will be loaded.
 
 ![Gnome Terminal Preferences](/assets/images/run_as_login_terminal_screenshot.png){: .center-image }
 
