@@ -18,11 +18,13 @@ curl -sSL https://get.rvm.io | bash -s stable --ruby
 
 But ruby is not available at the terminal (Gnome Terminal).
 
-The problem is that the installer will change `~/.profile` and not `~/.bashrc`. In Bash shell, `~/.profile` or `~/.bash_profile` will be loaded When the terminal is running as a login shell, otherwise `~/.bashrc` will be executed. 
+The problem is that the installer will update `~/.profile` to add the required paths to PATH. In Bash shell, `~/.profile` or `~/.bash_profile` will be loaded only when the terminal is running as a login shell, otherwise just `~/.bashrc` will be executed.
 
 ![Gnome Terminal Preferences](/assets/images/run_as_login_terminal_screenshot.png){: .center-image }
 
 So there are two options:
 
+* Copy (move) the startup codes from `~/.profile` to `~/.bashrc`
 * Check "Run as login terminal" option of the terminal profile (as shown in the picture)
-* Copy the startup codes from `~/.profile` to `~/.bashrc`.
+
+It [seems](http://askubuntu.com/a/337477/190988) that the second one is not recommended!
