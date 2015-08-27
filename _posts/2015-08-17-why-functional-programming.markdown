@@ -21,7 +21,7 @@ This is the idea behind map/reduce and it truly is an efficient approach.
 
 The request for such scenarios are increasing, and of course, functional programming shines here and makes everything super simple and clean. The same idea is implemented in Scala, Java, .NET, Ruby, Python, Node, etc. yet all of them are implemented with **functional programming** in mind.
 
-This is a more advanced sample in Scala on Play using [ReactiveMongo](http://www.reactivemongo.org/) and [Iteratees](https://www.playframework.com/documentation/2.4.x/Iteratees):
+Here is a more advanced sample in Scala on Play using [ReactiveMongo](http://www.reactivemongo.org/) and [Iteratees](https://www.playframework.com/documentation/2.4.x/Iteratees):
 
 {% highlight scala %}
 val content = Enumerator.outputStream { output =>
@@ -57,4 +57,4 @@ Result(
 )
 {% endhighlight %}
 
-This code even controls the data follow based on the client (consumer) speed which is more advanced and hard-to-implement scenario.
+This code even controls the data follow based on the client (consumer) speed.
