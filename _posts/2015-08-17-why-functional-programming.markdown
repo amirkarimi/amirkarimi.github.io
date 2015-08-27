@@ -13,7 +13,7 @@ The legacy code loads the data, creates an Excel file in memory, writes the data
 
 This solution **brings the data to the code**, which is inefficient.
 
-Instead, we decided to **bring the code to the data** which was very efficient. We could generate a 500MB CSV (as CSV is more compatible with streaming than Excel) file without using more than several kilo bytes of RAM. 
+Instead, we decided to **bring the code to the data** which was very efficient. We could generate a 500MB CSV (as CSV is more compatible with streaming than Excel) file without using more than several kilobytes of RAM. 
 
 We built a function which gets an entity as input and returns a CSV row (the code), then gave it to another function which maps the data to the CSV rows using the provided function (bringing the data to the code).
 
