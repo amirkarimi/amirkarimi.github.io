@@ -8,7 +8,7 @@ I don't use services like Heroku as deployment infrastructure. They are amazing 
 
 <!--more-->
 
-* I won't use a service or a software unless I know how it works
+* I don't use a service or software unless I know how it works
 * After I figured out how Heroku works, I have my own small automated deployment system which works fine
 * Heroku as an example, costs me 10x more than my own automated deployment process
 * I prefer to publish the binaries not sources
