@@ -10,7 +10,7 @@ I don't use services like Heroku as deployment infrastructure. They are amazing 
 
 * I don't use a service or software unless I know how it works
 * After I figured out how Heroku works, I have my own small automated deployment system which works fine
-* Heroku as an example, costs me 10x more than my own automated deployment process
+* Heroku costs me 10x more than my own automated deployment process
 * I prefer to publish the binaries not sources
 
 I also needed to run my own MongoDB instance, in which I was storing the files as well as other data. This way, Heroku costs me about 80$/mo for a service which I could build by myself for about 8$/mo.
