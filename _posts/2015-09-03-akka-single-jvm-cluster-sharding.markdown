@@ -53,6 +53,12 @@ As you can see `TestActorSystemManager` is the responsible for building the acto
 {% highlight scala %}
 object TestActorSystemManager {
 
+  def getSystem(tempPersistence: Boolean) = {
+    val system = getSystemWithoutSharding(tempPersistence)
+    setupSharding(system)
+    system
+  }
+
   def getSystemWithoutSharding(tempPersistence: Boolean) = {
     val pathPrefix = "test" + (if (tempPersistence) Random.alphanumeric.take(5).mkString else "")
 
@@ -82,12 +88,6 @@ object TestActorSystemManager {
     """)
 
     ActorSystem(ActorSystemManager.SystemName, config)
-  }
-
-  def getSystem(tempPersistence: Boolean) = {
-    val system = getSystemWithoutSharding(tempPersistence)
-    setupSharding(system)
-    system
   }
 
   def setupSharding(system: ActorSystem) = {
