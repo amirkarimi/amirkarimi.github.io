@@ -150,7 +150,11 @@ Supposing the base controller trait has a simple action method (mine is more com
 
 {% highlight scala %}
 trait BaseController extends Controller {
-  def action[A](block: Request[A] => Future[Result]): Future[Result] = {
+  def action[A](block: Request[A] => Future[Result]): Future[Result] = Action.async { implicit request =>
+    processRequest(block)(request)
+  }
+  
+  protected def processRequest[A](block: Request[A] => Future[Result])(implicit request: Request[A]) = {
     ...
   }
 }
@@ -160,17 +164,15 @@ This would be the trait which redirects all non-SEO friendly URLs of the child c
 
 {% highlight scala %}
 trait WithRouteLang extends BaseController {
-  override def action[A](block: Request[A] => Future[Result]): Future[Result] = {
-    Action.async { implicit request =>
-      request.headers.get(RouteLangFilter.routeLangKey) match {
-        case None if request.method == "GET" =>
-          val lang = request2lang(request)
-          val maybeSlash = if (request.path.startsWith("/")) "" else "/"
-          val queryStringPart = if (request.rawQueryString.isEmpty) "" else "?" + request.rawQueryString
-          Future.successful(Redirect("/" + lang.code + maybeSlash + request.path + queryStringPart))
-        case _ =>
-          super.withFrontRequest(frontUserModel, authenticator, request)(block)
-      }
+  override protected def processRequest[A](block: Request[A] => Future[Result])(implicit request: Request[A]) = {
+    request.headers.get(RouteLangFilter.routeLangKey) match {
+      case None if request.method == "GET" =>
+        val lang = request2lang(request)
+        val maybeSlash = if (request.path.startsWith("/")) "" else "/"
+        val queryStringPart = if (request.rawQueryString.isEmpty) "" else "?" + request.rawQueryString
+        Future.successful(Redirect("/" + lang.code + maybeSlash + request.path + queryStringPart))
+      case _ =>
+        super.processRequest(block)(request)
     }
   }
 }
