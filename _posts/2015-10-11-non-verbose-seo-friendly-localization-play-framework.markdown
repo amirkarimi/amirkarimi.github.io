@@ -4,7 +4,7 @@ title:  "Non-verbose SEO friendly internationalization for Play framework"
 date:   2015-10-11 23:42
 ---
 
-[Default internationalization support in Play](https://www.playframework.com/documentation/2.4.x/ScalaI18N) works with cookies and hence it's not SEO-friendly. It would be very nice if it was possible to use route parameters instead of cookies but as Play routes are (nicely, truly and correctly) type-safe, this will come at some cost; verbosity. Albeit it's not true for smart people who code in Scala :D
+[Default internationalization support in Play](https://www.playframework.com/documentation/2.4.x/ScalaI18N) works with cookies which is not SEO-friendly. It would be very nice if it was possible to use route parameters instead of cookies but as Play routes are (nicely, truly and correctly) type-safe, this will come at some cost; verbosity. Albeit it's not true for smart people who code in Scala :D
 
 <!--more-->
 
