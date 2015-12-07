@@ -8,7 +8,7 @@ You may have read or heard about [that amazing true story about a hacker scripts
 
 <!--more-->
 
-Those scripts are implemented in other languages by the community as well. I implemented the [coffee machine script](https://github.com/NARKOZ/hacker-scripts/blob/master/scala/fucking-coffee.scala) using [Ammonite-Shell](http://lihaoyi.github.io/Ammonite/#GettingAmmonite-Shell) in Scala. It really feels like a scripting language but without losing type safety!
+Those scripts are implemented in other languages by the community as well. So I implemented the [coffee machine script](https://github.com/NARKOZ/hacker-scripts/blob/master/scala/fucking-coffee.scala) using [Ammonite-Shell](http://lihaoyi.github.io/Ammonite/#GettingAmmonite-Shell) in Scala. It really feels like a scripting language but without losing type safety!
 
 Here is some points about Ammonite:
 
