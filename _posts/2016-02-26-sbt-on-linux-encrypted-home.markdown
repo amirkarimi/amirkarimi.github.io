@@ -1,7 +1,7 @@
 ---
 layout:		post
 title:		"Running SBT on Linux encrypted home"
-date:		2016-02-26 15:36
+date:		2016-02-26 15:36 +0330
 keywords:	"sbt, linux, encrypted home, scala, File name too long, java.lang.NoSuchMethodError"
 ---
 
