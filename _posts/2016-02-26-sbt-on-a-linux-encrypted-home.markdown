@@ -17,7 +17,7 @@ If you use Linux and encrypt your home folder, you may get the following error w
 
 When your home folder is encrypted, the file names are also encrypted and the encrypted file names [would be longer than the original ones](http://unix.stackexchange.com/questions/32795/what-is-the-maximum-allowed-filename-and-folder-size-with-ecryptfs). On the other hand, default maximum file name length for Scala compiler is 255 which is OK when the file names are unencrypted.
 
-Fortunately it's easily possible to change the default max file name for Scala compiler by putting the following command in `~/.sbt/0.13/local.sbt` file (for sbt 0.13.x);
+Fortunately it's easily possible to change the default max file name length for Scala compiler by putting the following command in `~/.sbt/0.13/local.sbt` file (for sbt 0.13.x);
 
 {% highlight sbt %}
 scalacOptions ++= Seq("-Xmax-classfile-name","100")
