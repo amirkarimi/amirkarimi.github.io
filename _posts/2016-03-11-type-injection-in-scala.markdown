@@ -30,9 +30,9 @@ The first one feels like being in jail and the second one makes tests too slow b
 
 Slick is one of the most advanced libraries I've ever seen. It uses the most advanced features of Scala to be type-safe and strong yet simple to use.
 
-We have to inject the slick driver API which, in fact, is a **trait** and subsequently a **type** containing various other types. For example `slick.driver.H2Driver.Table` is different than `slick.driver.PostgresDriver.Table`. 
+We have to inject the slick driver API which, in fact, is a **trait** and subsequently a **type** containing various other types. For example `slick.driver.H2Driver.Table` is different than `slick.driver.PostgresDriver.Table`.
 
-This is easily possible by injecting the `JdbcProfile` which itself contains the other required types.
+This is easily possible by injecting the `JdbcProfile` and import the driver specific types.
 
 {% highlight scala %}
 class PersonDAO(val profile: JdbcProfile) {
