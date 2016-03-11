@@ -1,7 +1,7 @@
 ---
 layout:		post
 title:		"Type Injection in Scala"
-date:		2016-03-11 19:15
+date:		2016-03-11
 keywords:	"scala, type injection, injection, di, dependency injection, slick, database-agnostic, data-access"
 ---
 
