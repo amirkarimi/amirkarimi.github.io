@@ -49,6 +49,7 @@ If you're OK with ENSIME but you don't like the extra-geeky editors like Emacs/V
 ## Others ##
 
 I didn't try other options: Vi, Sublime and Visual Studio Code. Because:
+
 * Vi is almost like Emacs from ENSIME point of view although with less features. I just told why I prefered Emacs
 * Sublime is not open source and it's not very active recently, though it's a great editor
 * Visual Studio Code is a Microsoft product and I don't expect a good support from the open source community. More over, it has many things in common with Atom. For instance, it's based on [Electron](http://electron.atom.io/) like Atom.
