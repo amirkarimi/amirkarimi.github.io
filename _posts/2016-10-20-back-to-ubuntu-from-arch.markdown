@@ -7,7 +7,7 @@ keywords:	"linux, Arch, ubuntu, open source"
 
 Several month ago, I left Ubuntu for Arch. This post is about my experiences and the reasons that led me to move back to Ubuntu.
 
-**Update 2017-01-21**: As the VirtualBox bug, which made me go back to Ubuntu, is resolved, I couldn't resist going back to Arch. This time I tried *i3* instead of a full fledged DI and I'm very happy so far.
+**Update 2017-01-21**: As the VirtualBox bug, which made me go back to Ubuntu, is resolved, I couldn't resist going back to Arch. This time I tried *i3* instead of a full fledged DE and I'm very happy so far.
 
 <!--more-->
 
@@ -39,4 +39,4 @@ Arch is for the people who are not just consumers, geeks who enjoy fixing proble
 
 ## Update 2017-01-21 ##
 
-As the VirtualBox bug, which made me go back to Ubuntu, is resolved, I couldn't resist going back to Arch. This time I tried *i3* instead of a full fledged DI and I'm very happy so far.
+As the VirtualBox bug, which made me go back to Ubuntu, is resolved, I couldn't resist going back to Arch. This time I tried *i3* instead of a full fledged DE and I'm very happy so far.
