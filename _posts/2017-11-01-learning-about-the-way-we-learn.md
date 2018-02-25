@@ -40,6 +40,6 @@ We need to care a lot about this mode of thinking, especially when we need to be
 
 The talk idea is about blaming the genius as an external identity can be a good approach to keep doing what we’re good at without being distracted with social and career expectations. Some true stories have been told which really happens. We might have had similar experiences but, remember, our brain is so powerful that allows us to fool ourselves using this power.
 
-Finally, whether you believe in the genius spirit or your own brain, there is an absolute true conclusion; “No matter what, just use your amazing brain and do what you’re good at”.
+Finally, whether you believe in the genius spirit or your own brain, there is an absolute true conclusion; "No matter what, just use your amazing brain and do what you’re good at".
 
 > This post is published at [Cake Solutions blog](https://www.cakesolutions.net/teamblogs/learning-about-the-way-we-learn)
