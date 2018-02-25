@@ -15,7 +15,7 @@ There are definitely some settings which should have the same value for all proj
 
 The simplest way for sharing common settings between projects is to define the common settings earlier as a `Seq` and use them later.
 
-```sbt
+{% highlight sbt %}
 lazy val commonSettings = Seq(
   organization := "com.example",
   version := "0.1.0-SNAPSHOT"
@@ -38,13 +38,13 @@ lazy val util = (project in file("util"))
     commonSettings,
     // other settings
   )
-```
+{% endhighlight %}
 
 But our build files are not always that simple. We probably have some plugins enabled for some of the projects. Consequently, there are some plugin-specific settings which can be shared between the projects for which the plugin is enabled.
 
 For example `dockerRepository` of [`DockerPlugin`](http://www.scala-sbt.org/sbt-native-packager/formats/docker.html) can be shared between almost all of the projects for which `DockerPlugin` is enabled. Again, the simplest solution is to create another `Seq` consist of the common settings for the corresponding plugin and use it ONLY in projects that the plugin is enabled for.
 
-```sbt
+{% highlight sbt %}
 lazy val commonSettings = Seq(
   organization := "com.example",
   version := "0.1.0-SNAPSHOT"
@@ -73,7 +73,7 @@ lazy val util = (project in file("util"))
     commonSettings,
     // other settings
   )
-```
+{% endhighlight %}
 
 How ever, we should be careful to add those plugin-specific settings to the project for which the plugin is enabled which we might forget to do for new projects.
 
@@ -83,7 +83,7 @@ Of course, it's possible. You can ask SBT to automatically enable a plugin only 
 
 Creating a SBT auto plugin is super easy. Just create a Scala file in `project` directory and extend `AutoPlugin`.
 
-```scala
+{% highlight scala %}
 import sbt._
 import sbt.Keys._
 
@@ -97,11 +97,11 @@ object DockerProjectSpecificPlugin extends AutoPlugin {
     dockerRepository in Docker := Some("my-repo")
   )
 }
-```
+{% endhighlight %}
 
 The above plugin specify a value for `dockerRepository` setting of `DockerPlugin`. By overriding `requires` method we specify that this plugin requires `DockerPlugin` to be enabled for the target project. But it still needs to be explicitly enabled to take effect.
 
-```sbt
+{% highlight sbt %}
 //...
 lazy val fooService = (project in file("fooService"))
   .enablePlugins(DockerPlugin, DockerProjectSpecificPlugin)
@@ -110,11 +110,11 @@ lazy val fooService = (project in file("fooService"))
     // other settings
   )
 //...
-```
+{% endhighlight %}
 
 Again we have to take care of enabling the project-specific plugin manually! Here is where [triggered plugins](http://www.scala-sbt.org/0.13/docs/Plugins.html#Root+plugins+and+triggered+plugins) come handy. Auto plugins provide a way to automatically attach themselves to projects if their dependencies are met. We can simply convert our plugin to a *triggered* one by overriding `trigger` method to return `allRequirements`.
 
-```scala
+{% highlight scala %}
 import sbt._
 import sbt.Keys._
 
@@ -129,11 +129,11 @@ object DockerProjectSpecificPlugin extends AutoPlugin {
     dockerRepository in Docker := Some("my-repo")
   )
 }
-```
+{% endhighlight %}
 
 Now we no longer need to enable this plugin explicitly. As we specified its dependencies using `requires` method, it will automatically be attached to the projects for which `DockerPlugin` is enabled.
 
-```sbt
+{% highlight sbt %}
 //...
 lazy val fooService = (project in file("fooService"))
   .enablePlugins(DockerPlugin)
@@ -142,11 +142,11 @@ lazy val fooService = (project in file("fooService"))
     // other settings
   )
 //...
-```
+{% endhighlight %}
 
 We can even go further and move all common settings into another triggered plugin.
 
-```scala
+{% highlight scala %}
 import sbt._
 import sbt.Keys._
 
@@ -158,11 +158,11 @@ object CommonProjectSettingsPlugin extends AutoPlugin {
     version := "0.1.0-SNAPSHOT"
   )
 }  
-```
+{% endhighlight %}
 
 And finally, `build.sbt` would be much cleaner and concise.
 
-```sbt
+{% highlight sbt %}
 lazy val core = (project in file("core"))
   .settings(
     // other settings
@@ -178,7 +178,7 @@ lazy val util = (project in file("util"))
   .settings(
     // other settings
   )
-```
+{% endhighlight %}
 
 Thanks to triggered plugins you'll end up having a cleaner `build.sbt` and you no longer have to worry about assigning the common plugin-specific settings to the projects manually.
 
