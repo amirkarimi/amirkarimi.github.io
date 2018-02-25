@@ -16,4 +16,4 @@ In Dec 2013, I decided to move to the wild and free world of the open source and
 
 I've always worked as a contractor or a part-time employee. It gave me the chances to work with various technologies and platforms in different scales.
 
-I left my home country and joined Cake Solutions at Manchester in Apr 2017.
+I left my home country and moved to Manchester to join Cake Solutions in Apr 2017.

@@ -2,7 +2,7 @@
 layout:   post
 title:    "How to apply settings to multiple projects using SBT triggered plugins"
 date:     2017-05-17
-keywords:	"Scala, sbt, triggered plugins, sbt plugings"
+keywords: "Scala, sbt, triggered plugins, sbt plugings"
 ---
 
 SBT is the main build tool for Scala projects. It's simply one of the most powerful build tools available. You're not limited to a single method for doing a specific job and there is no predefined and restricted rules. You can automate things as much as you want. And the good news is that SBT tries to run the tasks in parallel as much as possible.
