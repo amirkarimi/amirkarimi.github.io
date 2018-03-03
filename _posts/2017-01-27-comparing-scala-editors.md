@@ -34,15 +34,15 @@ It's not an editor war; I just prefer Emacs over Vi because:
 * It feels more modern than Vi
 * [Real programmers use Emacs!](https://xkcd.com/378/)
 
-As you might know, Emacs have a different world compared to modern editors. Everything is different; saving, opening, cut-copy-past, etc. it might be very hard to guess the shortcuts even for the simplest tasks. Fortunately, almost everything supports Emacs keybindings, even bash and zsh but still there are some programs with poor keyboard support; they make you use mouse. In such cases you prefer to use an Emacs package which will do the job and you'll end up living in Emacs. I'm not sure if it's a bad thing though!
+As you might know, Emacs has a different world compared to modern editors. Everything is different; saving, opening, cut-copy-past, etc. it might be very hard to guess the shortcuts even for the simplest tasks. Fortunately, almost everything supports Emacs keybindings, even bash and zsh but still there are some programs with poor keyboard support; they eventually require you to use the mouse. In such cases you prefer to use an Emacs package which will do the job and you'll end up living in Emacs. I'm not sure if it's a bad thing though!
 
-It gives you the best performance ever as a Scala IDE! I feel that Scala IDE and ENSIME have many things in common under the hood but ENSIME is slightly faster, less resource hungry and of course, more hackable. ENSIME is also not perfect. It stops responding once in a while, either without using CPU or sometimes with too much CPU usage. The good news is that you can easily stop the operation using `Ctrl-G` and continue editing or restart the ENSIME without having to restart the editor. The editor is really stable and you'll enjoy writing code if you rely on yourself more than what IDEs offer out-of-box. You just need to think a little bit different, you'll find a package for almost everything in Emacs. You'll also learn to automate everything more and more and it's a real joy. Eventually, you'll find yourself with more tools than what your previous full-featured IDE offers.
+It gives you the best performance ever as a Scala IDE! I feel that Scala IDE and ENSIME have many things in common under the hood but ENSIME is slightly faster, less resource hungry and of course, more hackable. ENSIME is also not perfect. It stops responding once in a while, either without using CPU or sometimes with too much CPU usage. The good news is that you can easily stop the operation using `Ctrl-G` and continue editing or restart the ENSIME without having to restart the editor. The editor is really stable and you'll enjoy writing code if you rely on yourself more than what IDEs offer out-of-box. You just need to think a bit different, you'll find a package for almost everything in Emacs. You'll also learn to automate everything more and more and it's a real joy. Eventually, you'll find yourself with more tools than what your previous full-featured IDE offers.
 
 The most interesting part is that writing code in Emacs (or Vim) gives you the feeling of being a real hacker/geek and it's worth more than anything!
 
 ## Atom (ENSIME) ##
 
-Atom itself is a good editor; not as geeky as Emacs/Vi but there is no learning curve. It's build on top of web technologies and doesn't feel like a bare-metal native editor. Besides, Atom support in ENSIME is not as great as Emacs. There are more bugs and strange ENSIME behaviors in Atom. For instance, sometimes it sounds like ENSIME is not running but it's not true!
+Atom itself is a good editor; not as geeky as Emacs/Vi but there is no learning curve. It's built on top of web technologies and doesn't feel like a bare-metal native editor. Besides, Atom support in ENSIME is not as great as Emacs. There are more bugs and strange ENSIME behaviors in Atom. For instance, sometimes it sounds like ENSIME is not running but it's not true!
 
 If you're OK with ENSIME but you don't like the extra-geeky editors like Emacs/Vi, Atom is a good choice for you.
 
@@ -50,10 +50,10 @@ If you're OK with ENSIME but you don't like the extra-geeky editors like Emacs/V
 
 I didn't try other options: Vi, Sublime and Visual Studio Code. Because:
 
-* Vi is almost like Emacs from ENSIME point of view although with less features. I just told why I prefered Emacs
+* Vi is almost like Emacs from ENSIME point of view although with fewer features. I just told why I preferred Emacs
 * Sublime is not open source and it's not very active recently, though it's a great editor
-* Visual Studio Code is a Microsoft product and I don't expect a good support from the open source community. More over, it has many things in common with Atom. For instance, it's based on [Electron](http://electron.atom.io/) like Atom.
+* Visual Studio Code is a Microsoft product and I don't expect a good support from the open source community. Moreover, it has many things in common with Atom. For instance, it's based on [Electron](http://electron.atom.io/) like Atom.
 
 ## Conclusion ##
 
-You have more options than what you probably think when it comes to Scala IDEs. Most of developers come from a cosy, polished and modern world of IDEs and tools but they need to go deeper to find out that those well-known products are not necessarily the best options for them. Specially when you live in an open source ecosystem you'll eventually find the best thing which works best just for you. Try and enjoy!
+You have more options than what you probably think when it comes to Scala IDEs. Most developers, come from a cozy, polished and modern world of IDEs and tools but they need to go deeper to find out that those well-known products are not necessarily the best options for them. Specially when you live in an open source ecosystem you'll eventually find the best thing that works best for you. Try and enjoy!
