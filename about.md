@@ -14,6 +14,6 @@ The first real programming job that I was paid for was developing a cutting opti
 
 In Dec 2013, I decided to move to the wild and free world of the open source and completely moved my career to the open source ecosystem as well as my day to day tools from the operating system to the programming language and platform. It was the best decision I've ever made in my career so far. I chose Scala as my main programming language because I was looking for an open source, cross-platform similar language to C#.
 
-I've always worked as a contractor or a part-time employee. It gave me the chances to work with various technologies and platforms in different scales.
+I've always worked as a contractor or a part-time employee. It gave me the chances to work with various technologies and platforms in different scales like Scala, C#, C/C++, Java, Ruby, Python, Javascript, etc. Checkout the projects I've done at [cv.amirkarimi.me](http://cv.amirkarimi.me/).
 
 I left my home country and moved to the UK to join [Cake Solutions](https://www.cakesolutions.net) in Apr 2017.
