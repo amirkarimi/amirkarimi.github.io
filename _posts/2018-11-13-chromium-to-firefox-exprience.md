@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Chromium to Firefox Experience"
-date:       2018-11-13 14:50 TODO
+date:       2018-11-13 14:50
 keywords:	"Chrome, Firefox, migrate to Firefox, Chrome vs Firefox, Chromium, multiple profiles, browser performance, browser RAM usage, Gnome, Linux"
 ---
 
