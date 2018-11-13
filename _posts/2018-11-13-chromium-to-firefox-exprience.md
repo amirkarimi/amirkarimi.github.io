@@ -19,17 +19,17 @@ Obviously the biggest issue with Chromium/Chrome is its RAM usage. But I'm also 
 
 Finally, I decided to give it a try. As the first step, I moved my passwords to LastPass so that I can share them between the browsers in case I wanted to switch back. Also setup a sync account on FF and migrated the browser history from Chromium.
 
-Now not only the browsing experience got much better but also the whole system works smoother. The RAM usage has gone down significantly and the swap is less engaged (although it was fast enough because of SSD). Moreover, switching profiles has never been smoother.
+Now not only the browsing experience got much faster but also the whole system works smoother. The RAM usage has gone down significantly and the swap is less engaged (although it was fast enough because of SSD). Moreover, switching profiles has never been smoother.
 
-I had two problems with Firefox though. Dark theme control rendering and not being able to switch tabs with mouse scroll wheel. Firefox renders the controls as native OS components so with a dark them you won't be able to see the text on a textbox with an explicit light background for instance. Fortunately, Firefox is customizable enough that there are a couple of [workarounds](https://www.reddit.com/r/Ubuntu/comments/8su4lm/fix_firefox_dark_text_input_on_ubuntu_18_when/). Finally, the only thing that I missed is switching between tabs using mouse wheel. Although it could be enabled by addons, seems that the latest version doesn't provide the required API. Again [nothing is impossible](https://forum.manjaro.org/t/howto-enable-tab-switching-in-firefox-using-mouse-wheel/39954).
+I had two issues with Firefox though. Dark theme control rendering and not being able to switch tabs with mouse scroll wheel. Firefox renders the controls as native OS components so with a dark them you won't be able to see the text on a textbox with an explicit light background for instance. Fortunately, Firefox is customizable enough that there are a couple of [workarounds](https://www.reddit.com/r/Ubuntu/comments/8su4lm/fix_firefox_dark_text_input_on_ubuntu_18_when/). I simply overrode the theme to a light one by setting `widget.content.gtk-theme-override`. Finally, the only thing that I missed is switching between tabs using mouse wheel. Although it could be enabled by addons, seems that the latest version doesn't provide the required API. Again [nothing is impossible](https://forum.manjaro.org/t/howto-enable-tab-switching-in-firefox-using-mouse-wheel/39954).
 
 ## Multiple Profiles
 
-Now let's see how I'm switching between profiles in Firefox.
+Now let's see how I switch between profiles in Firefox.
 
-First of all, you need to create a new profile. You can navigate to `about:profiles`, click on `Create New Profile` and follow the instruction. But there's no default GUI for switching profiles in the toolbar or menu. Instead, you can launch a profile in a new browser by running `firefox -p <profile-name>`.
+First of all, you need to create a new profile. You can navigate to `about:profiles`, click on `Create New Profile` and follow the instruction. Firefox doesn't have a default GUI for switching profiles in the toolbar or menu. Instead, you can launch Firefox with a specific profile by running `firefox -p <profile-name>`.
 
-If you're using Gnome, you can make it easier to launch a specific profile directly from the desktop by updating the Firefox launcher file at `/usr/share/applications/firefox.desktop`. Define two new actions by adding the following lines at the end of the file:
+If you're using Gnome, you can make it easier to launch a specific profile directly from the desktop by updating the Firefox launcher at `/usr/share/applications/firefox.desktop`. Define two new actions by adding the following lines at the end of the file:
 
 ```plan
 [Desktop Action default-profile]
@@ -53,4 +53,4 @@ to
 Actions=new-window;new-private-window;default-profile;work-profile;
 ```
 
-Now restart Gnome shell (by pressing `ALT + F2` and executing `r`) and you'll be able to launch your profile directly from the desktop. Those action items will appear on context menu when you right click on Firefox launcher. I just tested it on Gnome 3.30.1 but I guess it works for almost all desktops environments.
+Now restart Gnome shell (by pressing `ALT + F2` and executing `r`) then you'll be able to launch your profile directly from the desktop. Those action items will appear on context menu when you right click on Firefox launcher as you can see in the screenshot. I just tested it on Gnome 3.30 but I guess it works on almost all desktop environments.
