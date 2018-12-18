@@ -37,7 +37,7 @@ Name=Open Default Profile
 Exec=firefox -p default
 
 [Desktop Action work-profile]
-Name=Open Cake Profile
+Name=Open Work Profile
 Exec=firefox -p work
 ```
 
