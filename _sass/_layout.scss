@@ -2,6 +2,8 @@
  * Site header
  */
 .site-header {
+    font-family: $alt-font-family;
+
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
@@ -94,6 +96,8 @@
  * Site footer
  */
 .site-footer {
+    font-family: $alt-font-family;
+
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
 }
