@@ -4,11 +4,10 @@
 .site-header {
     font-family: $alt-font-family;
 
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
 
-    background: radial-gradient(at 50% 110%, #1e4b68, #080911);
+    background: radial-gradient(at 50% 110%, #4a6577, #191c1e);
+    box-shadow: 0 0 10px -2px;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -238,5 +237,12 @@
         @include media-query($on-laptop) {
             font-size: 18px;
         }
+    }
+
+    img + em {
+        text-align: center;
+        display: block;
+        color: gray;
+        font-size: 0.9em;
     }
 }
