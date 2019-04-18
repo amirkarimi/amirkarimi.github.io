@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "Chromium to Firefox Experience"
+title:      "Chromium to Firefox Experience (Setup Multiple Profiles)"
 date:       2018-11-13 14:50
-keywords:	"Chrome, Firefox, migrate to Firefox, Chrome vs Firefox, Chromium, multiple profiles, browser performance, browser RAM usage, Gnome, Linux"
+keywords:	"Chrome, Firefox, migrate to Firefox, Chrome vs Firefox, Chromium, firefox multiple profiles, multi-profile, browser performance, browser RAM usage, Gnome, Linux"
 ---
 
 A while ago, I decided to give Firefox a try. Here I'm going to share why and how it happened. Also I'll share how I configured my work and personal browser profiles on my Gnome desktop.
@@ -54,3 +54,28 @@ Actions=new-window;new-private-window;default-profile;work-profile;
 ```
 
 Now restart Gnome shell (by pressing `ALT + F2` and executing `r`) then you'll be able to launch your profile directly from the desktop. Those action items will appear on context menu when you right click on Firefox launcher as you can see in the screenshot. I just tested it on Gnome 3.30 but I guess it works on almost all desktop environments.
+
+## Update 1 - April 18, 2019
+
+You can use this script to update the Firefox desktop file automatically:
+
+{% highlight bash %}
+#!/bin/bash
+
+LAST_LINE=$(tail -n1 /usr/share/applications/firefox.desktop)
+if [ "$LAST_LINE" == "Exec=firefox -p work" ]; then
+    echo "Already updated!"
+    exit 1
+fi
+
+echo "
+[Desktop Action default-profile]
+Name=Open Default Profile
+Exec=firefox -p default
+
+[Desktop Action work-profile]
+Name=Open Work Profile
+Exec=firefox -p work" >> /usr/share/applications/firefox.desktop
+
+sed -i 's/Actions=new-window;new-private-window;/Actions=new-window;new-private-window;default-profile;work-profile;/' /usr/share/applications/firefox.desktop
+{% endhighlight %}
