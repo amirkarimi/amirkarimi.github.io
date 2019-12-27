@@ -1,0 +1,43 @@
+---
+layout: page
+title: Contact
+permalink: /contact/
+---
+
+<ul class="social-media-list contact">
+    {% if site.email %}
+    <li>
+    <a href="mailto:{{ site.email }}">
+        <i class="fas fa-inbox"></i>
+        <span class="username">{{ site.email }}</span>
+    </a>
+    </li>
+    {% endif %}
+
+    {% if site.github_username %}
+    <li>
+    <a href="https://github.com/{{ site.github_username }}">
+        <i class="fab fa-github"></i>
+        <span class="username">{{ site.github_username }}</span>
+    </a>
+    </li>
+    {% endif %}
+
+    {% if site.twitter_username %}
+    <li>
+    <a href="https://twitter.com/{{ site.twitter_username }}">
+        <i class="fab fa-twitter"></i>
+        <span class="username">@{{ site.twitter_username }}</span>
+    </a>
+    </li>
+    {% endif %}
+
+    {% if site.linkedin_url %}
+    <li>
+    <a href="{{ site.linkedin_url }}">
+        <i class="fab fa-linkedin"></i>
+        <span class="username">LinkedIn</span>
+    </a>
+    </li>
+    {% endif %}
+</ul>

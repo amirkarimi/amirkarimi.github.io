@@ -7,6 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://amirkarimi.me" # the base hostname & protocol for your site
 twitter_username: 4m1rk
 github_username: amirkarimi
+linkedin_url: https://www.linkedin.com/in/amirkarimi/
 google_verification: cKyFlH6ASoTGc4cPHhQ6rOOzpG7BAj2J-AnXfaBDfOQ
 
 excerpt_separator: <!--more-->
