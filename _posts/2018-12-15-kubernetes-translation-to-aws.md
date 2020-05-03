@@ -5,8 +5,6 @@ date:       2018-12-15 17:52
 keywords:    "Kubernetes, k8s, AWS, ECS, cloud, docker, comparison"
 ---
 
-![K8s to AWS](/assets/images/2018-12-15-k8s-to-aws.png){: .center-image }
-
 I use analogy whenever I need to explain something in the clearest and fastest possible way. Gaining knowledge in an abstract manner is hard and costly. Using existing knowledge as a foundation speeds up the learning process and prevents misunderstandings. When a C# developer, for instance, asks me what's `flatMap` in Scala, I'll ask if they know what's `SelectMany`? If they do, explaining how `flatMap` works on non-list types would be far faster and easier.
 
 Now let's do this with Kubernetes and AWS. Let's see what are the Kubernetes components closest equivalents in AWS.

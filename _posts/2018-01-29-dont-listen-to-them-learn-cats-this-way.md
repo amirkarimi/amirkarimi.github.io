@@ -5,7 +5,7 @@ date:     2018-01-29
 keywords: "functional programming, FP, cats, scalaz, scala, monad transformers"
 ---
 
-![](https://cdn-images-1.medium.com/max/800/1*Tj-wz2CtiiX2RtQutVKLOA.png)
+![](https://cdn-images-1.medium.com/max/800/1*Tj-wz2CtiiX2RtQutVKLOA.png){: .center-image }
 
 OK, you came to the conclusion that type-safety is good. It helps you get things
 done in a safer manner, at least for whatever you’re working on at the moment.

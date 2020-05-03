@@ -5,8 +5,6 @@ date:       2019-04-07 18:50
 keywords:   "event-driven, reactive programming, keyboard, hardware design, assembly x86, late 90's, distributed systems, event sourcing"
 ---
 
-![Das Keyboard Ultimate - I have one and it's awesome](https://upload.wikimedia.org/wikipedia/commons/5/56/IBM_Model_F_XT.png)
-
 The event-driven design has already been around for a while. Like many other trendy patterns, it's far older than what we think. Before the web era, it was quite normal to design stand-alone desktop applications using this design. But it is even older than that. It has already been used massively since the mainframe era (and probably even before).
 
 This is the story of how I learned about event-driven design without even knowing what it's called in the late 90s when I was just getting started to learn how computers work.
