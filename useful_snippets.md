@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Useful Snippets
+permalink: /useful_snippets/
 order: 1
 ---
 
