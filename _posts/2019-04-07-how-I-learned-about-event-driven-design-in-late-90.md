@@ -21,9 +21,9 @@ I was trying to understand how the keyboard driver works in the late 90s. So I t
 
 I figured out whatever comes from the keyboard can be read from the I/O port number `0x60`. This is not a TCP port or something like that. This is so low level that there's a [CPU instruction](https://stackoverflow.com/questions/3215878/what-are-in-out-instructions-in-x86-used-for) for that called `IN` (`OUT` for writing data to an I/O port). Reading from an I/O port in Assembly is like:
 
-{% highlight asm %}
+```asm
 IN AL, 60h
-{% endhighlight %}
+```
 
 But it was only 8 bits. I checked the other numbers around (~75-85) but none of them were sending any data when I was pressing the keys. That was the moment I got introduced to the idea of **even-driven design**. 
 
@@ -35,9 +35,9 @@ Modern PCs don't have any PS/2 connectors. Less modern ones remained compatible 
 
 You can try it on your *nix machine right now. Although not directly from IO ports, you can read the signals from your keyboard input device driver under `/dev/input/`. In my case it's like:
 
-{% highlight bash %}
+```bash
 $ cat /dev/input/by-id/usb-Metadot_-_Das_Keyboard_Das_Keyboard-event-kbd
-{% endhighlight %}
+```
 
 You will see two separate events when a key is pressed or released.
 

@@ -16,7 +16,7 @@ Another issue with the cluster sharding tests is the persistence. You have to us
 
 I've build a simple test kit to be used as a Specs2 scope:
 
-{% highlight scala %}
+```scala
 object ClusterTestKit {
   def storageLocations(system: ActorSystem) = List(
     "akka.persistence.journal.leveldb.dir",
@@ -45,12 +45,12 @@ abstract class IsolatedCluster(_system: ActorSystem)
     }
   }
 }
-{% endhighlight %}
+```
 
 `IsolatedCluster` class provides an isolated actor system cluster which makes tests easier. It also removes the persistence files.
 
 As you can see `TestActorSystemManager` is the responsible for building the actor system and setting up cluster sharding with a single node:
-{% highlight scala %}
+```scala
 object TestActorSystemManager {
 
   def getSystem(tempPersistence: Boolean) = {
@@ -99,7 +99,7 @@ object TestActorSystemManager {
     ActorSystemManager.startSharding(system)
   }
 }
-{% endhighlight %}
+```
 
 Note that I didn't use in-memory persistence plugin. Instead, the path of snapshots and journal stores are set randomly which allows tests to be run in parallel while I keep the production persistence plugin.
 
@@ -107,7 +107,7 @@ This made the tests over 400% faster.
 
 And here is the integration test:
 
-{% highlight scala %}
+```scala
 class SampleActorSpec extends Specification with Matchers {
   "Sample actor" >> {
     "send back info" >> new IsolatedCluster {
@@ -117,6 +117,6 @@ class SampleActorSpec extends Specification with Matchers {
     }
   }
 }
-{% endhighlight %}
+```
 
 Everything is like the default cluster sharding samples except that we have a single node. This way we can start simple and increase the node numbers and even scale-out the system, when necessary.

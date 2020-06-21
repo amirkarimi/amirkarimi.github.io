@@ -29,16 +29,16 @@ There are two major approach for changing the current language in Play:
 
 It's simply possible to set/change the current language by calling `withLang` method on a `Result` object.
 
-{% highlight scala %}
+```scala
 val lang = Lang("en")
 Ok(Messages("hello.world")).withLang(lang)
-{% endhighlight %}
+```
 
 Or you can clear the selected language:
 
-{% highlight scala %}
+```scala
 Ok(Messages("hello.world")).clearingLang
-{% endhighlight %}
+```
 
 It sets/clears the cookie (named `PLAY_LANG`) which stores the language code behind the scene.
 
@@ -57,9 +57,9 @@ The best approach is to use route parameters as language indicators. For example
 
 This way we have to add language parameter to each action and its corresponding route:
 
-{% highlight scala %}
+```scala
 GET    /$lang<[a-z]{2}>/page/:id     controllers.PageController.view(id: Int, lang: String)
-{% endhighlight %}
+```
 
 Read more information about this approach [here](http://mariussoutier.com/blog/2012/12/11/playframework-routes-part-2-advanced/).
 
@@ -75,15 +75,15 @@ Explicit route parameters are too verbose and cookies are not SEO friendly. Anot
 
 So `http://www.mysite.com/en/page/1` would be transformed to `http://www.mysite.com/page/1` and the route file would be like this:
 
-{% highlight scala %}
+```scala
 GET    /page/:id     controllers.PageController.view(id: Int)
-{% endhighlight %}
+```
 
 But where can we store the parsed and removed language code? The best place I've found is the headers.
 
 Here is the filter which parses the language code and stores it to the headers:
 
-{% highlight scala %}
+```scala
 
 object RouteLangFilter extends Filter with Controller {
   val langRegex = "/(.{2})(/.*)?".r
@@ -115,13 +115,13 @@ object RouteLangFilter extends Filter with Controller {
     Seq(Cookies.encode(updatedCookies.toSeq))
   }
 }
-{% endhighlight %}
+```
 
 I also add the custom header `x-Route-Lang` which will come handy to distinguish processed URLs from the originals.
 
 As its not possible to transform the route by the filters, we have to override `routeRequest` method of `Global` object in Play 2.3 or `DefaultHttpRequestHandler` in Play 2.4 to do so.
 
-{% highlight scala %}
+```scala
 override def onRouteRequest(request: RequestHeader): Option[Handler] = {
   request.path match {
     case RouteLangFilter.langRegex(lang, path) =>
@@ -131,7 +131,7 @@ override def onRouteRequest(request: RequestHeader): Option[Handler] = {
       super.onRouteRequest(request)
   }
 }
-{% endhighlight %}
+```
 
 Language code will be extracted by the `Filter` and route transformation will be done by `routeRequest`. 
 
@@ -148,7 +148,7 @@ All of my controllers inherit from a special controller trait which provides the
 
 Supposing the base controller trait has a simple action method (mine is more complicated) which is used by child controllers:
 
-{% highlight scala %}
+```scala
 trait BaseController extends Controller {
   def action[A](block: Request[A] => Future[Result]): Future[Result] = Action.async { implicit request =>
     processRequest(block)(request)
@@ -158,11 +158,11 @@ trait BaseController extends Controller {
     ...
   }
 }
-{% endhighlight %}
+```
 
 This would be the trait which redirects all non-SEO friendly URLs of the child controller to SEO friendly ones:
 
-{% highlight scala %}
+```scala
 trait WithRouteLang extends BaseController {
   override protected def processRequest[A](block: Request[A] => Future[Result])(implicit request: Request[A]) = {
     request.headers.get(RouteLangFilter.routeLangKey) match {
@@ -176,16 +176,16 @@ trait WithRouteLang extends BaseController {
     }
   }
 }
-{% endhighlight %}
+```
 
 As you can see `x-Route-Lang` header (`RouteLangFilter.routeLangKey`) is used to find out whether we should redirect to SEO-friendly URLs or not.
 
 Now its just enough to implement `WithRouteLang` trait for each controller you want to be SEO-friendly internationalized.
 
-{% highlight scala %}
+```scala
 class PageController extends BaseController with WithRouteLang {
   def view(id: Int) = action { implicit request =>
     ...
   }
 }
-{% endhighlight %}
+```

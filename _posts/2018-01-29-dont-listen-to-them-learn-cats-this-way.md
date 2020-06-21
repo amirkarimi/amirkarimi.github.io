@@ -20,14 +20,14 @@ Scala is `Option` type, after which it simply no longer makes sense to deal with
 
 Have a look at this piece of code for instance:
 
-{% highlight scala %}
+```scala
 def getUser(id: Int): Option[User] = ???
 
 getUser(10) match {
     case None => println("User not found")
     case Some(user) => println(s"User: $user")
 }
-{% endhighlight %}
+```
 
 It obviously feels safer than a null checking `if` block. The author of
 `getUser` method lets the consumer know what they should expect to happen when
@@ -45,14 +45,14 @@ others), Scala has chosen a direct answer; `Future` type. As a result, it’s mo
 likely that you’ll see methods returning `Future` of something in real-world
 idiomatic Scala codebases:
 
-{% highlight scala %}
+```scala
 def getUser(id: Int): Future[Option[User]] = ???
 
 getUser(10).map {
     case None => println("User not found")
     case Some(user) => println(s"User: $user")
 }
-{% endhighlight %}
+```
 
 Again, method signature explains everything. The only difference is that it’s
 async and the consumer uses `map` to match the result. So far so good.
@@ -65,7 +65,7 @@ don’t look shiny anymore.
 Consider the following example where we want to find the user country by its ID
 asynchronously:
 
-{% highlight scala %}
+```scala
 def getUser(id: Int): Future[Option[User]] = ???
 def getCity(user: User): Future[Option[City]] = ???
 def getCountry(city: City): Future[Option[Country]] = ???
@@ -80,7 +80,7 @@ def getCountryByUserId(id: Int): Future[Option[Country]] = {
         }
     }
 }
-{% endhighlight %}
+```
 
 Despite the method signatures expressiveness, it’s not that beautiful anymore.
 Although there is a pattern here, it doesn’t look like as smooth and readable as
@@ -94,7 +94,7 @@ another container type like `Future` and a generic type like `User`
 (`OptionT[Future, User]`). And it provides more abstraction. Let’s rewrite the
 above sample with `OptionT`:
 
-{% highlight scala %}
+```scala
 def getCountryByUserId(id: Int): Future[Option[Country]] = {
     val result = for {
     user <- OptionT(getUser(id))
@@ -105,7 +105,7 @@ def getCountryByUserId(id: Int): Future[Option[Country]] = {
     }
     result.value
 }
-{% endhighlight %}
+```
 
 Far more beautiful, concise and readable.
 
@@ -120,7 +120,7 @@ applications. But the good news is that Cats support the same concept for
 
 So the following code:
 
-{% highlight scala %}
+```scala
 def getUser(id: Int): Future[Either[String, User]] = ???
 def getCity(user: User): Future[Either[String, City]] = ???
 def getCountry(city: City): Future[Either[String, Country]] = ???
@@ -135,11 +135,11 @@ def getCountryByUserId(id: Int): Future[Either[String, Country]] = {
         }
     }
 }
-{% endhighlight %}
+```
 
 Can be rewritten using `EitherT` like this:
 
-{% highlight scala %}
+```scala
 def getCountryByUserId(id: Int): Future[Either[String, Country]] = {
     val result = for {
     user <- EitherT(getUser(id))
@@ -150,7 +150,7 @@ def getCountryByUserId(id: Int): Future[Either[String, Country]] = {
     } 
     result.value
 }
-{% endhighlight %}
+```
 
 I’d say `Future[Either[String, Option[User]]` would be a more realistic type to
 deal with, but it needs its own separate blog post which will also show that

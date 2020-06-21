@@ -23,7 +23,7 @@ The request for such scenarios are increasing, and of course, functional program
 
 Here is a more advanced sample in Scala on Play using [ReactiveMongo](http://www.reactivemongo.org/) and [Iteratees](https://www.playframework.com/documentation/2.4.x/Iteratees):
 
-{% highlight scala %}
+```scala
 val content = Enumerator.outputStream { output =>
   val writer = CSVWriter.open(output)
   
@@ -55,6 +55,6 @@ Result(
   header = ResponseHeader(200, Map(CONTENT_DISPOSITION -> s"attachment; filename=export.csv")),
   body = content
 )
-{% endhighlight %}
+```
 
 This code even controls the data follow based on the client (consumer) speed.

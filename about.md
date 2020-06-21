@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+order: 3
 ---
 
 My first computer was a .386 (12MHz) with 2MB of RAM running MS-DOS in 1994 when I was about 9 years old.

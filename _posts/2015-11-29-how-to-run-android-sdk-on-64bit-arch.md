@@ -23,10 +23,10 @@ I prefer the first one which seems easier. I [enabled multilib repository](https
 
 And installed all 32-bit dependencies mentioned in them:
 
-{% highlight text %}
+```text
 # pacman -S lib32-alsa-lib lib32-openal lib32-libstdc++5 lib32-libxv \
     lib32-mesa lib32-sdl lib32-fontconfig lib32-libpulse \
     lib32-gcc-libs lib32-zlib lib32-ncurses swt
-{% endhighlight %}
+```
 
 Then I was able to start developing my Android app.

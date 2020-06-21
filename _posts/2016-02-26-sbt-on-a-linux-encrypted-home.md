@@ -7,11 +7,11 @@ keywords:	"sbt, linux, encrypted home, scala, File name too long, java.lang.NoSu
 
 If you use Linux and encrypt your home folder, you may get the following error when compiling a SBT project:
 
-{% highlight text %}
+```text
 [error] File name too long
 [error] one error found
 [error] (compile:compile) Compilation failed
-{% endhighlight %}
+```
 
 <!--more-->
 
@@ -19,9 +19,9 @@ When your home folder is encrypted, the file names are also encrypted and the en
 
 Fortunately it's easily possible to change the default max file name length for Scala compiler by putting the following command in `~/.sbt/0.13/local.sbt` file (for sbt 0.13.x);
 
-{% highlight sbt %}
+```sbt
 scalacOptions ++= Seq("-Xmax-classfile-name","100")
-{% endhighlight %}
+```
 
 It sets the maximum class file name length to 100 which after encryption will not exceed the maximum limit. SBT will pick this setting for all projects for the current user.
 

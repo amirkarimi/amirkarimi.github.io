@@ -15,3 +15,7 @@ excerpt_separator: <!--more-->
 # Build settings
 markdown: kramdown
 
+collections:
+  useful_snippets:
+    output: true
+

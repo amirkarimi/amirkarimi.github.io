@@ -59,7 +59,7 @@ Now restart Gnome shell (by pressing `ALT + F2` and executing `r`) then you'll b
 
 You can use this script to update the Firefox desktop file automatically:
 
-{% highlight bash %}
+```bash
 #!/bin/bash
 
 LAST_LINE=$(tail -n1 /usr/share/applications/firefox.desktop)
@@ -78,4 +78,4 @@ Name=Open Work Profile
 Exec=firefox -p work" >> /usr/share/applications/firefox.desktop
 
 sed -i 's/Actions=new-window;new-private-window;/Actions=new-window;new-private-window;default-profile;work-profile;/' /usr/share/applications/firefox.desktop
-{% endhighlight %}
+```

@@ -10,11 +10,11 @@ RVM installation is [clearly described at rvm.io](https://rvm.io/rvm/install){:t
 
 I use the default installation script:
 
-{% highlight bash %}
+```bash
 
 curl -sSL https://get.rvm.io | bash -s stable --ruby
 
-{% endhighlight %}
+```
 
 But ruby is not available at the terminal (Gnome Terminal).
 

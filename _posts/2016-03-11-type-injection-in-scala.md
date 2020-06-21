@@ -13,10 +13,10 @@ In Slick 3 (the latest version at the moment) you have to be aware of the databa
 
 For instance, the following code is needed to connect and work with Postgres:
 
-{% highlight scala %}
+```scala
 // Use PostgresDriver to connect to a PostgreSQL database
 import slick.driver.PostgresDriver.api._
-{% endhighlight %}
+```
 
 On the other hand it's wise to use an in-memory DB for functional tests instead of Postgres. H2 is a perfect choice, but it's not fully compatible with Postgres and we were seeing serious issues in our tests when we just replaced the postgres connection with H2.
 
@@ -34,32 +34,32 @@ We have to inject the slick driver API which, in fact, is a **trait** and subseq
 
 This is easily possible by injecting the `JdbcProfile` and import the driver specific types.
 
-{% highlight scala %}
+```scala
 class PersonDAO(val profile: JdbcProfile) {
   import profile.api._
   //...
 }
-{% endhighlight %}
+```
 
 The profile can be set to Postgres for production:
 
-{% highlight scala %}
+```scala
 class AppModule extends AbstractModule with ScalaModule {
   def configure() {
     bind[JdbcProfile].toInstance(PostgresDriver)
   }
 }
-{% endhighlight %}
+```
 
 And it can be set to H2 for tests:
 
-{% highlight scala %}
+```scala
   def application = {
     new GuiceApplicationBuilder()
       .overrides(bind[JdbcProfile].toInstance(H2Driver))
       .build
   }
-{% endhighlight %}
+```
 
 Now data-access layer will switch to H2 when running tests. 
 
