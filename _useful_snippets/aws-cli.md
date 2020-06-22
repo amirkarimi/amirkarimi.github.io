@@ -14,5 +14,5 @@ iam = boto3.resource('iam')
 for user in iam.users.all():
   has_any = any(user.mfa_devices.all())
   if not has_any:
-    print(f"{user.name}")
+    print(user.name)
 ```
