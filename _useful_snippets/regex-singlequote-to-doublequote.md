@@ -1,12 +1,15 @@
 ---
 layout: page
-date: 2020-05-10
-title: My Useful Regular Expressions
+date: 2020-06-10
+category: Useful Regex
+title: Covert Single Quoted YAML to Double Quoted
 ---
 
-## YAML
+When you need to unify your YAML file to use double quote for strings you can use the following regular expressions and the replacement to use on your favorite editor.
 
-> The first lines are the regex to find and the last line are the replace expressions.
+<!--more-->
+
+> The first lines are the regex to find and the last lines are the replace expressions.
 
 ### Convert single quoted values to double in YAML
 

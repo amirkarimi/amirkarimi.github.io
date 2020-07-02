@@ -1,10 +1,13 @@
 ---
 layout: page
-date: 2020-05-20
-title: AWS CLI Useful Scripts
+date: 2020-06-20
+category: AWS
+title: List AWS Users Without MFA
 ---
 
-## List users who haven't enabled MFA
+Lists users who didn't enable MFA.
+
+<!--more-->
 
 ```python
 import boto3
