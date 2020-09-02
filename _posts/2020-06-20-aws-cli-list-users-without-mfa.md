@@ -6,7 +6,7 @@ category: Useful Snippets
 keywords:	useful snippets, aws, boto3, AWS IAM, script
 ---
 
-Lists users who didn't enable MFA.
+Lists users who haven't enabled MFA on their AWS accounts.
 
 <!--more-->
 

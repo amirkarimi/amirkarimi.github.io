@@ -6,7 +6,7 @@ category: Useful Snippets
 keywords: useful snippets, rails, mailer, active mailer, smoke test, bash
 ---
 
-When you need to see the generated HTML by active mailer in your browser you can run this code.
+Use this code snippet when you need to see the generated HTML by active mailer in the browser.
 
 <!--more-->
 

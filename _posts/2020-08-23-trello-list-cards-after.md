@@ -6,9 +6,11 @@ category: Useful Snippets
 keywords: useful snippets, trello, javascript, browser
 ---
 
-List all card titles after the one contains "End of June" inside the browser.
+List the cards contents after a given card content inside the browser. Useful to generate a quick report from your Trello board.
 
 <!--more-->
+
+This example lists all the cards placed after then one with "End of June" title.
 
 Open the developer tool in your browser and type in:
 

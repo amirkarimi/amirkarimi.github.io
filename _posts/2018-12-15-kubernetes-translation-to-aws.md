@@ -9,7 +9,7 @@ I use analogy whenever I need to explain something in the clearest and fastest p
 
 Now let's do this with Kubernetes and AWS. Let's see what are the Kubernetes components closest equivalents in AWS.
 
-The point is that an analogy doesn't provide a deep understanding of a new concept, but it provides the foundation to speed up the learning process. So don't expect a conclusive 1:1 mapping from Kubernetes elements to AWS ones.
+The point is that an analogy doesn't provide a deep understanding of a new concept, but it provides the foundation to speed up the learning process. So don't expect a conclusive 1:1 mapping from Kubernetes elements to AWS.
 
 <!--more-->
 

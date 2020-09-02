@@ -6,7 +6,23 @@ category: Useful Snippets
 keywords:	useful snippets, regex, yaml, convert
 ---
 
-When you need to unify your YAML file to use double quote for strings you can use the following regular expressions and the replacement to use on your favorite editor.
+You can use these regular expressions and replacement expressions inside your favorite editor when you need to unify your YAML file to use double quote for all strings.
+
+For example converting:
+
+```yaml
+key1: value 1
+key2: 'value 2'
+key3: 'value "3"'
+```
+
+To:
+
+```yaml
+key1: "value 1"
+key2: "value 2"
+key3: "value \"3\""
+```
 
 <!--more-->
 
@@ -22,7 +38,7 @@ When you need to unify your YAML file to use double quote for strings you can us
 
 e.g. `key: 'value'` will be converted to `key: "value"`
 
-### Escape doube quotes inside doube quoted strings in YAML
+### Escape double quotes inside double quoted strings in YAML
 
 ```
 :(\s?)"(.*)([^\\])"(.*)"
