@@ -190,7 +190,6 @@
 }
 
 .post-link {
-    display: block;
     font-size: 24px;
 }
 
@@ -257,5 +256,19 @@
         display: block;
         color: gray;
         font-size: 0.9em;
+    }
+}
+
+h2 .badge {
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 2px 6px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: middle;
+
+    &.badge-1 {
+        background-color: #b064bb;
     }
 }

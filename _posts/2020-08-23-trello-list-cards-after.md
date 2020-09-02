@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: post
 date: 2020-08-23
-category: Trello
-title: List Cards After a Specific One
+title: List Trello Cards After a Specific One
+category: Useful Snippets
+keywords: useful snippets, trello, javascript, browser
 ---
 
 List all card titles after the one contains "End of June" inside the browser.

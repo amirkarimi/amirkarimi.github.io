@@ -1,12 +1,12 @@
 ---
-layout: page
+layout: post
 date: 2020-07-01
 title: Rails Mailer Smoke Test
-category: Rails
-keywords: rails, mailer, active mailer, smoke test, bash
+category: Useful Snippets
+keywords: useful snippets, rails, mailer, active mailer, smoke test, bash
 ---
 
-When you need to see the generated HTML by active mailer in your browser you can run the following code:
+When you need to see the generated HTML by active mailer in your browser you can run this code.
 
 <!--more-->
 

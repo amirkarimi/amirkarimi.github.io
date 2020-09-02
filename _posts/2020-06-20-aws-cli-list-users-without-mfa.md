@@ -1,8 +1,9 @@
 ---
-layout: page
-date: 2020-06-20
-category: AWS
-title: List AWS Users Without MFA
+layout:		post
+date:     2020-06-20
+title:    List AWS Users Without MFA
+category: Useful Snippets
+keywords:	useful snippets, aws, boto3, AWS IAM, script
 ---
 
 Lists users who didn't enable MFA.

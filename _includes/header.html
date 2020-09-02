@@ -14,6 +14,10 @@
       </a>
 
       <div class="trigger">
+        {% for category in site.categories %}
+          <a class="page-link" href="/{{ category[0] | slugify | prepend: site.baseurl }}">{{ category[0] }}</a>
+        {% endfor %}
+
         {% assign sorted_pages = (site.pages | sort: 'order') %}
         {% for page in sorted_pages %}
           {% if page.title %}

@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: post
 date: 2020-06-10
-category: Useful Regex
 title: Covert Single Quoted YAML to Double Quoted
+category: Useful Snippets
+keywords:	useful snippets, regex, yaml, convert
 ---
 
 When you need to unify your YAML file to use double quote for strings you can use the following regular expressions and the replacement to use on your favorite editor.
