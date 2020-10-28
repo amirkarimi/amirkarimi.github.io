@@ -2,7 +2,7 @@
 layout:     post
 title:      "How to Use Docker Volumes for Development"
 date:       2020-10-18
-keywords:   "docker, docker-compose, volumes, exclude volume, development, nodejs"
+keywords:   "docker, docker-compose, volumes, exclude volume, development, nodejs, sh: 1: nodemon: not found, sh: 1: not found"
 ---
 
 Running Docker containers in production normally doesn't need [mounting](https://docs.docker.com/storage/volumes/) local files or dirs. But when using Docker for development, it makes sense to mount the source code to avoid baking the Docker image on every change. That looks straight forward except for some cases.
