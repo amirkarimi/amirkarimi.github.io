@@ -309,12 +309,12 @@ In this case it was only `server.js` that needs to be mounted. In some cases the
 
 ## Conclusion
 
-This was an example to demonstrate how Docker volume mounting can be used during development. The same concept applies in different situations and for different stacks.
+This was an example to demonstrate how Docker volume mounting can be used during development. The same concept applies for other languages and frameworks.
 
-Here is a summary and comparison of methods demonstrated:
+Here is a summary and comparison of the demonstrated methods:
 
-| Method                     | Pros                                       | Cons                                                              |
-| -------------------------- | ------------------------------------------ | ----------------------------------------------------------------- |
-| Mounting the Whole Dir     | Easy                                       | Corrupts the docker content - Basically, not usable               |
-| Re-Mounting Excluded Paths | Needs to specify only excluded dirs        | Inconsistent, Dangling Images                                     |
-| Mounting Selectively       | Consistent and clear, probably best method | Needs tracking all newly added files and dirs by development team |
+| Method                     | Pros                                       | Cons                                                        |
+| -------------------------- | ------------------------------------------ | ----------------------------------------------------------- |
+| Mounting the whole dir     | Easy                                       | Corrupts the docker content - basically, not usable         |
+| Re-mounting excluded paths | Only excluded dirs needs to be specified   | Inconsistent, Dangling Images                               |
+| Mounting selectively       | Consistent and clear, probably best method | Needs tracking all newly added files and dirs by developers |
