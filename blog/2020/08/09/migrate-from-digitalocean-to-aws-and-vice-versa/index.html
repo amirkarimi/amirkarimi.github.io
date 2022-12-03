@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    
+
+    <title>Quick Guide for Migrating a DigitalOcean Droplet to AWS EC2 - Amir Karimi</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="/assets/css/highlight.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109182476-2"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-109182476-2');
+        </script>
+    
+    
+
+    <meta name="keywords" content="cloud migration, cheat sheet, digital ocean to aws, aws to digitalocean, docker, docker-compose, volumes, development" />
+
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <!-- Begin page content -->
+    
+<nav class="navbar navbar-expand-lg bg-light mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="https://4m1r.dev">Amir Karimi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/about" >
+                            About
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/blog" >
+                            Blog
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="mailto:hey@4m1r.dev" target="_blank">
+                            Contact
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="flex-grow-1">
+    <div class="container">
+        
+<div class="row gx-5 page">
+    
+    <div class="col-lg-3 order-lg-3 mb-1">
+        <div class="page-toc">
+            <h6>On this page</h6>
+            <hr class="my-2"/>
+            
+        <ul>
+        
+            <li>
+                <a href="#setup-the-new-machine">Setup the New Machine</a>
+                
+            </li>
+        
+            <li>
+                <a href="#install-requirements">Install requirements</a>
+                
+        <ul>
+        
+            <li>
+                <a href="#install-docker">Install Docker</a>
+                
+            </li>
+        
+            <li>
+                <a href="#install-docker-compose">Install Docker Compose</a>
+                
+            </li>
+        
+            <li>
+                <a href="#install-nginx-and-certbot">Install Nginx and Certbot</a>
+                
+            </li>
+        
+        </ul>
+    
+            </li>
+        
+            <li>
+                <a href="#copy-the-application">Copy the Application</a>
+                
+            </li>
+        
+            <li>
+                <a href="#backup-and-restore-docker-volumes">Backup and Restore Docker Volumes</a>
+                
+            </li>
+        
+            <li>
+                <a href="#start-the-app-using-docker-compose">Start the app using Docker Compose</a>
+                
+            </li>
+        
+            <li>
+                <a href="#configuring-lets-encrypt-using-certbot">Configuring Let&#39;s Encrypt using Certbot</a>
+                
+        <ul>
+        
+            <li>
+                <a href="#move-the-files">Move the files</a>
+                
+            </li>
+        
+            <li>
+                <a href="#update-your-domain">Update your domain</a>
+                
+            </li>
+        
+            <li>
+                <a href="#enable-automatic-renewal">Enable automatic renewal</a>
+                
+            </li>
+        
+        </ul>
+    
+            </li>
+        
+        </ul>
+    
+        </div>
+    </div>
+    
+    <div class="col-lg-9">
+        <h1 class="text-2xl font-bold mb-3">Quick Guide for Migrating a DigitalOcean Droplet to AWS EC2</h1>
+        <div class="font-normal">
+            <p>I needed to move a DigitalOcean Droplet to AWS which was running a Docker application using Docker Compose and had its SSL configured using Let's Encrypt. I couldn't find an easy way to convert the DigitalOcean disk snapshots to AWS EBS ones, otherwise, the whole disk could be cloned in AWS with much less effort since Linux configuration is all about the filesystem. I ended up installing needed packages on the target machine and move the configurations. Since I tested everything and it was successful I figured it might be useful to put all the commands and steps in the same place as a quick step-by-step guide. Also, the exact same steps apply to any other cloud as well as the other way around, from AWS to DigitalOcean.</p>
+<!--more-->
+
+<h2 id="setup-the-new-machine">Setup the New Machine</h2>
+<p>Both the Droplet and AWS EC2 instance are running Ubuntu 18.04 but this guide should work for newer versions of Ubuntu.</p>
+<p>First of all, it's a good idea to make sure that the swap memory is enabled. There is a nice tutorial from DigitalOcean on <a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04">how to enable the swap space on Ubuntu</a>.</p>
+<h2 id="install-requirements">Install requirements</h2>
+<p>First, start by updating the <code>apt</code> repository on the new machine:</p>
+<div class="codehilite"><pre><span></span><code>sudo apt update
+</code></pre></div>
+
+<h3 id="install-docker">Install Docker</h3>
+<div class="codehilite"><pre><span></span><code>sudo apt-get install <span class="se">\</span>
+    apt-transport-https <span class="se">\</span>
+    ca-certificates <span class="se">\</span>
+    curl <span class="se">\</span>
+    gnupg-agent <span class="se">\</span>
+    software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo apt-key add -
+
+sudo apt-key fingerprint 0EBFCD88
+
+sudo add-apt-repository <span class="se">\</span>
+   <span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
+<span class="s2">   </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> \</span>
+<span class="s2">   stable&quot;</span>
+
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+<span class="c1"># If the user is not root</span>
+sudo usermod -aG docker <span class="nv">$USER</span>
+</code></pre></div>
+
+<p>You also need to logout and login again to be able to work with docker without running as root.</p>
+<h3 id="install-docker-compose">Install Docker Compose</h3>
+<div class="codehilite"><pre><span></span><code>sudo curl -L <span class="s2">&quot;https://github.com/docker/compose/releases/download/1.26.2/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&quot;</span> -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+</code></pre></div>
+
+<h3 id="install-nginx-and-certbot">Install Nginx and Certbot</h3>
+<div class="codehilite"><pre><span></span><code>sudo apt install nginx
+
+sudo add-apt-repository universe
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install certbot python3-certbot-nginx
+</code></pre></div>
+
+<h2 id="copy-the-application">Copy the Application</h2>
+<p>Copy the application folder including docker-compose files by running the following commands on the source machine:</p>
+<div class="codehilite"><pre><span></span><code>tar cjvf app.tar.bz2 <span class="o">[</span>APP_DIR<span class="o">]</span>
+scp -i <span class="o">[</span>PEM_FILE<span class="o">]</span>.pem app.tar.bz2 <span class="o">[</span>DESITNATION_MACHINE_SSH<span class="o">]</span>:~/
+</code></pre></div>
+
+<p>And on the new machine:</p>
+<div class="codehilite"><pre><span></span><code>tar xvf app.tar.bz2
+</code></pre></div>
+
+<h2 id="backup-and-restore-docker-volumes">Backup and Restore Docker Volumes</h2>
+<blockquote>
+<p>You can skip this section if you don't have any Docker volumes that needs to be moved or you mount your files to the local disk and that will be copied as part of the source code or similar way</p>
+</blockquote>
+<p>On the source machine, run <code>docker volume ls</code> and find the volume names you need to migrate then run the following command to create a backup of the volume:</p>
+<div class="codehilite"><pre><span></span><code>docker run --rm <span class="se">\</span>
+  --volume <span class="o">[</span>VOLUME_NAME<span class="o">]</span>:/home/volume <span class="se">\</span>
+  --volume <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/home/backup <span class="se">\</span>
+  ubuntu <span class="se">\</span>
+  tar cvf /home/backup/volume.tar /home/volume
+</code></pre></div>
+
+<p>The first volume exposes the original volume to this temporary Docker container and the second one allows us to copy the volume back into another path at the host machine. Though instead of copy we create a <code>tar</code> file using the last command.</p>
+<p>Transfer the file to the new machine using <code>scp</code> as before and then:</p>
+<div class="codehilite"><pre><span></span><code>docker run --rm <span class="se">\ </span>
+  --volume <span class="o">[</span>VOLUME_NAME<span class="o">]</span>:/home/volume <span class="se">\</span>
+  --volume <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/home/backup <span class="se">\</span>
+  ubuntu <span class="se">\</span>
+  tar xvf /home/backup/volume.tar -C /home/volume --strip <span class="m">1</span>
+</code></pre></div>
+
+<p>This is the same approach just a different command to extract the <code>tar</code> file.</p>
+<h2 id="start-the-app-using-docker-compose">Start the app using Docker Compose</h2>
+<div class="codehilite"><pre><span></span><code>docker-compose up -d --build
+</code></pre></div>
+
+<h2 id="configuring-lets-encrypt-using-certbot">Configuring Let's Encrypt using Certbot</h2>
+<p>The original server had Let's Encrypt configured <a href="https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx">using Certbot and Nginx running on the host machine</a>.</p>
+<p>Since Nginx is installed on the new machine, it should work out of the box by just copying the configs and key files from the original machine.</p>
+<h3 id="move-the-files">Move the files</h3>
+<p>The easiest way is to use <code>tar</code> and <code>scp</code> like copying the source code above. First make <code>tar.bz2</code> files from <code>/etc/nginx</code> and <code>/etc/letsencrypt</code> folders on the source machine:</p>
+<div class="codehilite"><pre><span></span><code>tar cjvf nginx.tar.bz2 /etc/nginx/
+tar cjvf letsencrypt.tar.bz2 /etc/letsencrypt
+
+scp -i <span class="o">[</span>PEM_FILE<span class="o">]</span>.pem nginx.tar.bz2 letsencrypt.tar.bz2 <span class="o">[</span>DESITNATION_MACHINE_SSH<span class="o">]</span>:~/
+</code></pre></div>
+
+<p>Then on the new machine:</p>
+<div class="codehilite"><pre><span></span><code>sudo tar xvf nginx.tar.bz2 -C /
+sudo tar xvf letsencrypt.tar.bz2 -C /
+</code></pre></div>
+
+<h3 id="update-your-domain">Update your domain</h3>
+<p>You need to update your domain to point to this new server IP address before being able to enable automatic renewal.</p>
+<h3 id="enable-automatic-renewal">Enable automatic renewal</h3>
+<p>Just to make sure the renewal is working run:</p>
+<div class="codehilite"><pre><span></span><code>sudo certbot renew --dry-run
+</code></pre></div>
+        </div>
+        
+        <div class="mt-5 mb-4 gap-2 d-flex justify-content-between">
+            
+            <a class="btn btn-outline-secondary" href="/blog/2020/07/01/rails-mailer-smoke-test">
+                <span aria-hidden="true">&laquo;</span>
+                Rails Mailer Smoke Test
+            </a>
+            
+            
+            <a class="btn btn-outline-secondary" href="/blog/2020/08/23/trello-list-cards-after">
+                List Trello Cards After a Specific One
+                <span aria-hidden="true">&raquo;</span>
+            </a>                
+            
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+</main>
+
+
+    <footer class="footer mt-auto py-3">
+        
+        <div class="container d-flex flex-wrap justify-content-between">
+            <div>
+                <span class="mb-3 mb-md-0 text-muted">
+                    &copy; 2022
+                    <a href="https://4m1r.dev" class="text-muted">Amir Karimi</a>.
+                    All Rights Reserved.
+                </span>
+            </div>
+
+            
+            <div>
+                <div class="hstack gap-2 social-icons">
+    <a href="https://twitter.com/4m1rk">
+        <svg role="img" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/amirkarimi">
+        <svg role="img"  width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://github.com/amirkarimi">
+        <svg role="img"  width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+</div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>

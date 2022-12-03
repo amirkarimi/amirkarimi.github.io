@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    
+
+    <title>Chromium to Firefox Experience (Setup Multiple Profiles) - Amir Karimi</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="/assets/css/highlight.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109182476-2"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-109182476-2');
+        </script>
+    
+    
+
+    <meta name="keywords" content="Chrome, Firefox, migrate to Firefox, Chrome vs Firefox, Chromium, firefox multiple profiles, multi-profile, browser performance, browser RAM usage, Gnome, Linux" />
+
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <!-- Begin page content -->
+    
+<nav class="navbar navbar-expand-lg bg-light mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="https://4m1r.dev">Amir Karimi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/about" >
+                            About
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/blog" >
+                            Blog
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="mailto:hey@4m1r.dev" target="_blank">
+                            Contact
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="flex-grow-1">
+    <div class="container">
+        
+<div class="row gx-5 page">
+    
+    <div class="col-lg-3 order-lg-3 mb-1">
+        <div class="page-toc">
+            <h6>On this page</h6>
+            <hr class="my-2"/>
+            
+        <ul>
+        
+            <li>
+                <a href="#multiple-profiles">Multiple Profiles</a>
+                
+            </li>
+        
+            <li>
+                <a href="#update-1-april-18-2019">Update 1 - April 18, 2019</a>
+                
+            </li>
+        
+        </ul>
+    
+        </div>
+    </div>
+    
+    <div class="col-lg-9">
+        <h1 class="text-2xl font-bold mb-3">Chromium to Firefox Experience (Setup Multiple Profiles)</h1>
+        <div class="font-normal">
+            <p>A while ago, I decided to give Firefox a try. Here I'm going to share why and how it happened. Also I'll share how I configured my work and personal browser profiles on my Gnome desktop.</p>
+<p><img alt="Screenshot of Firefox profile launchers" class="center-image" src="/assets/img/2018-11-13-chrome-ff-screen-shot.png" /></p>
+<!--more-->
+
+<p>As I use my personal laptop at work, I have a separate browser profile for work. After all, 99% of non-development works happen inside the browser.</p>
+<p>It's been long enough that I don't remember when I started using Chromium exactly but it's been my favorite browser for a long time. Chromium is quite similar to Chrome so I'm not going to compare them. One of the most valuable features of Chromium/Chrome is its seamless sync and integration. Not only between your machines but also your phone. Also the form and password autocompletions stay out of your way.</p>
+<p>Obviously the biggest issue with Chromium/Chrome is its RAM usage. But I'm also experiencing some performance issues. Specially during the start up time or when switching profiles. Having lots of tabs open and keep the session saved, makes it even worse. After releasing Firefox Quantum I started thinking to move to Firefox as it was noticeably faster. Not only start up time but also page rendering and everything else. It also has a better support of those weird corporate ancient websites which still using Flash or any other infamous tool.</p>
+<p>Finally, I decided to give it a try. As the first step, I moved my passwords to LastPass so that I can share them between the browsers in case I wanted to switch back. Also setup a sync account on FF and migrated the browser history from Chromium.</p>
+<p>Now not only the browsing experience got much faster but also the whole system works smoother. The RAM usage has gone down significantly and the swap is less engaged (although it was fast enough because of SSD). Moreover, switching profiles has never been smoother.</p>
+<p>I had two issues with Firefox though. Dark theme control rendering and not being able to switch tabs with mouse scroll wheel. Firefox renders the controls as native OS components so with a dark them you won't be able to see the text on a textbox with an explicit light background for instance. Fortunately, Firefox is customizable enough that there are a couple of <a href="https://www.reddit.com/r/Ubuntu/comments/8su4lm/fix_firefox_dark_text_input_on_ubuntu_18_when/">workarounds</a>. I simply overrode the theme to a light one by setting <code>widget.content.gtk-theme-override</code>. Finally, the only thing that I missed is switching between tabs using mouse wheel. Although it could be enabled by addons, seems that the latest version doesn't provide the required API. Again <a href="https://forum.manjaro.org/t/howto-enable-tab-switching-in-firefox-using-mouse-wheel/39954">nothing is impossible</a>.</p>
+<h2 id="multiple-profiles">Multiple Profiles</h2>
+<p>Now let's see how I switch between profiles in Firefox.</p>
+<p>First of all, you need to create a new profile. You can navigate to <code>about:profiles</code>, click on <code>Create New Profile</code> and follow the instruction. Firefox doesn't have a default GUI for switching profiles in the toolbar or menu. Instead, you can launch Firefox with a specific profile by running <code>firefox -p &lt;profile-name&gt;</code>.</p>
+<p>If you're using Gnome, you can make it easier to launch a specific profile directly from the desktop by updating the Firefox launcher at <code>/usr/share/applications/firefox.desktop</code>. Define two new actions by adding the following lines at the end of the file:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[Desktop Action default-profile]</span><span class="w"></span>
+<span class="na">Name</span><span class="o">=</span><span class="s">Open Default Profile</span><span class="w"></span>
+<span class="na">Exec</span><span class="o">=</span><span class="s">firefox -p default</span><span class="w"></span>
+
+<span class="k">[Desktop Action work-profile]</span><span class="w"></span>
+<span class="na">Name</span><span class="o">=</span><span class="s">Open Work Profile</span><span class="w"></span>
+<span class="na">Exec</span><span class="o">=</span><span class="s">firefox -p work</span><span class="w"></span>
+</code></pre></div>
+
+<p>Then update the line starting with <code>Actions=</code> from this:</p>
+<div class="codehilite"><pre><span></span><code>Actions=new-window;new-private-window;
+</code></pre></div>
+
+<p>to </p>
+<div class="codehilite"><pre><span></span><code>Actions=new-window;new-private-window;default-profile;work-profile;
+</code></pre></div>
+
+<p>Now restart Gnome shell (by pressing <code>ALT + F2</code> and executing <code>r</code>) then you'll be able to launch your profile directly from the desktop. Those action items will appear on context menu when you right click on Firefox launcher as you can see in the screenshot. I just tested it on Gnome 3.30 but I guess it works on almost all desktop environments.</p>
+<h2 id="update-1-april-18-2019">Update 1 - April 18, 2019</h2>
+<p>You can use this script to update the Firefox desktop file automatically:</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="nv">LAST_LINE</span><span class="o">=</span><span class="k">$(</span>tail -n1 /usr/share/applications/firefox.desktop<span class="k">)</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$LAST_LINE</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;Exec=firefox -p work&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Already updated!&quot;</span>
+    <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">fi</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;</span>
+<span class="s2">[Desktop Action default-profile]</span>
+<span class="s2">Name=Open Default Profile</span>
+<span class="s2">Exec=firefox -p default</span>
+
+<span class="s2">[Desktop Action work-profile]</span>
+<span class="s2">Name=Open Work Profile</span>
+<span class="s2">Exec=firefox -p work&quot;</span> &gt;&gt; /usr/share/applications/firefox.desktop
+
+sed -i <span class="s1">&#39;s/Actions=new-window;new-private-window;/Actions=new-window;new-private-window;default-profile;work-profile;/&#39;</span> /usr/share/applications/firefox.desktop
+</code></pre></div>
+        </div>
+        
+        <div class="mt-5 mb-4 gap-2 d-flex justify-content-between">
+            
+            <a class="btn btn-outline-secondary" href="/blog/2018/01/29/dont-listen-to-them-learn-cats-this-way">
+                <span aria-hidden="true">&laquo;</span>
+                Don’t listen to them, learn Cats this way
+            </a>
+            
+            
+            <a class="btn btn-outline-secondary" href="/blog/2018/12/15/kubernetes-translation-to-aws">
+                Kubernetes translated to AWS
+                <span aria-hidden="true">&raquo;</span>
+            </a>                
+            
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+</main>
+
+
+    <footer class="footer mt-auto py-3">
+        
+        <div class="container d-flex flex-wrap justify-content-between">
+            <div>
+                <span class="mb-3 mb-md-0 text-muted">
+                    &copy; 2022
+                    <a href="https://4m1r.dev" class="text-muted">Amir Karimi</a>.
+                    All Rights Reserved.
+                </span>
+            </div>
+
+            
+            <div>
+                <div class="hstack gap-2 social-icons">
+    <a href="https://twitter.com/4m1rk">
+        <svg role="img" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/amirkarimi">
+        <svg role="img"  width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://github.com/amirkarimi">
+        <svg role="img"  width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+</div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>

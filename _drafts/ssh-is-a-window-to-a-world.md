@@ -1,4 +1,0 @@
-remote shell
-tunnel
-sftp
-...
