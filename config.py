@@ -16,7 +16,8 @@ class NavItem:
 @dataclass
 class Config:
     develop_mode: bool = False
-    base_url: str = 'https://4m1r.dev'
+    domain: str = 'www.4m1r.dev'
+    base_url: str = f'https://{domain}'
     name: str = 'Amir Karimi'
     title: str = 'Software Engineer'
     year: int = datetime.now().year

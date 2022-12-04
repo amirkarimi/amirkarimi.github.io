@@ -131,6 +131,10 @@ def render_blog():
     write_file(blog_index_page_path, blog_index_content)
 
 
+def set_cname():
+    write_file(Path(OUTPUT_PATH, 'CNAME'), config.domain)
+
+
 def build_all(develop_mode: bool):
     config.develop_mode = develop_mode
     print('Compiling...', end='')
@@ -143,6 +147,7 @@ def build_all(develop_mode: bool):
         render_blog()
         compile_assets()
         collect_downloads()
+        set_cname()
         print(' [Done]')
     except (TemplateError, sass.CompileError):
         console.print_exception(show_locals=True)
