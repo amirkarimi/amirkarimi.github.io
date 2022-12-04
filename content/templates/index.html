@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{{ config.name }} - Home{% endblock %}
+
+{# No social_links in footer in the landing page #}
+{% block footer_links %}
+{% endblock %}
+
+{% block head %}
+{{ super() }}
+<meta name="description" content="Amir Karimi - Software Engineer">
+<meta name="keywords" content="amir karimi, software engineer, software developer, consultant, contractor, software architect, python, go, javascript, scala, rust" />
+
+<style>
+    body {
+        background-color: #f7f7f7;
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ddd' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    footer {
+        background: linear-gradient(to bottom, transparent 10%, rgba(0, 0, 0, 0.1));
+    }
+</style>
+{% endblock %}
+
+{% block main %}
+<main id="intro" class="flex-grow-1 d-flex flex-column align-items-center justify-content-center text-center">
+    <img class="rounded-circle mb-4 shadow" style="width: 12em" src="/assets/img/amir2.jpg" alt="Amir's Face">
+    <div>
+        <div id="name">
+            {{ config.name }}
+        </div>
+        <div id="title">
+            {{ config.title }}
+        </div>
+        <hr/>
+        <div class="links">
+            {% for item in config.menu %}
+                <a href="{{ item.link }}" {% if item.target %}target="{{ item.target }}"{% endif %}>{{ item.title }}</a>
+            {% endfor %}
+        </div>
+        <hr/>
+        <div class="d-inline-block">
+            {% include 'social_icons.html' %}
+        </div>
+    </div>
+</main>
+{% endblock %}

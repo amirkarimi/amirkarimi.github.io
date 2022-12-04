@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,300;0,400;0,600;1,100;1,300;1,400;1,600&display=swap');
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+main, .navbar {
+    font-family: "Roboto Slab", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+footer {
+    font-size: $small-font-size;
+    background: $light;
+
+    a:not(:hover) {
+        text-decoration: none;
+    }
+}
+
+blockquote {
+    border-left: 0.3em solid $gray-200;
+    padding-left: 1em;
+}
+
+.flex-basis-content {
+    flex-basis: content;
+}
+
+.social-icons {
+    a {
+        color: $secondary;
+        width: 1.5em;
+        height: 1.5em;
+        
+        &:hover {
+            color: shade-color($secondary, 30%);
+        }
+    }
+}
+
+#intro {
+    #name {
+        font-size: $h2-font-size;
+        font-weight: $font-weight-semibold;
+        color: $gray-700;
+    }
+
+    #title {
+        font-size: $h3-font-size;
+        font-weight: $font-weight-light;
+        color: $gray-600;
+    }
+
+    hr {
+        color: $gray-600;
+    }
+
+    .links a {
+        font-size: $h4-font-size;
+        display: block;
+        color: $orange-700;
+        text-decoration: none;
+
+        &:hover {
+            color: $orange-800;
+        }
+    }
+}
+
+.page-toc {
+    position: sticky;
+    top: 2em;
+
+    *, a {
+        color: $text-muted;
+    }
+
+    a:not(:hover) {
+        text-decoration: none;
+    }
+
+    .header {
+        font-weight: $font-weight-semibold;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+
+        ul {
+            padding-left: 1em;
+        }
+
+        li, ul {
+            line-height: 1.2;
+            margin-top: 0.5em;
+        }
+    }
+}
+
+.blog-index {
+    .post {
+        @extend .my-5;
+    }
+
+    .date {
+        color: $text-muted;
+    }
+    .title {
+        a {
+            color: black;
+
+            &:not(:hover) {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.blog-index, .page {
+    table {
+        @extend .table;
+        @extend .table-striped;
+
+        thead {
+            @extend .table-dark;
+        }
+    }
+}
+
+code {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.codehilite {
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+
+    pre {
+        margin: 0;
+    }
+}

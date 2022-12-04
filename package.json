@@ -1,0 +1,11 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Amir Karimi's personal website",
+  "author": "Amir Karimi",
+  "license": "ISC",
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.1"
+  }
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="/assets/css/highlight.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% if not config.develop_mode %}
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109182476-2"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-109182476-2');
+        </script>
+    {% endif %}
+    {% endblock %}
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <!-- Begin page content -->
+    {% block main %}
+    {% endblock main %}
+
+    <footer class="footer mt-auto py-3">
+        {# TODO: Better mobile view support #}
+        <div class="container d-flex flex-wrap justify-content-between">
+            <div>
+                <span class="mb-3 mb-md-0 text-muted">
+                    &copy; {{config.year}}
+                    <a href="{{config.base_url}}" class="text-muted">{{config.name}}</a>.
+                    All Rights Reserved.
+                </span>
+            </div>
+
+            {% block footer_links %}
+            <div>
+                {% include 'social_icons.html' %}
+            </div>
+            {% endblock %}
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>

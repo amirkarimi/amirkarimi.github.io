@@ -1,0 +1,58 @@
+{% extends "internal.html" %}
+{% block title %}{{ config.name }} - {{ page.title }}{% endblock %}
+
+{% block head %}
+{{ super() }}
+{% if page.keywords %}
+    <meta name="keywords" content="{{ page.keywords }}" />
+{%endif %}
+{% endblock %}
+
+{% macro render_toc(items) -%}
+    {% if items %}
+        <ul>
+        {% for item in items %}
+            <li>
+                <a href="#{{item.id}}">{{item.name}}</a>
+                {{ render_toc(item.children) }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{%- endmacro %}
+
+{% block content %}
+<div class="row gx-5 page">
+    {% if not page.hide_toc %}
+    <div class="col-lg-3 order-lg-3 mb-1">
+        <div class="page-toc">
+            <h6>On this page</h6>
+            <hr class="my-2"/>
+            {{ render_toc(page.toc) }}
+        </div>
+    </div>
+    {% endif %}
+    <div class="col-lg-{{ '12' if page.hide_toc else '9' }}">
+        <h1 class="text-2xl font-bold mb-3">{{ page.title }}</h1>
+        <div class="font-normal">
+            {{ page.content|safe }}
+        </div>
+        {% if page.older_link or page.newer_link %}
+        <div class="mt-5 mb-4 gap-2 d-flex justify-content-between">
+            {% if page.older_link %}
+            <a class="btn btn-outline-secondary" href="{{ page.older_link.url }}">
+                <span aria-hidden="true">&laquo;</span>
+                {{ page.older_link.title }}
+            </a>
+            {% endif %}
+            {% if page.newer_link %}
+            <a class="btn btn-outline-secondary" href="{{ page.newer_link.url }}">
+                {{ page.newer_link.title }}
+                <span aria-hidden="true">&raquo;</span>
+            </a>                
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

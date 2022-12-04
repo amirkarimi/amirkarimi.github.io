@@ -1,5 +1,7 @@
-_site
-.sass-cache
-.vscode
-.jekyll-cache
-.local
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache
+node_modules
+venv/
+TODO

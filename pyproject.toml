@@ -1,0 +1,7 @@
+[[tool.mypy.overrides]]
+module = "watchdog.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "sass.*"
+ignore_missing_imports = true
