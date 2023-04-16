@@ -36,7 +36,15 @@ blockquote {
     }
 }
 
+@keyframes blurry {
+    from { filter: blur(100px); }
+    to { filter: blur(0); }
+}
+
 #intro {
+
+    animation: blurry 3s;
+
     #name {
         font-size: $h2-font-size;
         font-weight: $font-weight-semibold;

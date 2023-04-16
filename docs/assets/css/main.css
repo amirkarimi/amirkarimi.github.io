@@ -8380,26 +8380,31 @@ blockquote {
   .social-icons a:hover {
     color: #4c5258; }
 
-#intro #name {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #495057; }
+@keyframes blurry {
+  from {
+    filter: blur(100px); }
+  to {
+    filter: blur(0); } }
 
-#intro #title {
-  font-size: 1.75rem;
-  font-weight: 300;
-  color: #6c757d; }
-
-#intro hr {
-  color: #6c757d; }
-
-#intro .links a {
-  font-size: 1.5rem;
-  display: block;
-  color: #984c0c;
-  text-decoration: none; }
-  #intro .links a:hover {
-    color: #653208; }
+#intro {
+  animation: blurry 3s; }
+  #intro #name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #495057; }
+  #intro #title {
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: #6c757d; }
+  #intro hr {
+    color: #6c757d; }
+  #intro .links a {
+    font-size: 1.5rem;
+    display: block;
+    color: #984c0c;
+    text-decoration: none; }
+    #intro .links a:hover {
+      color: #653208; }
 
 .page-toc {
   position: sticky;

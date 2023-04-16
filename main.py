@@ -173,7 +173,7 @@ def serve(watch: bool = typer.Option(False, help="Watch for changes."), addr: st
         print("Monitoring for changes...")
         observer = watch_files(
             on_change,
-            ignore_regexes=[r'\./.+\.py', r'\./out(/.+)?'],
+            ignore_regexes=[r'\./.+\.py', r'\./docs(/.+)?'],
             ignore_directories=True
         )
 
