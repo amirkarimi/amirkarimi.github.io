@@ -8387,7 +8387,7 @@ blockquote {
     filter: blur(0); } }
 
 #intro {
-  animation: blurry 3s; }
+  animation: blurry 2s; }
   #intro #name {
     font-size: 2rem;
     font-weight: 600;
