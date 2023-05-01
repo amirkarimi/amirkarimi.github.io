@@ -2,10 +2,6 @@ from dataclasses import dataclass, field
 from datetime import datetime
 
 
-PACKAGE_NAME = 'content'
-OUTPUT_PATH = 'docs'
-
-
 @dataclass
 class NavItem:
     title: str
@@ -16,6 +12,8 @@ class NavItem:
 @dataclass
 class Config:
     develop_mode: bool = False
+    package_name: str = 'content'
+    output_path: str = 'docs'
     domain: str = 'www.4m1r.dev'
     base_url: str = f'https://{domain}'
     name: str = 'Amir Karimi'
@@ -26,5 +24,3 @@ class Config:
         NavItem('Blog', '/blog'),
         NavItem('Contact', 'mailto:hey@4m1r.dev', target='_blank'),
     ])
-
-config = Config()
