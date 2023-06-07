@@ -1,6 +1,6 @@
 # My DIY Static Website Builder
 
-This is a simple static website builder written in Python. I built https://4m1r.dev using it.
+This is a simple static website builder written in Python. I built https://amirkarimi.dev using it.
 
 ## Setup
 

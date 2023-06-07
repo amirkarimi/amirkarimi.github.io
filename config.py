@@ -14,7 +14,7 @@ class Config:
     develop_mode: bool = False
     package_name: str = 'content'
     output_path: str = 'docs'
-    domain: str = 'www.4m1r.dev'
+    domain: str = 'www.amirkarimi.dev'
     base_url: str = f'https://{domain}'
     name: str = 'Amir Karimi'
     title: str = 'Software Engineer'
@@ -22,5 +22,5 @@ class Config:
     menu: list[NavItem] = field(default_factory=lambda :[
         NavItem('About', '/about'),
         NavItem('Blog', '/blog'),
-        NavItem('Contact', 'mailto:hey@4m1r.dev', target='_blank'),
+        NavItem('Contact', 'mailto:info@amirkarimi.dev', target='_blank'),
     ])
