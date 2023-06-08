@@ -20,6 +20,6 @@ I got admitted to a university for computer software engineering in 2003. Thanks
 
 In Dec 2013, I made a big decision: to stop being obsessed with MS! I moved to the wild and free world of open source and completely transformed my career to be on top of the open source ecosystem. It turned out to be the best decision of my career! Scala helped me a lot in this journey; not only it offered me all C# features but also gave me a better understanding of Functional Programming paradigms.
 
-For the majority of my career, I worked as a contractor or a part-time employee. It gave me the chance to work with various technologies and platforms at different scales using Scala, C#, C/C++, Java, Ruby, Python, Go, Javascript, etc. Check out [my resume](/downloads/resume.pdf) if you would like to know more details.
+For the majority of my career, I worked as a contractor or a part-time employee. It gave me the chance to work with various technologies and platforms at different scales using Scala, C#, C/C++, Java, Ruby, Python, Go, Javascript, etc. Check out [my resume](/downloads/amirkarimi-resume-202204-01.pdf) if you would like to know more details.
 
 This website is built using my own DIY static website builder. You can find the source code [here](https://github.com/amirkarimi/amirkarimi.github.io).
