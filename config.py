@@ -14,7 +14,7 @@ class Config:
     develop_mode: bool = False
     package_name: str = 'content'
     output_path: str = 'docs'
-    domain: str = 'www.amirkarimi.dev'
+    domain: str = 'amirkarimi.dev'
     base_url: str = f'https://{domain}'
     name: str = 'Amir Karimi'
     title: str = 'Software Engineer'
