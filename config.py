@@ -17,7 +17,7 @@ class Config:
     domain: str = 'amirkarimi.dev'
     base_url: str = f'https://{domain}'
     name: str = 'Amir Karimi'
-    title: str = 'Software Engineer'
+    title: str = 'Fractional VP of Engineering'
     year: int = datetime.now().year
     menu: list[NavItem] = field(default_factory=lambda :[
         NavItem('About', '/about'),

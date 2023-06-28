@@ -8375,10 +8375,13 @@ blockquote {
 
 .social-icons a {
   color: #6c757d;
-  width: 1.5em;
-  height: 1.5em; }
+  text-decoration: none; }
   .social-icons a:hover {
     color: #4c5258; }
+
+.footer-social-icons a {
+  width: 1.5em;
+  height: 1.5em; }
 
 @keyframes blurry {
   from {

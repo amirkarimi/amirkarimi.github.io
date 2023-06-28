@@ -24,16 +24,18 @@ blockquote {
     flex-basis: content;
 }
 
-.social-icons {
-    a {
-        color: $secondary;
-        width: 1.5em;
-        height: 1.5em;
+.social-icons a {
+    color: $secondary;
+    text-decoration: none;
         
-        &:hover {
-            color: shade-color($secondary, 30%);
-        }
+    &:hover {
+        color: shade-color($secondary, 30%);
     }
+}
+
+.footer-social-icons a {
+    width: 1.5em;
+    height: 1.5em;
 }
 
 @keyframes blurry {
