@@ -1,0 +1,5 @@
+{% extends 'resume/_expandable.html' %}
+{% block title %}{{ degree.degree }}<span class="text-muted"> | {{ degree.university }}{% endblock %}
+{% block side %}{{ degree.start }} - {{ degree.end }}{% endblock %}
+{% block subtitle %}{{ degree.location }}{% endblock %}
+{% block body %}{{ degree.description | markdown }}{% endblock %}

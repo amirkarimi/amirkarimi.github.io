@@ -111,6 +111,7 @@ projects:
     associated_with: Disney Streaming Services
     stack: [scala, aws, devops, docker]
   - title: Book Coupon Distribution System
+    pdf_resume: true
     date: Jun 2016 - Dec 2016
     description: Built an online registration, allocation, and payment system that handled the sales of book coupons for students used in international Iranian book fairs. This app handled the equivalent of $2M transactions within two weeks of the Tehran International Book Fair. Probably the largest project built entirely using the Scala ecosystem in Iran for the first time.
     problem: My client was responsible for the distribution of book coupons to students so that they can use them at book fairs to buy books. Students had to go to banks or other institutions to register and receive the coupons. For the biggest events like Tehran International Book Fair, there was always more demand than available coupons which was leading to some logistic issues both for providers and users.
@@ -156,6 +157,7 @@ projects:
     associated_with: Self-employed
     stack: [python, devops, django]
   - title: Fair Registration and Management System
+    pdf_resume: true
     date: Nov 2013 - Apr 2014
     description: A custom-made book fair registration system automates book publishers' registration process, allowing visitors to search for books and publisher locations online. It handled more than 40 provincial book fairs in the country, including the Tehran International Book Fair, with Alexa's rank below 500 among Iranian websites during the fair times. Serving tens of thousands of users per day using a single CPU and 2.5GB of RAM thanks to using non-blocking IO and async programming.
     problem: My client was responsible for holding book fairs and managing publishers' registration all over the country including the biggest cultural event in the country, Tehran International Book Fair. The publisher's registration process was done physically which was time-consuming and costly for both publishers and my client.
@@ -164,6 +166,7 @@ projects:
     associated_with: Self-employed
     stack: [scala, devops, mongodb, play]
   - title: Building a Pluggable Authentication Module (PAM) to add MFA support to Linux services
+    pdf_resume: true
     comment: "Shorter title: Building a Linux Pluggable Authentication Module (PAM) to support MFA"
     date: Jan 2014 - Mar 2014
     description: Implemented a Pluggable Authentication Module (PMA) that integrates with my client's multi-factor authentication service. It allows adding MFA to all Linux services supporting PAM, such as SSH or local user logins.
@@ -200,6 +203,7 @@ projects:
     associated_with: Self-employed
     stack: [c_sharp]
   - title: Marine Services Management
+    pdf_resume: true
     hide: true
     date: Mar 2012 - Aug 2012
     description: Automation of marine services management that consists of a desktop application as well as a backend. The desktop app can work in offline mode and syncs with the backend whenever the internet connection is available. It also has a licensing system that allows my client to easily sell this software to several customers.
@@ -254,6 +258,7 @@ projects:
     associated_with: Self-employed
     stack: [c_sharp]
   - title: Steam Boiler Simulation CAD Software
+    pdf_resume: true
     date: Dec 2010 - Mar 2011
     description: A GUI desktop app that simulates a virtual power generator steam boiler. Allows designing boiler systems by drag-and-dropping the boiler elements, specifying the connections and parameters then the user can run a simulation and receive the results report visually as well as on each element.
     associated_with: Self-employed
@@ -270,7 +275,7 @@ projects:
     associated_with: Self-employed
     stack: [c_sharp, asp_net]
   - title: Custom-made Enterprise Report Builder
-    hide: true
+    pdf_resume: true
     date: Aug 2009 - Feb 2010
     description: This project has started based on IRISL's need for a highly customizable report-building system. The customer was not able to produce their reports using off-the-shelf reporting software. This software was a set of tools, templating system, and integration with Microsoft Office Suite providing the flexibility customer needed and minimizing manual operations.
     associated_with: Self-employed
@@ -310,6 +315,7 @@ projects:
     associated_with: Behsad
     stack: [c_c++]
   - title: Boot loader (Personal Project)
+    pdf_resume: true
     date: Nov 2001 - Dec 2001
     description: A boot loader program written from scratch to run from a floppy disk, built using my home-grown text rendering library. It was an effort to develop a basic operating system. I learned about working with low-level IO, direct screen memory access handling, memory management, and re-implemented some functions of the C standard library since the original ones depended on MS-DOS.
     stack: [c_c++, assembly]

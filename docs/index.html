@@ -66,10 +66,14 @@
         <a class="nav-link" href="#projects"><i class="fa-solid fa-hammer"></i> Featured Projects</a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+    </li>
+    
+    <li class="nav-item">
         <a class="nav-link" href="/blog"><i class="fa-solid fa-pen-to-square"></i> Blog</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/downloads/amirkarimi-resume-202204-01.pdf">
+        <a class="nav-link" href="/downloads/amirkarimi-resume-202306-01.pdf">
             <i class="fa-regular fa-file-pdf"></i> PDF Version
         </a>
     </li>
@@ -135,10 +139,14 @@
         <a class="nav-link" href="#projects"><i class="fa-solid fa-hammer"></i> Featured Projects</a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+    </li>
+    
+    <li class="nav-item">
         <a class="nav-link" href="/blog"><i class="fa-solid fa-pen-to-square"></i> Blog</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/downloads/amirkarimi-resume-202204-01.pdf">
+        <a class="nav-link" href="/downloads/amirkarimi-resume-202306-01.pdf">
             <i class="fa-regular fa-file-pdf"></i> PDF Version
         </a>
     </li>
@@ -1083,6 +1091,28 @@
                     
                 
                     
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Custom-made Enterprise Report Builder</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-csharp-plain" title="C#"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Aug 2009 - Feb 2010</div>
+        <div class="fw-light">
+            <p>This project has started based on IRISL's need for a highly customizable report-building system. The customer was not able to produce their reports using off-the-shelf reporting software. This software was a set of tools, templating system, and integration with Microsoft Office Suite providing the flexibility customer needed and minimizing manual operations.</p>
+        </div>
+    </div>
+</div>
+                    
                 
                     
                 
@@ -1171,6 +1201,51 @@
     </div>
 </div>
                     
+                
+
+                <!-- EDUCATION -->
+
+                <h4 class="section-header" id="education"><i class="fa-solid fa-graduation-cap"></i> Education</h4>
+
+                
+                    <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">BSc in Computer Science<span class="text-muted"> | Azad</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            2005 - 2007
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Arak, Iran</div>
+        <div class="fw-light">
+            <ul>
+<li>Created a full-featured messenger system from scratch, including a custom binary protocol written in C++.</li>
+<li>Gave a few talks about Computer Networks &amp; Socket Programming.</li>
+</ul>
+        </div>
+    </div>
+</div>
+                
+                    <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">AEng in Computer Software<span class="text-muted"> | Elmi-Karbordi</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            2003 - 2005
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Arak, Iran</div>
+        <div class="fw-light">
+            <ul>
+<li>Developed a boot loader in an effort to develop a basic operating system. Learned working with IO, direct screen memory access handling, memory management (used linked-list data structure), re-implementing some functions of the C standard library from scratch.</li>
+<li>Was selected as the top 3 students to participate in ACM Asian regional contest.</li>
+<li>The youngest student attending this university at age 17.</li>
+</ul>
+        </div>
+    </div>
+</div>
                 
             </div>
         </div>

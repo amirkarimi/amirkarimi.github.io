@@ -1,0 +1,125 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Amir Karimi - Senior Software Engineer - Resume</title>
+    <meta name="description" content="Amir Karimi - Senior Software Engineer - Resume">
+    <meta name="keywords"
+        content="amir karimi, software development, senior software engineer, consultant, software design, programming, coding, web applications, open source, linux, python, go, golang, rust, scala, ruby, docker, aws" />
+    <meta name="author" content="Amir Karimi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="/assets/css/resume_styles.css?v=2.0">
+</head>
+
+<body>
+    <div class="doc-header">
+        <div class="main">
+            <div class="title">{{ config.data.name }}</div>
+            <div class="subtitle">{{ config.data.title }}</div>
+            <div class="intro">{{ config.data.intro }}</div>
+        </div>
+        <div class="info">
+            <div class="last-update">Last update: {{ config.now.strftime('%b %Y') }}</div>
+            <div><a href="{{ config.base_url }}">{{ config.domain_with_www }}</a></div>
+            <div>{{ config.data.phone }} | {{ config.data.email }}</div>
+            <div>{{ config.data.location }}</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="header">Technical Skills</div>
+            {% for skillset in config.data.skills %}
+            <div class="skillset">
+                <h4>{{skillset}}</h4>
+                <ul>
+                {% for skill in config.data.skills[skillset] %}
+                    {% with stack = config.data.stacks[skill] %}
+                        <li>
+                            <i class="{{stack.icon}} item-icon"></i>
+                            {{stack.title}}
+                        </li>
+                    {% endwith %}
+                {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="header">Employment</div>
+
+        {% for position in config.data.positions %}
+
+        <div class="subsection-header">
+            <div>{{ position.title }}</div>
+            <div>{{ position.company }} - {{ position.location }}</div>
+            <div>{{ position.start }} {% if position.end %}-{% endif %} {{ position.end }}</div>
+        </div>
+
+        {{ position.description | markdown }}
+        {% endfor %}
+    </div>
+
+    <div class="section">
+        <div class="header" id="projects">Featured Projects</div>
+
+        <ul>
+            <li>
+                <strong>Book Coupon Distribution System</strong> (2016) -
+                Registration and payment system to handle the sales of book coupons for students used in official
+                Iranian book fairs. This app handled the equivalent of $2M transactions within two weeks for Tehran
+                International Book Fair. Probably the largest project built entirely using the Scala ecosystem in Iran
+                at the time.
+                <span class="item-endnote">(Scala, Play, MongoDB, JS/HTML/CSS)</span>
+            </li>
+            {% for project in config.data.projects %}
+                {% if project.pdf_resume %}
+                <li>
+                    <strong>{{ project.title }}</strong> ({{ project.date[-4:] }}) - {{ project.description}}
+                    <span class="item-endnote">
+                        ({% for skill in project.stack %}{{ config.data.stacks[skill].title }}{{ ", " if not loop.last else "" }}{% endfor %})
+                    </span>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="header">Education</div>
+
+        {% for degree in config.data.education %}
+        <div class="subsection-header">
+            <div>{{ degree.degree }}</div>
+            <div>{{ degree.university }}</div>
+            <div>{{ degree.start }} - {{ degree.end }}</div>
+        </div>
+        {{ degree.description | markdown }}
+        {% endfor %}
+    </div>
+
+    <!--
+  <div class="section">
+    <div class="header">Certifications</div>
+    <ul>
+      <li>
+        <strong>Neural Networks and Deep Learning</strong> (Sep 2017) - Coursera - License: UQH3GDCTTGTH
+      </li>
+      <li>
+        <strong>AWS Certified Developer - Associate</strong> (Jun 2017) - AWS - License: F4YBGRB2KNV11PWB
+      </li>
+      <li>
+        <strong>Principle of Reactive Programming</strong> (Dec 2013) - Coursera - Accomplishment with distinction
+      </li>
+    </ul>
+  </div> -->
+
+</body>
+
+</html>

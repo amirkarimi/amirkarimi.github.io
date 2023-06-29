@@ -25,6 +25,7 @@ env.filters['markdown'] = lambda text: Markup(md.convert(text))
 
 processors: list[Type[Processor]] = [
     HomePage,
+    PdfResume,
     CustomPages,
     Blog,
     Assets,

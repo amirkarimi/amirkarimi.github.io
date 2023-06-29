@@ -33,10 +33,14 @@
         <a class="nav-link" href="#projects"><i class="fa-solid fa-hammer"></i> Featured Projects</a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+    </li>
+    
+    <li class="nav-item">
         <a class="nav-link" href="/blog"><i class="fa-solid fa-pen-to-square"></i> Blog</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/downloads/amirkarimi-resume-202204-01.pdf">
+        <a class="nav-link" href="{{ config.pdf_resume_path }}">
             <i class="fa-regular fa-file-pdf"></i> PDF Version
         </a>
     </li>
@@ -152,6 +156,14 @@
                     {% if not project.hide %}
                         {% include 'resume/project.html' %}
                     {% endif %}
+                {% endfor %}
+
+                <!-- EDUCATION -->
+
+                <h4 class="section-header" id="education"><i class="fa-solid fa-graduation-cap"></i> Education</h4>
+
+                {% for degree in config.data.education %}
+                    {% include 'resume/degree.html' %}
                 {% endfor %}
             </div>
         </div>

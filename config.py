@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field
 from datetime import datetime
+from pathlib import Path
 from typing import Any
 import yaml
 from yaml import Loader
@@ -22,10 +23,20 @@ class Config:
     domain: str = 'amirkarimi.dev'
     base_url: str = f'https://{domain}'
     year: int = datetime.now().year
+    now: datetime = datetime.now()
     menu: list[NavItem] = field(default_factory=lambda :[
         NavItem('About', '/about'),
         NavItem('Blog', '/blog')
     ])
+
+    @property
+    def domain_with_www(self):
+        return 'www.' + self.domain
+
+    @property
+    def pdf_resume_path(self):
+        path = next(Path('content/downloads').iterdir())
+        return '/downloads/' + path.name
 
 def load_config():
     with open(DATA_FILE, 'r') as f:

@@ -32,6 +32,14 @@ class HomePage(Processor):
                 template.render(config=self.config))
 
 
+class PdfResume(Processor):
+    def run(self):
+        template_file = 'pdf_resume.html'
+        template = self.env.get_template(template_file)
+        write_file(f'{self.config.output_path}/{template_file}',
+                template.render(config=self.config))
+
+
 class CustomPages(Processor):
     def run(self):
         for input_file in Path(self.config.package_name, 'pages').iterdir():
@@ -116,10 +124,10 @@ class Assets(Processor):
         sass_input_path = input_assets_path.joinpath('scss')
         sass_output_path = output_assets_path.joinpath('css')
         sass_output_path.mkdir(exist_ok=True)
-        file_name = 'main'
-        with open(sass_output_path.joinpath(f'{file_name}.css'), 'w') as css:
-            css.write(sass.compile(filename=str(
-                sass_input_path.joinpath(f'{file_name}.scss'))))
+
+        for file_path in sass_input_path.iterdir():
+            with open(sass_output_path.joinpath(file_path.with_suffix('.css').name), 'w') as css:
+                css.write(sass.compile(filename=str(file_path)))
 
         # JS
         js_files = [
