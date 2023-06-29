@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ config.name }} - Home{% endblock %}
+{% block title %}{{ config.data.name }} - Home{% endblock %}
 
 {# No social_links in footer in the landing page #}
 {% block footer_links %}
@@ -13,49 +13,148 @@
 <style>
     body {
         background-color: #f7f7f7;
-        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ddd' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+        background-image: url("/assets/img/groovepaper.png");
     }
-    
     footer {
         background: linear-gradient(to bottom, transparent 10%, rgba(0, 0, 0, 0.1));
     }
 </style>
 {% endblock %}
 
+{% macro navbar(classes) %}
+<ul class="{{classes}} text-nowrap">
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa-solid fa-circle-info"></i> Intro</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#positions"><i class="fa-solid fa-briefcase"></i> Positions</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#projects"><i class="fa-solid fa-hammer"></i> Featured Projects</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/blog"><i class="fa-solid fa-pen-to-square"></i> Blog</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/downloads/amirkarimi-resume-202204-01.pdf">
+            <i class="fa-regular fa-file-pdf"></i> PDF Version
+        </a>
+    </li>
+</ul>
+<hr/>
+<ul class="{{classes}} text-nowrap">
+    <li class="nav-item">
+        <a class="nav-link" href="mailto:info@amirkarimi.dev">
+            <i class="fa-solid fa-envelope"></i> {{config.data.email}}
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="tel:{{config.data.phone.replace(' ', '')}}">
+            <i class="fa-solid fa-phone"></i> {{config.data.phone}}
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://calendly.com/amir_karimi">
+            <i class="fa-regular fa-calendar"></i> Schedule a Call
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://www.linkedin.com/in/amirkarimi">
+            <i class="fa-brands fa-linkedin"></i> in/amirkarimi
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://github.com/amirkarimi">
+            <i class="fa-brands fa-github"></i> @amirkarimi
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://twitter.com/4m1rk">
+            <i class="fa-brands fa-square-twitter"></i> @4m1rk
+        </a>
+    </li>
+</ul>
+{% endmacro %}
+
+{% macro image() %}
+<!-- <img class="rounded mb-4 shadow" style="width: 12em" src="/assets/img/amir2.jpg" alt="Amir's Face"> -->
+{% endmacro %}
+
 {% block main %}
-<main id="intro" class="flex-grow-1 d-flex flex-column align-items-center justify-content-center text-center">
-    <img class="rounded-circle mb-4 shadow" style="width: 12em" src="/assets/img/amir2.jpg" alt="Amir's Face">
-    <div>
-        <div id="name">
-            {{ config.name }}
+<div class="container mt-4">
+    <nav class="d-lg-none navbar navbar-collapse mb-4 sticky-top">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar"
+            aria-controls="topNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mt-2 px-4 py-2 rounded border bg-light" id="topNavbar">
+            {{ navbar("navbar-nav ms-auto") }}
         </div>
-        <div id="title">
-            {{ config.title }}
+    </nav>
+
+    <div class="d-lg-none text-center">
+        {{ image() }}
+    </div>
+
+    <div class="d-flex flex-row">
+        <div class="me-5 d-none d-lg-block">
+            {{ image() }}
+            <div id="local-navbar" class="sticky-top">
+                {{ navbar("nav nav-pills flex-column") }}
+            </div>
         </div>
-        <hr/>
-        <div class="links">
-            {% for item in config.menu %}
-                <a href="{{ item.link }}" {% if item.target %}target="{{ item.target }}"{% endif %}>{{ item.title }}</a>
-            {% endfor %}
-        </div>
-        <hr/>
-        <div class="social-icons vstack align-items-start">
-            <a href="mailto:info@amirkarimi.dev">
-                <i class="fa-solid fa-envelope"></i> Email
-            </a>
-            <a href="https://www.linkedin.com/in/amirkarimi">
-                <i class="fa-brands fa-linkedin"></i> Linkedin
-            </a>
-            <a href="https://calendly.com/amir_karimi">
-                <i class="fa-regular fa-calendar"></i> Schedule a Call
-            </a>
-            <a href="https://github.com/amirkarimi">
-                <i class="fa-brands fa-github"></i> Github
-            </a>
-            <a href="https://twitter.com/4m1rk">
-                <i class="fa-brands fa-square-twitter"></i> Twitter
-            </a>
+        <div class="flex-fill">
+            <div>
+                <div id="intro">
+                    <div id="name">
+                        {{ config.data.name }}
+                    </div>
+                    <div id="title">
+                        {{ config.data.title }}
+                    </div>
+                    <div class="my-2">
+                        {{ config.data.intro }}
+                    </div>
+                </div>
+
+                <!-- SKILLS -->
+        
+                <div class="row mt-4">
+                    {% for skillset in config.data.skills %}
+                    <div class="col-md-3 col-sm-6 mb-2">
+                        <h5 class="mb-2">{{skillset}}</h5>
+                            {% for skill in config.data.skills[skillset] %}
+                            <div class="text-muted text-truncate">
+                                {% with stack = config.data.stacks[skill] %}
+                                    <i class="{{stack.icon}} item-icon"></i>
+                                    {{stack.title}}
+                                {% endwith %}
+                            </div>
+                            {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- POSITIONS -->
+
+                <h4 class="section-header" id="positions"><i class="fa-solid fa-briefcase"></i> Positions</h4>
+
+                {% for position in config.data.positions %}
+                    {% include 'resume/position.html' %}
+                {% endfor %}
+
+                <!-- PROJECTS -->
+
+                <h4 class="section-header" id="projects"><i class="fa-solid fa-hammer"></i> Featured Projects</h4>
+
+                {% for project in config.data.projects %}
+                    {% if not project.hide %}
+                        {% include 'resume/project.html' %}
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
-</main>
+</div>
 {% endblock %}

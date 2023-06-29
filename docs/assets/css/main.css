@@ -8357,7 +8357,7 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important; } }
 
-main, .navbar {
+body, .navbar {
   font-family: "Roboto Slab", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
 
 footer {
@@ -8375,13 +8375,14 @@ blockquote {
 
 .social-icons a {
   color: #6c757d;
-  text-decoration: none; }
+  text-decoration: none;
+  width: 1.5em;
+  height: 1.5em; }
   .social-icons a:hover {
     color: #4c5258; }
 
-.footer-social-icons a {
-  width: 1.5em;
-  height: 1.5em; }
+#local-navbar a {
+  color: #6c757d; }
 
 @keyframes blurry {
   from {
@@ -8389,25 +8390,26 @@ blockquote {
   to {
     filter: blur(0); } }
 
-#intro {
-  animation: blurry 1s; }
-  #intro #name {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #495057; }
-  #intro #title {
-    font-size: 1.75rem;
-    font-weight: 300;
-    color: #6c757d; }
-  #intro hr {
-    color: #6c757d; }
-  #intro .links a {
-    font-size: 1.5rem;
-    display: block;
-    color: #984c0c;
-    text-decoration: none; }
-    #intro .links a:hover {
-      color: #653208; }
+#intro #name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #495057; }
+
+#intro #title {
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: #6c757d; }
+
+#intro hr {
+  color: #6c757d; }
+
+#intro .links a {
+  font-size: 1.5rem;
+  display: block;
+  color: #984c0c;
+  text-decoration: none; }
+  #intro .links a:hover {
+    color: #653208; }
 
 .page-toc {
   position: sticky;
@@ -8444,3 +8446,15 @@ code {
   margin-bottom: 1rem; }
   .codehilite pre {
     margin: 0; }
+
+.item-icon {
+  display: inline-block;
+  width: 1.3em; }
+
+.expandable-header {
+  cursor: pointer; }
+
+.section-header {
+  font-size: 1.5rem;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em; }

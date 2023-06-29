@@ -5,6 +5,10 @@ import markdown
 
 SUMMARY_SEPARATOR = "<!--more-->"
 
+def build_markdown():
+    return markdown.Markdown(extensions=[
+        'toc', 'fenced_code', 'tables', 'attr_list', 'codehilite', 'md_in_html'
+    ])
 
 def parse_date(val):
     if not val:
@@ -26,8 +30,7 @@ def parse_metadata(content: str) -> tuple[dict, str]:
 
 def parse_markdown(markdown_content: str) -> MarkdownPage:
     metadata, markdown_content = parse_metadata(markdown_content)
-    md = markdown.Markdown(extensions=[
-                           'toc', 'fenced_code', 'tables', 'attr_list', 'codehilite', 'md_in_html'])
+    md = build_markdown()
     html_content = md.convert(markdown_content)
 
     summary_separator_index = html_content.find(SUMMARY_SEPARATOR)

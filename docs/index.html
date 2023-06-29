@@ -11,6 +11,17 @@
     <link href="/assets/css/main.css?v=2" rel="stylesheet">
     <link href="/assets/css/highlight.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-38DSNZVGYF"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-38DSNZVGYF');
+        </script>
     
     
 <meta name="description" content="Amir Karimi - Software Engineer">
@@ -19,59 +30,1152 @@
 <style>
     body {
         background-color: #f7f7f7;
-        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ddd' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+        background-image: url("/assets/img/groovepaper.png");
     }
-    
     footer {
         background: linear-gradient(to bottom, transparent 10%, rgba(0, 0, 0, 0.1));
     }
 </style>
 
+
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body class="d-flex flex-column h-100">
 
     <!-- Begin page content -->
     
-<main id="intro" class="flex-grow-1 d-flex flex-column align-items-center justify-content-center text-center">
-    <img class="rounded-circle mb-4 shadow" style="width: 12em" src="/assets/img/amir2.jpg" alt="Amir's Face">
-    <div>
-        <div id="name">
-            Amir Karimi
+<div class="container mt-4">
+    <nav class="d-lg-none navbar navbar-collapse mb-4 sticky-top">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar"
+            aria-controls="topNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mt-2 px-4 py-2 rounded border bg-light" id="topNavbar">
+            
+<ul class="navbar-nav ms-auto text-nowrap">
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa-solid fa-circle-info"></i> Intro</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#positions"><i class="fa-solid fa-briefcase"></i> Positions</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#projects"><i class="fa-solid fa-hammer"></i> Featured Projects</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/blog"><i class="fa-solid fa-pen-to-square"></i> Blog</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/downloads/amirkarimi-resume-202204-01.pdf">
+            <i class="fa-regular fa-file-pdf"></i> PDF Version
+        </a>
+    </li>
+</ul>
+<hr/>
+<ul class="navbar-nav ms-auto text-nowrap">
+    <li class="nav-item">
+        <a class="nav-link" href="mailto:info@amirkarimi.dev">
+            <i class="fa-solid fa-envelope"></i> info@amirkarimi.dev
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="tel:+17786802525">
+            <i class="fa-solid fa-phone"></i> +1 778 680 2525
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://calendly.com/amir_karimi">
+            <i class="fa-regular fa-calendar"></i> Schedule a Call
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://www.linkedin.com/in/amirkarimi">
+            <i class="fa-brands fa-linkedin"></i> in/amirkarimi
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://github.com/amirkarimi">
+            <i class="fa-brands fa-github"></i> @amirkarimi
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://twitter.com/4m1rk">
+            <i class="fa-brands fa-square-twitter"></i> @4m1rk
+        </a>
+    </li>
+</ul>
+
         </div>
-        <div id="title">
-            Fractional VP of Engineering
+    </nav>
+
+    <div class="d-lg-none text-center">
+        
+<!-- <img class="rounded mb-4 shadow" style="width: 12em" src="/assets/img/amir2.jpg" alt="Amir's Face"> -->
+
+    </div>
+
+    <div class="d-flex flex-row">
+        <div class="me-5 d-none d-lg-block">
+            
+<!-- <img class="rounded mb-4 shadow" style="width: 12em" src="/assets/img/amir2.jpg" alt="Amir's Face"> -->
+
+            <div id="local-navbar" class="sticky-top">
+                
+<ul class="nav nav-pills flex-column text-nowrap">
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa-solid fa-circle-info"></i> Intro</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#positions"><i class="fa-solid fa-briefcase"></i> Positions</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#projects"><i class="fa-solid fa-hammer"></i> Featured Projects</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/blog"><i class="fa-solid fa-pen-to-square"></i> Blog</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/downloads/amirkarimi-resume-202204-01.pdf">
+            <i class="fa-regular fa-file-pdf"></i> PDF Version
+        </a>
+    </li>
+</ul>
+<hr/>
+<ul class="nav nav-pills flex-column text-nowrap">
+    <li class="nav-item">
+        <a class="nav-link" href="mailto:info@amirkarimi.dev">
+            <i class="fa-solid fa-envelope"></i> info@amirkarimi.dev
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="tel:+17786802525">
+            <i class="fa-solid fa-phone"></i> +1 778 680 2525
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://calendly.com/amir_karimi">
+            <i class="fa-regular fa-calendar"></i> Schedule a Call
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://www.linkedin.com/in/amirkarimi">
+            <i class="fa-brands fa-linkedin"></i> in/amirkarimi
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://github.com/amirkarimi">
+            <i class="fa-brands fa-github"></i> @amirkarimi
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://twitter.com/4m1rk">
+            <i class="fa-brands fa-square-twitter"></i> @4m1rk
+        </a>
+    </li>
+</ul>
+
+            </div>
         </div>
-        <hr/>
-        <div class="links">
-            
-                <a href="/about" >About</a>
-            
-                <a href="/blog" >Blog</a>
-            
-                <a href="mailto:info@amirkarimi.dev" target="_blank">Contact</a>
-            
-        </div>
-        <hr/>
-        <div class="social-icons vstack align-items-start">
-            <a href="mailto:info@amirkarimi.dev">
-                <i class="fa-solid fa-envelope"></i> Email
-            </a>
-            <a href="https://www.linkedin.com/in/amirkarimi">
-                <i class="fa-brands fa-linkedin"></i> Linkedin
-            </a>
-            <a href="https://calendly.com/amir_karimi">
-                <i class="fa-regular fa-calendar"></i> Schedule a Call
-            </a>
-            <a href="https://github.com/amirkarimi">
-                <i class="fa-brands fa-github"></i> Github
-            </a>
-            <a href="https://twitter.com/4m1rk">
-                <i class="fa-brands fa-square-twitter"></i> Twitter
-            </a>
+        <div class="flex-fill">
+            <div>
+                <div id="intro">
+                    <div id="name">
+                        Amir Karimi
+                    </div>
+                    <div id="title">
+                        Fractional VP of Engineering
+                    </div>
+                    <div class="my-2">
+                        20 years of experience in end-to-end project delivery, team building, and consultancy services. My experience spans from working with small startups to Disney and Amazon.
+                    </div>
+                </div>
+
+                <!-- SKILLS -->
+        
+                <div class="row mt-4">
+                    
+                    <div class="col-md-3 col-sm-6 mb-2">
+                        <h5 class="mb-2">Principals</h5>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-haskell-plain item-icon"></i>
+                                    Functional Programming
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="fa-solid fa-network-wired item-icon"></i>
+                                    Distributed Systems
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="fa-solid fa-faucet-drip item-icon"></i>
+                                    ETL
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="fa-solid fa-server item-icon"></i>
+                                    Serverless
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="fa-solid fa-vial-circle-check item-icon"></i>
+                                    TDD
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="fa-solid fa-sitemap item-icon"></i>
+                                    OOP
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="fa-regular fa-object-group item-icon"></i>
+                                    SOLID
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="fa-solid fa-arrows-spin item-icon"></i>
+                                    Agile
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="fa-brands fa-flipboard item-icon"></i>
+                                    Kanban
+                                
+                            </div>
+                            
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-2">
+                        <h5 class="mb-2">Languages</h5>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-python-plain item-icon"></i>
+                                    Python
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-go-original-wordmark item-icon"></i>
+                                    Go
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-typescript-plain item-icon"></i>
+                                    TypeScript
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-javascript-plain item-icon"></i>
+                                    JavaScript
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-scala-plain item-icon"></i>
+                                    Scala
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-java-plain item-icon"></i>
+                                    Java
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-ruby-plain item-icon"></i>
+                                    Ruby
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-cplusplus-plain item-icon"></i>
+                                    C/C++
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-html5-plain item-icon"></i>
+                                    HTML/CSS
+                                
+                            </div>
+                            
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-2">
+                        <h5 class="mb-2">Frameworks</h5>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="fa-regular fa-star item-icon"></i>
+                                    Spark/PySpark
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-django-plain item-icon"></i>
+                                    Django
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-fastapi-plain item-icon"></i>
+                                    FastAPI
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-flask-original item-icon"></i>
+                                    Flask
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-rails-plain item-icon"></i>
+                                    Rails
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="fa-solid fa-play item-icon"></i>
+                                    Play
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="fa-solid fa-mountain item-icon"></i>
+                                    Akka
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-vuejs-plain item-icon"></i>
+                                    VueJS
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-react-original item-icon"></i>
+                                    React
+                                
+                            </div>
+                            
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-2">
+                        <h5 class="mb-2">Tools</h5>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-linux-plain item-icon"></i>
+                                    Linux
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-docker-plain item-icon"></i>
+                                    Docker
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-amazonwebservices-original item-icon"></i>
+                                    AWS
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-kubernetes-plain item-icon"></i>
+                                    Kubernetes
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-terraform-plain item-icon"></i>
+                                    Terraform
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-postgresql-plain item-icon"></i>
+                                    Postgres
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-mysql-plain item-icon"></i>
+                                    MySQL
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-mongodb-plain item-icon"></i>
+                                    MongoDB
+                                
+                            </div>
+                            
+                            <div class="text-muted text-truncate">
+                                
+                                    <i class="devicon-apachekafka-original item-icon"></i>
+                                    Kafka
+                                
+                            </div>
+                            
+                    </div>
+                    
+                </div>
+
+                <!-- POSITIONS -->
+
+                <h4 class="section-header" id="positions"><i class="fa-solid fa-briefcase"></i> Positions</h4>
+
+                
+                    <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Fractional VP of Engineering <span class="text-muted"> | Self Employed</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            Jun 2023  
         </div>
     </div>
-</main>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Vancouver, Canada</div>
+        <div class="fw-light">
+            <p>I support start-ups in the following two situations:</p>
+<ul>
+<li>They're outsourcing development and they need a liaison between their team and the overseas developers</li>
+<li>They have an in-house team that needs additional resources or more efficiency in creating scalable code</li>
+</ul>
+        </div>
+    </div>
+</div>
+                
+                    <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Software Engineer <span class="text-muted"> | Amazon</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            Nov 2022 - Jun 2023
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Vancouver, Canada</div>
+        <div class="fw-light">
+            <ul>
+<li>My team utilizes AI/ML to overcome advertising attribution challenges while maintaining compliance with strict privacy regulations that prohibit user identity capture and storage.</li>
+<li>Demonstrating exceptional leadership skills by becoming a project lead within two months of joining Amazon.</li>
+<li>One of the main contributors to re-architecting and improving the data processing pipelines which are processing petabytes of data daily, reducing the number of jobs from around 15 to 1.</li>
+</ul>
+        </div>
+    </div>
+</div>
+                
+                    <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Principal Software Architecture <span class="text-muted"> | Acceptto</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            May 2019 - Nov 2022
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Vancouver, Canada</div>
+        <div class="fw-light">
+            <ul>
+<li>Promoted to lead the core engineering team consisting of 5 engineers developing the company's core product.</li>
+<li>Reduced customer onboarding time from days to hours by developing a horizontally scalable, full-duplex communication service for the customer directory agent.</li>
+<li>Led the redesign and implementation of the next generation of Acceptto's SSO microservice to make it horizontally scalable and highly available.</li>
+<li>Designed and implemented a policy orchestration engine module that allows customers to control Acceptto's authentication system behavior with or without writing code.</li>
+<li>Increased the availability and scalability of the company's core services by leading the migration to AWS and adding multi-region disaster recovery support, done using Terraform.</li>
+<li>Helped the sales team to close two deals that increased the company's annual income by almost 30%, by leading the technical sale and architecture design calls.</li>
+<li>Acceptto was acquired by SecureAuth in Nov 2021.</li>
+</ul>
+        </div>
+    </div>
+</div>
+                
+                    <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Site Reliability Engineer <span class="text-muted"> | Disney Streaming Services</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            Apr 2018 - Mar 2019
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Manchester, UK</div>
+        <div class="fw-light">
+            <ul>
+<li>One of the main contributors to establishing the SRE practices within Disney Streaming Services as the 4th member of the newly shaped SRE team in the company.</li>
+<li>Increased the availability of the services by implementing a transparent cross-region replication support for AWS Kinesis resources (Kinesis did not offer such a service at the time).</li>
+<li>Helped three different teams within a year to prepare for big launches that required handling thousands of requests per second by reviewing the architecture, building high throughput performance tests, chaos engineering, and building necessary tools and processes to improve reliability.</li>
+</ul>
+        </div>
+    </div>
+</div>
+                
+                    <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Software Engineer <span class="text-muted"> | Disney Streaming Services</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            Apr 2017 - Mar 2018
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Manchester, UK</div>
+        <div class="fw-light">
+            <ul>
+<li>Developed scalable microservices capable of handling tens of thousands of requests per second using Scala, Play, DynamoDB, AWS Lambda, Kinesis, SQS, S3, etc.</li>
+<li>Contributed directly to the design and implementation of a new subscription system for BAMTech Media, which was later used in Disney+.</li>
+<li>The original company name was Cake Solutions. It was acquired by BAMTech and then Disney in 2017.</li>
+</ul>
+        </div>
+    </div>
+</div>
+                
+                    <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Independent Software Engineer / Consultant <span class="text-muted"> | Self Employed</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            Jan 2006 - Mar 2017
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Tehran, Iran</div>
+        <div class="fw-light">
+            <ul>
+<li>Designed and developed more than 40 custom-built software projects, from high-performance desktop applications written in C++ to highly scalable web applications written in Scala. Technologies: C#, .NET, Scala, Play, Akka, Python, Ruby, Java, Javascript, HTML/CSS, and more. See some of my works done as a solo developer under <a href="#projects">Projects</a> section.</li>
+<li>Worked directly with clients from corporate to individual entrepreneurs as a contractor or partner.</li>
+<li>Built and managed a network of developers by setting up a transparent system to share the project's financial value with the whole team based on the value each member adds. It was a successful alternative to the traditional employment structure of corporations to attract the best talents.</li>
+</ul>
+        </div>
+    </div>
+</div>
+                
+                    <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Software Developer <span class="text-muted"> | Behsad</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            Feb 2003 - Dec 2005
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Arak, Iran</div>
+        <div class="fw-light">
+            <ul>
+<li>Software developer in a team of 3, consisting of two academic researchers building a 2D cutting-stock problem-solving desktop GUI application for the first of its kind in Iran. Written in C++ and utilizing the Genetic Algorithm, it was solving general cutting-stock problems with less than 5% waste on average.</li>
+<li>Designed and implemented dozens of applications using C#, .NET, and MSSQL.</li>
+<li>Mentored and led a team of junior developers.</li>
+</ul>
+        </div>
+    </div>
+</div>
+                
+
+                <!-- PROJECTS -->
+
+                <h4 class="section-header" id="projects"><i class="fa-solid fa-hammer"></i> Featured Projects</h4>
+
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Re-architecture of the ML big-data data pipelines</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-python-plain" title="Python"></i>
+        
+    
+        
+            <i class="devicon-scala-plain" title="Scala"></i>
+        
+    
+        
+            <i class="devicon-amazonwebservices-original" title="AWS"></i>
+        
+    
+        
+            <i class="fa-regular fa-star" title="Spark/PySpark"></i>
+        
+    
+        
+            <i class="fa-solid fa-faucet-drip" title="ETL"></i>
+        
+    
+        
+            <i class="devicon-pytorch-original" title="PyTorch"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Dec 2022 - Jun 2023</div>
+        <div class="fw-light">
+            <p>One of the main contributors out of the two, to re-design and implement a new version of the data pipeline that simplifies the architecture and allows faster evolutions. This pipeline is handling petabytes of data daily. We leveraged Iceberg and other technologies and refactored the existing Spark jobs to a cleaner and simpler design. We reduced the number of job applications from 15 to 1 for a module.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Re-architecting the SSO and migrate to cloud</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-amazonwebservices-original" title="AWS"></i>
+        
+    
+        
+            <i class="fa-solid fa-gears" title="DevOps"></i>
+        
+    
+        
+            <i class="devicon-terraform-plain" title="Terraform"></i>
+        
+    
+        
+            <i class="devicon-ruby-plain" title="Ruby"></i>
+        
+    
+        
+            <i class="devicon-vuejs-plain" title="VueJS"></i>
+        
+    
+        
+            <i class="devicon-javascript-plain" title="JavaScript"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Nov 2020 - Jun 2021</div>
+        <div class="fw-light">
+            <p>Led the redesign and implementation of the next generation of Acceptto's SSO microservice to make it horizontally scalable and highly available. The old SSO module was a web server that should be run and maintained on the customer site. The new version was designed to run in the cloud and connect to the customer's user directory using an agent. This project reduced the customer onboarding time from days to hours.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">LDAP Agent and Switchboard</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-go-original-wordmark" title="Go"></i>
+        
+    
+        
+            <i class="fa-solid fa-gears" title="DevOps"></i>
+        
+    
+        
+            <i class="devicon-ruby-plain" title="Ruby"></i>
+        
+    
+        
+            <i class="devicon-vuejs-plain" title="VueJS"></i>
+        
+    
+        
+            <i class="devicon-typescript-plain" title="TypeScript"></i>
+        
+    
+        
+            <i class="devicon-javascript-plain" title="JavaScript"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Sep 2020 - Feb 2021</div>
+        <div class="fw-light">
+            <p>Created a solution for Acceptto that allowed their backend to communicate with customers' ActiveDirectory. I managed the project (team of two) and contributed to the development directly. It was done in two phases and successfully executed with customer compliments. The final architecture removed the need for firewall configurations and load balancing on the customer side.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Policy Orchestration Engine for an IAM Solution</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-python-plain" title="Python"></i>
+        
+    
+        
+            <i class="devicon-amazonwebservices-original" title="AWS"></i>
+        
+    
+        
+            <i class="devicon-terraform-plain" title="Terraform"></i>
+        
+    
+        
+            <i class="devicon-ruby-plain" title="Ruby"></i>
+        
+    
+        
+            <i class="devicon-flask-original" title="Flask"></i>
+        
+    
+        
+            <i class="devicon-vuejs-plain" title="VueJS"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Apr 2019 - Sep 2019</div>
+        <div class="fw-light">
+            <p>Designed and implemented a policy orchestration engine that allows customers to define their rules and condition to customize a core IAM solution software behavior. For example, customers can dynamically define policies to ask for MFA in addition to passwords when the user is logging in from a specific location or specific time of day, or a specific risk profile associated with the user. In addition to a UI, it allows power users to write their own predicates and policies. This feature provided a competitive advantage for the company in the industry which led to at least two successful accounts.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Launch SRE</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-python-plain" title="Python"></i>
+        
+    
+        
+            <i class="devicon-go-original-wordmark" title="Go"></i>
+        
+    
+        
+            <i class="devicon-scala-plain" title="Scala"></i>
+        
+    
+        
+            <i class="fa-solid fa-gears" title="DevOps"></i>
+        
+    
+        
+            <i class="devicon-apachekafka-original" title="Kafka"></i>
+        
+    
+        
+            <i class="devicon-ruby-plain" title="Ruby"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Apr 2018 - Apr 2019</div>
+        <div class="fw-light">
+            <p>As the 4th member of the newly founded SRE team of Disney Streaming Services, helped three different development teams within a year to prepare for big launches that required handling thousands of requests per second by reviewing the architecture, building high throughput performance tests, chaos engineering, and building necessary tools and processes to improve reliability.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Subscription system</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-scala-plain" title="Scala"></i>
+        
+    
+        
+            <i class="devicon-amazonwebservices-original" title="AWS"></i>
+        
+    
+        
+            <i class="fa-solid fa-gears" title="DevOps"></i>
+        
+    
+        
+            <i class="devicon-docker-plain" title="Docker"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Apr 2017 - Apr 2018</div>
+        <div class="fw-light">
+            <p>As part of a team of four, contributed directly to the design and implementation of a new subscription system for BAMTech Media, which was later used in Disney+. Capable of handling tens of thousands of requests per second.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Book Coupon Distribution System</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-scala-plain" title="Scala"></i>
+        
+    
+        
+            <i class="devicon-mongodb-plain" title="MongoDB"></i>
+        
+    
+        
+            <i class="fa-solid fa-play" title="Play"></i>
+        
+    
+        
+            <i class="fa-solid fa-mountain" title="Akka"></i>
+        
+    
+        
+            <i class="fa-solid fa-gears" title="DevOps"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Jun 2016 - Dec 2016</div>
+        <div class="fw-light">
+            <p>Built an online registration, allocation, and payment system that handled the sales of book coupons for students used in international Iranian book fairs. This app handled the equivalent of $2M transactions within two weeks of the Tehran International Book Fair. Probably the largest project built entirely using the Scala ecosystem in Iran for the first time.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Fair Registration and Management System</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-scala-plain" title="Scala"></i>
+        
+    
+        
+            <i class="fa-solid fa-gears" title="DevOps"></i>
+        
+    
+        
+            <i class="devicon-mongodb-plain" title="MongoDB"></i>
+        
+    
+        
+            <i class="fa-solid fa-play" title="Play"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Nov 2013 - Apr 2014</div>
+        <div class="fw-light">
+            <p>A custom-made book fair registration system automates book publishers' registration process, allowing visitors to search for books and publisher locations online. It handled more than 40 provincial book fairs in the country, including the Tehran International Book Fair, with Alexa's rank below 500 among Iranian websites during the fair times. Serving tens of thousands of users per day using a single CPU and 2.5GB of RAM thanks to using non-blocking IO and async programming.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Building a Pluggable Authentication Module (PAM) to add MFA support to Linux services</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-cplusplus-plain" title="C/C++"></i>
+        
+    
+        
+            <i class="devicon-linux-plain" title="Linux"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Jan 2014 - Mar 2014</div>
+        <div class="fw-light">
+            <p>Implemented a Pluggable Authentication Module (PMA) that integrates with my client's multi-factor authentication service. It allows adding MFA to all Linux services supporting PAM, such as SSH or local user logins.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Steam Boiler Simulation CAD Software</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-csharp-plain" title="C#"></i>
+        
+    
+        
+            <i class="devicon-windows8-original" title="WPF"></i>
+        
+    
+        
+            <i class="fa-solid fa-f" title="Fortran"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Dec 2010 - Mar 2011</div>
+        <div class="fw-light">
+            <p>A GUI desktop app that simulates a virtual power generator steam boiler. Allows designing boiler systems by drag-and-dropping the boiler elements, specifying the connections and parameters then the user can run a simulation and receive the results report visually as well as on each element.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Maritime Container Transportation Order and Management System</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-csharp-plain" title="C#"></i>
+        
+    
+        
+            <i class="devicon-dot-net-plain" title="ASP.NET"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Apr 2010 - Jun 2010</div>
+        <div class="fw-light">
+            <p>A workflow and order tracking system with an online payment gateway for managing maritime transportation businesses.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Online Education System of Arak University of Medical Sciences</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-php-plain" title="PHP"></i>
+        
+    
+        
+            <i class="devicon-mysql-plain" title="MySQL"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Apr 2007 - Jul 2007</div>
+        <div class="fw-light">
+            <p>An online education system with features like defining the exams, questions, exam registration, issuing certificates based on the exam results, etc. This system has been used to facilitate the process of physicians' continuous education supervised by the University of Medical Sciences in Arak.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">2D Cutting-Stock Problem Solving Software</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-cplusplus-plain" title="C/C++"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Sep 2003 - May 2004</div>
+        <div class="fw-light">
+            <p>This software was the first of its kind which has been implemented in Iran. Using C++ and genetic algorithm we could reduce the waste in general 2D cutting-stock to less than 5%. I was the main developer in a team of 3, consisting of two academic researchers. This was my first commercial project and basically the start of my career.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+                    
+                        <div class="mb-2" x-data="{ open: false }">
+    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
+        <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+        <div class="d-inline-block flex-fill">Boot loader (Personal Project)</div>
+        <div class="text-muted text-lg-end flex-end text-nowrap">
+            
+    
+        
+            <i class="devicon-cplusplus-plain" title="C/C++"></i>
+        
+    
+        
+            <i class="fa-solid fa-terminal" title="Assembly"></i>
+        
+    
+
+        </div>
+    </div>
+    <div x-show="open" x-collapse>
+        <div class="text-muted mb-2">Nov 2001 - Dec 2001</div>
+        <div class="fw-light">
+            <p>A boot loader program written from scratch to run from a floppy disk, built using my home-grown text rendering library. It was an effort to develop a basic operating system. I learned about working with low-level IO, direct screen memory access handling, memory management, and re-implemented some functions of the C standard library since the original ones depended on MS-DOS.</p>
+        </div>
+    </div>
+</div>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <footer class="footer mt-auto py-3">
@@ -80,7 +1184,7 @@
             <div>
                 <span class="mb-3 mb-md-0 text-muted">
                     &copy; 2023
-                    <a href="http://localhost:8000" class="text-muted">Amir Karimi</a>.
+                    <a href="https://amirkarimi.dev" class="text-muted"></a>.
                     All Rights Reserved.
                 </span>
             </div>

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,300;0,400;0,600;1,100;1,300;1,400;1,600&display=swap');
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 
-main, .navbar {
+body, .navbar {
     font-family: "Roboto Slab", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
@@ -27,15 +27,16 @@ blockquote {
 .social-icons a {
     color: $secondary;
     text-decoration: none;
+    width: 1.5em;
+    height: 1.5em;
         
     &:hover {
         color: shade-color($secondary, 30%);
     }
 }
 
-.footer-social-icons a {
-    width: 1.5em;
-    height: 1.5em;
+#local-navbar a {
+    color: $secondary;
 }
 
 @keyframes blurry {
@@ -44,8 +45,6 @@ blockquote {
 }
 
 #intro {
-
-    animation: blurry 1s;
 
     #name {
         font-size: $h2-font-size;
@@ -148,4 +147,19 @@ code {
     pre {
         margin: 0;
     }
+}
+
+.item-icon {
+    display: inline-block;
+    width: 1.3em;
+}
+
+.expandable-header {
+    cursor: pointer;
+}
+
+.section-header {
+    font-size: $h4-font-size;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
 }

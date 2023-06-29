@@ -1,7 +1,10 @@
 from typing import Type
-from config import Config
+
+from markupsafe import Markup
+from config import load_config
 from jinja2 import Environment, PackageLoader, TemplateError, select_autoescape
 from rich.console import Console
+from markdown_parser import build_markdown
 from processors import *
 from watch import watch_files
 from server import base_url, serve_forever
@@ -10,13 +13,15 @@ import sass
 import typer
 
 
-config = Config()
+config = load_config()
 console = Console()
 app = typer.Typer()
 env = Environment(
     loader=PackageLoader(config.package_name),
     autoescape=select_autoescape()
 )
+md = build_markdown()
+env.filters['markdown'] = lambda text: Markup(md.convert(text))
 
 processors: list[Type[Processor]] = [
     HomePage,
@@ -47,6 +52,8 @@ def build_all(develop_mode: bool):
 
 
 def on_change(event):
+    global config
+    config = load_config()
     build_all(develop_mode=True)
 
 

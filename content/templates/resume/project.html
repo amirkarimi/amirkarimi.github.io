@@ -1,0 +1,11 @@
+{% extends 'resume/_expandable.html' %}
+{% block title %}{{ project.title }}{% endblock %}
+{% block side %}
+    {% for skill in project.stack %}
+        {% with stack = config.data.stacks[skill] %}
+            <i class="{{stack.icon}}" title="{{ stack.title }}"></i>
+        {% endwith %}
+    {% endfor %}
+{% endblock %}
+{% block subtitle %}{{ project.date }}{% endblock %}
+{% block body %}{{ project.description | markdown }}{% endblock %}
