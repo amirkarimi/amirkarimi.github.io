@@ -39,7 +39,7 @@ positions:
   - title: Site Reliability Engineer
     company: Disney Streaming Services
     location: Manchester, UK
-    start: Apr 2018 
+    start: Mar 2018
     end: Mar 2019
     description: |
       - One of the main contributors to establishing the SRE practices within Disney Streaming Services as the 4th member of the newly shaped SRE team in the company.
@@ -494,3 +494,8 @@ certificates:
     date: Dec 2013
     source: Coursera
     description: "License: Accomplishment with distinction"
+  - title: Stripe Certified Professional Developer
+    date:
+    source: Stripe
+    url: https://stripecertifications.credential.net/540532dd-2fdb-4b51-8df7-32c9d617b029
+    description: "Credential ID: 76849733"

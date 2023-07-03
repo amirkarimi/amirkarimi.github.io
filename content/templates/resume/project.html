@@ -8,4 +8,9 @@
     {% endfor %}
 {% endblock %}
 {% block subtitle %}{{ project.date }}{% endblock %}
-{% block body %}{{ project.description | markdown }}{% endblock %}
+{% block body %}
+    {{ project.description | markdown }}
+    <p>
+        Skills: <span class="text-muted">{% for skill in project.stack %}{{ config.data.stacks[skill].title }}{{ ", " if not loop.last else "" }}{% endfor %}</span>
+    </p>
+{% endblock %}
