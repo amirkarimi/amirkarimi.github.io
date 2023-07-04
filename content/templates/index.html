@@ -23,6 +23,7 @@
 
 {% macro navbar(classes) %}
 <ul class="{{classes}} text-nowrap">
+    {#
     <li class="nav-item">
         <a class="nav-link" href="#"><i class="fa-solid fa-circle-info"></i> Intro</a>
     </li>
@@ -35,7 +36,8 @@
     <li class="nav-item">
         <a class="nav-link" href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a>
     </li>
-    
+    #}
+
     <li class="nav-item">
         <a class="nav-link" href="/blog"><i class="fa-solid fa-pen-to-square"></i> Blog</a>
     </li>
@@ -47,6 +49,11 @@
 </ul>
 <hr/>
 <ul class="{{classes}} text-nowrap">
+    <li class="nav-item">
+        <a class="nav-link">
+            <i class="fa-solid fa-location-dot"></i> {{config.data.location}}
+        </a>
+    </li>
     <li class="nav-item">
         <a class="nav-link" href="mailto:info@amirkarimi.dev">
             <i class="fa-solid fa-envelope"></i> {{config.data.email}}
