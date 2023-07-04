@@ -1,4 +1,4 @@
-<div class="mb-2" x-data="{ open: false }">
+<div class="my-3" x-data="{ open: false }">
     <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
         <i class="fa-solid text-muted me-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
         <div class="d-inline-block flex-fill">{% block title %}{% endblock %}</div>

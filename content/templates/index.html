@@ -134,9 +134,9 @@
                 <div class="row mt-4">
                     {% for skillset in config.data.skills %}
                     <div class="col-md-3 col-sm-6 mb-2">
-                        <h5 class="mb-2">{{skillset}}</h5>
+                        <h5 class="mb-3">{{skillset}}</h5>
                             {% for skill in config.data.skills[skillset] %}
-                            <div class="text-muted text-truncate">
+                            <div class="text-muted text-truncate my-1">
                                 {% with stack = config.data.stacks[skill] %}
                                     <i class="{{stack.icon}} item-icon"></i>
                                     {{stack.title}}
