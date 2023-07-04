@@ -1,11 +1,11 @@
 name: Amir Karimi
-title: Fractional VP of Engineering
+title: Senior Software Engineer
 intro: 20 years of experience in end-to-end project delivery, team building, and consultancy services. My experience spans from working with small startups to Disney and Amazon.
 phone: +1 778 680 2525
 email: info@amirkarimi.dev
 location: Vancouver, BC
 positions:
-  - title: Fractional VP of Engineering
+  - title: Independent Senior Software Engineer
     company: Self Employed
     location: Vancouver, Canada
     start: Jun 2023
@@ -85,13 +85,13 @@ projects:
     date: Nov 2020 - Jun 2021
     description: Led the redesign and implementation of the next generation of Acceptto's SSO microservice to make it horizontally scalable and highly available. The old SSO module was a web server that should be run and maintained on the customer site. The new version was designed to run in the cloud and connect to the customer's user directory using an agent. This project reduced the customer onboarding time from days to hours.
     associated_with: Acceptto Corporation
-    stack: [aws, devops, terraform, ruby, vue, js]
+    stack: [aws, terraform, ruby, vue, js]
     comments: Merged this with agent project in Catalant
   - title: LDAP Agent and Switchboard
     date: Sep 2020 - Feb 2021
     description: Created a solution for Acceptto that allowed their backend to communicate with customers' ActiveDirectory. I managed the project (team of two) and contributed to the development directly. It was done in two phases and successfully executed with customer compliments. The final architecture removed the need for firewall configurations and load balancing on the customer side.
     associated_with: Acceptto Corporation
-    stack: [go, devops, ruby, vue, ts, js]
+    stack: [go, ruby, vue, ts, js]
   - title: Policy Orchestration Engine for an IAM Solution
     date: Apr 2019 - Sep 2019
     description: Designed and implemented a policy orchestration engine that allows customers to define their rules and condition to customize a core IAM solution software behavior. For example, customers can dynamically define policies to ask for MFA in addition to passwords when the user is logging in from a specific location or specific time of day, or a specific risk profile associated with the user. In addition to a UI, it allows power users to write their own predicates and policies. This feature provided a competitive advantage for the company in the industry which led to at least two successful accounts.
@@ -101,7 +101,7 @@ projects:
     date: Apr 2018 - Apr 2019
     description: As the 4th member of the newly founded SRE team of Disney Streaming Services, helped three different development teams within a year to prepare for big launches that required handling thousands of requests per second by reviewing the architecture, building high throughput performance tests, chaos engineering, and building necessary tools and processes to improve reliability.
     associated_with: Disney Streaming Services
-    stack: [python, go, scala, devops, kafka, ruby]
+    stack: [python, go, scala, kafka, ruby]
   - title: Subscription system
     date: Apr 2017 - Apr 2018
     description: As part of a team of four, contributed directly to the design and implementation of a new subscription system for BAMTech Media, which was later used in Disney+. Capable of handling tens of thousands of requests per second.
@@ -109,7 +109,7 @@ projects:
     action: I was a software engineer in a team of four responsible for implementing the new subscription service as well as the infrastructure on AWS.
     result: The system was handling tens of thousands of requests per second successfully. The same system was later used in Disney+ services.
     associated_with: Disney Streaming Services
-    stack: [scala, aws, devops, docker]
+    stack: [scala, aws, docker]
   - title: Book Coupon Distribution System
     pdf_resume: true
     date: Jun 2016 - Dec 2016
@@ -118,7 +118,7 @@ projects:
     action: As a solo developer, I built an online registration, allocation, and payment system that handled the registration and sales of coupons. It allowed the admins to allocate a certain number of coupons based on different factors such as city, education, etc. It was implemented using Scala, Play Framework, MongoDB, and Akka.
     result: This app handled the equivalent of $2M transactions within two weeks of the Tehran International Book Fair successfully and was received very well by the users and organizers of the book fair. It was probably the largest project built entirely using the Scala ecosystem in Iran for the first time.
     associated_with: Self-employed
-    stack: [scala, mongodb, play, akka, devops]
+    stack: [scala, mongodb, play, akka]
   - title: Exercise and Workout Coaching App
     hide: true
     date: Aug 2015 - Nov 2016
@@ -127,7 +127,7 @@ projects:
     action: I requested my client to give me one day a week and asses the result in 4 weeks, if there were not happy with the result they don't need to pay anything. I designed and built the backend features within the first few weeks to the point that the backend features were ahead of the front end.
     result: My client was satisfied with the result. Within the next few months, I also built a backend team that continued building and launched the next versions of the product within the next 2 years.
     associated_with: Self-employed
-    stack: [scala, play, akka, devops]
+    stack: [scala, play, akka]
   - title: Custom-Made Content Management Systems
     hide: true
     date: Feb 2014 - Feb 2016
@@ -146,16 +146,15 @@ projects:
     action: I built a CMS that not only was performing very well on light hardware but also was designed to be easy to work with by less-technical people. Its admin panel was customizable to their need. The customization of the admin panel was done by me and the result was an admin panel that my client staff could quickly learn to use.
     result: This CMS made all my clients self-sufficient to continue maintaining their website content saving them thousands of dollars a year.
     associated_with: Self-employed
-    stack: [scala, devops, mongodb, play]
+    stack: [scala, mongodb, play]
   - title: ISP Integration Software Bot
-    hide: true
     date: Oct 2015 - Nov 2015
     description: Removed human errors, reduced costs and time by up to 10 times by reducing the time to submit the information and monitor the data from other systems by developing a bot to expose an API and other integrations on top of a closed-source UI that was designed to be only used by humans.
     problem: My client had to use human resources in order to submit data and monitor the state of the request in some external systems. This was an error-prone, time-consuming, and costly process. The external system was not providing any APIs for integration either.
     action: I implemented a bot using Selenium and Django that acts as an agent that submits the information, periodically checks them on the external website, and keeps the data in sync with its local database. It was offering some REST API that my client used to integrate with their systems.
     result: My client operation cost related to this external website was reduced by up to 5 times while the human errors were completely eliminated.
     associated_with: Self-employed
-    stack: [python, devops, django]
+    stack: [python, django]
   - title: Fair Registration and Management System
     pdf_resume: true
     date: Nov 2013 - Apr 2014
@@ -164,8 +163,8 @@ projects:
     action: I analyzed the registration processes and designed and implemented a custom-made fair registration system that automates book publishers' registration process fully online. It was also allowing the publishers to import their books to be published on the other website which was dedicated to visitors. Visitors could search for books and publisher locations online and plan for their visit before going to the fair.
     result: It handled more than 40 provincial book fairs in the country, including the Tehran International Book Fair, with Alexa's rank below 500 among Iranian websites during the fair times. Thanks to using non-blocking IO and async programming it served tens of thousands of users per day using a single CPU and 2.5GB of RAM.
     associated_with: Self-employed
-    stack: [scala, devops, mongodb, play]
-  - title: Building a Pluggable Authentication Module (PAM) to add MFA support to Linux services
+    stack: [scala, mongodb, play]
+  - title: Pluggable Authentication Module (PAM) to add MFA support to Linux services
     pdf_resume: true
     comment: "Shorter title: Building a Linux Pluggable Authentication Module (PAM) to support MFA"
     date: Jan 2014 - Mar 2014
@@ -179,7 +178,6 @@ projects:
     associated_with: Self-employed
     stack: [c_sharp, asp_net]
   - title: Xoqal (Open Source)
-    hide: true
     date: Aug 2012 - Aug 2013
     description: Xoqal is an application library targeting .NET 4+ platforms written in C#. It helps to build web and desktop (win) applications using the same infrastructure. It provides some abstractions, data types, etc that make it easier for developers to follow the best design patterns and principles like SOLID.
     associated_with: Self-employed
@@ -252,11 +250,10 @@ projects:
     associated_with: Self-employed
     stack: [c_sharp]
   - title: Custom-made Inventory Management System
-    hide: true
     date: Jan 2011 - May 2011
     description: A custom-made desktop application that automates inventory management for small businesses.
     associated_with: Self-employed
-    stack: [c_sharp]
+    stack: [c_sharp, wpf]
   - title: Steam Boiler Simulation CAD Software
     pdf_resume: true
     date: Dec 2010 - Mar 2011
@@ -270,6 +267,7 @@ projects:
     associated_with: Self-employed
     stack: [c_sharp]
   - title: Maritime Container Transportation Order and Management System
+    hide: true
     date: Apr 2010 - Jun 2010
     description: A workflow and order tracking system with an online payment gateway for managing maritime transportation businesses.
     associated_with: Self-employed
