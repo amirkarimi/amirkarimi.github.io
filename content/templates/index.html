@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ config.data.name }} - Home{% endblock %}
+{% block title %}{{ config.data.name }} - {{ config.data.title }}{% endblock %}
 
 {# No social_links in footer in the landing page #}
 {% block footer_links %}
@@ -7,8 +7,8 @@
 
 {% block head %}
 {{ super() }}
-<meta name="description" content="Amir Karimi - Software Engineer">
-<meta name="keywords" content="amir karimi, software engineer, software developer, consultant, contractor, software architect, python, go, javascript, scala, rust" />
+<meta name="description" content="{{ config.data.name }} - {{ config.data.title }}">
+<meta name="keywords" content="{{ config.data.keywords }}" />
 
 <style>
     body {
