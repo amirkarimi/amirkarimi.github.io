@@ -21,70 +21,49 @@
 </style>
 {% endblock %}
 
-{% macro navbar(classes) %}
-<ul class="{{classes}} text-nowrap">
-    {#
-    <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fa-solid fa-circle-info"></i> Intro</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#positions"><i class="fa-solid fa-briefcase"></i> Positions</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#projects"><i class="fa-solid fa-hammer"></i> Featured Projects</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#education"><i class="fa-solid fa-graduation-cap"></i> Education</a>
-    </li>
-    #}
-
-    <li class="nav-item">
-        <a class="nav-link" href="/blog"><i class="fa-solid fa-pen-to-square"></i> Blog</a>
-    </li>
-    <li class="nav-item">
+{% macro navbar() %}
+<div id="local-navbar">
+    <nav class="nav flex-column text-nowrap">
+        <a class="nav-link" href="/blog">
+            <i class="fa-solid fa-pen-to-square"></i> Blog
+        </a>
         <a class="nav-link" href="{{ config.pdf_resume_path }}">
             <i class="fa-regular fa-file-pdf"></i> PDF Version
         </a>
-    </li>
-</ul>
-<hr/>
-<ul class="{{classes}} text-nowrap">
-    <li class="nav-item">
+        <hr/>
         <a class="nav-link">
             <i class="fa-solid fa-location-dot"></i> {{config.data.location}}
         </a>
-    </li>
-    <li class="nav-item">
         <a class="nav-link" href="mailto:info@amirkarimi.dev">
             <i class="fa-solid fa-envelope"></i> {{config.data.email}}
         </a>
-    </li>
-    <li class="nav-item">
         <a class="nav-link" href="tel:{{config.data.phone.replace(' ', '')}}">
             <i class="fa-solid fa-phone"></i> {{config.data.phone}}
         </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="https://calendly.com/amir_karimi">
-            <i class="fa-regular fa-calendar"></i> Schedule a Call
+        <a class="nav-link" href="{{ config.data.calendar }}">
+            <i class="fa-solid fa-calendar"></i> Schedule a Meeting
         </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="https://www.linkedin.com/in/amirkarimi">
-            <i class="fa-brands fa-linkedin"></i> in/amirkarimi
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="https://github.com/amirkarimi">
-            <i class="fa-brands fa-github"></i> @amirkarimi
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="https://twitter.com/4m1rk">
-            <i class="fa-brands fa-square-twitter"></i> @4m1rk
-        </a>
-    </li>
-</ul>
+        <hr/>
+        <span class="nav-link nav-icons">
+            <a href="{{ config.data.linkedin }}" title="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="{{ config.data.github }}" title="Github">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="{{ config.data.twitter }}" title="Twitter">
+                <i class="fa-brands fa-square-twitter"></i>
+            </a>
+        </span>
+    </nav>
+</div>
+{% endmacro %}
+
+{% macro section_header(id, title, icon) %}
+<div class="d-flex flex-row mt-4">
+    <h4 class="section-header" id="{{id}}"><i class="{{icon}}"></i> {{title}}</h4>
+    <hr class="flex-fill ms-2"/>
+</div>
 {% endmacro %}
 
 {% macro image() %}
@@ -93,14 +72,14 @@
 
 {% block main %}
 <div class="container mt-4">
-    <nav class="d-lg-none navbar navbar-collapse mb-4 sticky-top">
+    <nav class="d-lg-none navbar navbar-collapse mb-4 sticky-top me-2">
         <a class="navbar-brand" href="#"></a>
         <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar"
             aria-controls="topNavbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse mt-2 px-4 py-2 rounded border bg-light" id="topNavbar">
-            {{ navbar("navbar-nav ms-auto") }}
+        <div class="collapse navbar-collapse mt-2 px-1 py-2 rounded border bg-light" id="topNavbar">
+            {{ navbar() }}
         </div>
     </nav>
 
@@ -111,8 +90,8 @@
     <div class="d-flex flex-row">
         <div class="me-5 d-none d-lg-block">
             {{ image() }}
-            <div id="local-navbar" class="sticky-top">
-                {{ navbar("nav nav-pills flex-column") }}
+            <div class="sticky-top">
+                {{ navbar() }}
             </div>
         </div>
         <div class="flex-fill">
@@ -130,10 +109,10 @@
                 </div>
 
                 <!-- SKILLS -->
-        
+
                 <div class="row mt-4">
                     {% for skillset in config.data.skills %}
-                    <div class="col-md-3 col-sm-6 mb-2">
+                    <div class="col-md-3 col-sm-6 mb-3 mb-md-0">
                         <h5 class="mb-3">{{skillset}}</h5>
                             {% for skill in config.data.skills[skillset] %}
                             <div class="text-muted text-truncate my-1">
@@ -148,17 +127,15 @@
                 </div>
 
                 <!-- POSITIONS -->
-
-                <h4 class="section-header" id="positions"><i class="fa-solid fa-briefcase"></i> Positions</h4>
-
+                
+                {{ section_header("positions", "Positions", "fa-solid fa-briefcase") }}
                 {% for position in config.data.positions %}
                     {% include 'resume/position.html' %}
                 {% endfor %}
 
                 <!-- PROJECTS -->
-
-                <h4 class="section-header" id="projects"><i class="fa-solid fa-hammer"></i> Featured Projects</h4>
-
+                
+                {{ section_header("projects", "Featured Projects", "fa-solid fa-hammer") }}
                 {% for project in config.data.projects %}
                     {% if not project.hide %}
                         {% include 'resume/project.html' %}
@@ -166,9 +143,8 @@
                 {% endfor %}
 
                 <!-- EDUCATION -->
-
-                <h4 class="section-header" id="education"><i class="fa-solid fa-graduation-cap"></i> Education</h4>
-
+                
+                {{ section_header("education", "Education", "fa-solid fa-graduation-cap") }}
                 {% for degree in config.data.education %}
                     {% include 'resume/degree.html' %}
                 {% endfor %}

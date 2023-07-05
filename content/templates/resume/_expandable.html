@@ -1,15 +1,19 @@
 <div class="expandable-item" x-data="{ open: false }">
-    <div class="expandable-header d-flex flex-row align-items-center" @click="open = ! open">
-        <i class="fa-solid text-muted me-2" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
-        <div class="d-inline-block flex-fill">{% block title %}{% endblock %}</div>
-        <div class="text-muted text-lg-end flex-end text-nowrap">
-            {% block side %}{% endblock %}
-        </div>
-    </div>
-    <div x-show="open" x-collapse>
-        <div class="text-muted mb-2">{% block subtitle %}{% endblock %}</div>
-        <div class="fw-light">
-            {% block body %}{% endblock %}
+    <div class="d-flex flex-row">
+        <i class="expandable-pointer fa-solid text-muted me-2 mt-1" :class="open ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'" @click="open = ! open"></i>
+        <div class="flex-fill">
+            <div class="expandable-pointer d-md-flex flex-md-row" @click="open = ! open">
+                <div class="d-inline-block flex-fill">{% block title %}{% endblock %}</div>
+                <div class="text-muted flex-end text-nowrap">
+                    {% block side %}{% endblock %}
+                </div>
+            </div>
+            <div x-show="open" x-collapse>
+                <div class="text-muted mb-2">{% block subtitle %}{% endblock %}</div>
+                <div class="fw-light">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>    
         </div>
     </div>
 </div>

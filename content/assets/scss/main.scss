@@ -35,9 +35,16 @@ blockquote {
     }
 }
 
-#local-navbar a {
-    color: $secondary;
+#local-navbar {
+    a {
+        color: $secondary;
+    }
+    
+    a.nav-link i {
+        width: 1.2em;
+    }
 }
+
 
 @keyframes blurry {
     from { filter: blur(100px); }
@@ -159,12 +166,25 @@ code {
     margin-bottom: 1em;
 }
 
-.expandable-header {
+.expandable-pointer {
     cursor: pointer;
 }
 
 .section-header {
     font-size: $h4-font-size;
-    margin-top: 1.2em;
-    margin-bottom: 1.2em;
+    //margin-bottom: 0.8em;
+}
+
+.section-card {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 0.8em;
+}
+
+.nav-icons {
+    font-size: 1.5em;
+
+    a {
+        text-decoration: none;
+    }
 }
