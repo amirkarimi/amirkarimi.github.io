@@ -159,7 +159,7 @@ projects:
     action: I implemented a bot using Selenium and Django that acts as an agent that submits the information, periodically checks them on the external website, and keeps the data in sync with its local database. It was offering some REST API that my client used to integrate with their systems.
     result: My client operation cost related to this external website was reduced by up to 5 times while the human errors were completely eliminated.
     associated_with: Self-employed
-    stack: [python, django]
+    stack: [python, django, selenium]
   - title: Fair Registration and Management System
     pdf_resume: true
     date: Nov 2013 - Apr 2014
@@ -343,7 +343,7 @@ education:
 skills:
   Principals: [functional_programming, distributed_systems, etl, serverless, tdd, oop, solid, agile, kanban]
   Languages: [python, go, ts, js, scala, java, ruby, c_c++, html_css]
-  Frameworks: [spark, django, fast_api, flask, rails, play, akka, vue, react]
+  Frameworks: [spark, django, fast_api, flask, rails, play, akka, vue, react, selenium]
   Tools: [linux, docker, aws, kubernetes, terraform, postgres, mysql, mongodb, kafka]
 stacks:
   python:
@@ -439,6 +439,9 @@ stacks:
   terraform:
     title: Terraform
     icon: devicon-terraform-plain
+  selenium:
+    title: Selenium
+    icon: devicon-selenium-original
   postgres:
     title: Postgres
     icon: devicon-postgresql-plain

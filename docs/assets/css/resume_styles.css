@@ -75,7 +75,8 @@ ul:last-child {
 .skillset {
   display: inline-block;
   width: 24.5%;
-  margin: 0; }
+  margin: 0;
+  vertical-align: top; }
   .skillset ul {
     margin-top: 0;
     padding-left: 0; }
