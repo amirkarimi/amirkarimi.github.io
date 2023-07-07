@@ -153,6 +153,7 @@ projects:
     associated_with: Self-employed
     stack: [scala, mongodb, play]
   - title: ISP Integration Software Bot
+    pdf_resume: true
     date: Oct 2015 - Nov 2015
     description: Removed human errors, reduced costs and time by up to 10 times by reducing the time to submit the information and monitor the data from other systems by developing a bot to expose an API and other integrations on top of a closed-source UI that was designed to be only used by humans.
     problem: My client had to use human resources in order to submit data and monitor the state of the request in some external systems. This was an error-prone, time-consuming, and costly process. The external system was not providing any APIs for integration either.
