@@ -1,5 +1,8 @@
-from dataclasses import asdict, dataclass
-from datetime import datetime
+from dataclasses import asdict, dataclass, field
+from datetime import datetime, timezone
+from urllib.parse import urljoin
+
+from config import Config
 
 
 @dataclass
@@ -44,3 +47,25 @@ class Post:
         d.update(asdict(self.navigation))
         d['url'] = self.navigation.url
         return d
+
+
+@dataclass
+class SiteMapRecord:
+    relative_path: str
+    updated_at: datetime
+    priority: float
+
+    @property
+    def lastmod(self):
+        return self.updated_at.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    
+    def loc(self, config: Config):
+        if self.relative_path is None or self.relative_path == "":
+            return config.base_url
+        else:
+            return urljoin(config.base_url, str(self.relative_path))
+
+
+@dataclass
+class SiteMapData:
+    records: list[SiteMapRecord] = field(default_factory=list)

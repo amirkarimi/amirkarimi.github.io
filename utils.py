@@ -1,3 +1,6 @@
+from pathlib import Path
+
+
 def read_file(input_file_path: str) -> str:
     with open(input_file_path, 'r') as in_file:
         return in_file.read()

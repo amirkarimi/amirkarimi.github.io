@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for sitemap_item in sitemap.records %}
+    <url>
+        <loc>{{ sitemap_item.loc(config) }}</loc>
+        <lastmod>{{ sitemap_item.lastmod }}</lastmod>
+        <priority>{{ sitemap_item.priority }}</priority>
+    </url>
+    {% endfor %}
+</urlset>

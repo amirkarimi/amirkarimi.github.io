@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <url>
+        <loc>https://amirkarimi.dev</loc>
+        <lastmod>2023-07-07T17:29:43Z</lastmod>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/about</loc>
+        <lastmod>2023-07-07T17:29:43Z</lastmod>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2020/10/18/docker-compose-volumes-cheatsheet</loc>
+        <lastmod>2020-10-18T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2020/08/23/trello-list-cards-after</loc>
+        <lastmod>2020-08-23T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2020/08/09/migrate-from-digitalocean-to-aws-and-vice-versa</loc>
+        <lastmod>2020-08-09T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2020/07/01/rails-mailer-smoke-test</loc>
+        <lastmod>2020-07-01T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2020/06/20/aws-cli-list-users-without-mfa</loc>
+        <lastmod>2020-06-20T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2020/06/10/regex-singlequote-to-doublequote</loc>
+        <lastmod>2020-06-10T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2020/05/02/dealing-with-distraction-for-sw</loc>
+        <lastmod>2020-05-02T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2019/04/07/how-I-learned-about-event-driven-design-in-late-90</loc>
+        <lastmod>2019-04-07T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2018/12/15/kubernetes-translation-to-aws</loc>
+        <lastmod>2018-12-15T08:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2018/11/13/chromium-to-firefox-exprience</loc>
+        <lastmod>2018-11-13T08:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2018/01/29/dont-listen-to-them-learn-cats-this-way</loc>
+        <lastmod>2018-01-29T08:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2017/11/01/learning-about-the-way-we-learn</loc>
+        <lastmod>2017-11-01T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2017/05/17/how-to-apply-settings-to-multiple-projects-using-sbt-triggered-plugins</loc>
+        <lastmod>2017-05-17T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2017/01/27/comparing-scala-editors</loc>
+        <lastmod>2017-01-27T08:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2016/10/20/back-to-ubuntu-from-arch</loc>
+        <lastmod>2016-10-20T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2016/03/11/type-injection-in-scala</loc>
+        <lastmod>2016-03-11T08:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2016/02/26/sbt-on-a-linux-encrypted-home</loc>
+        <lastmod>2016-02-26T08:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2015/12/07/the-hacker-scripts-scala</loc>
+        <lastmod>2015-12-07T08:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2015/11/29/how-to-run-android-sdk-on-64bit-arch</loc>
+        <lastmod>2015-11-29T08:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2015/10/11/non-verbose-seo-friendly-localization-play-framework</loc>
+        <lastmod>2015-10-11T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2015/09/03/akka-single-jvm-cluster-sharding</loc>
+        <lastmod>2015-09-03T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2015/08/27/how-i-deploy-my-play-apps</loc>
+        <lastmod>2015-08-27T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2015/08/19/installing-rvm-on-ubuntu-desktop</loc>
+        <lastmod>2015-08-19T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2015/08/17/why-functional-programming</loc>
+        <lastmod>2015-08-17T07:00:00Z</lastmod>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/downloads/amirkarimi-senior-software-engineer-resume-202307-03.pdf</loc>
+        <lastmod>2023-07-07T17:29:43Z</lastmod>
+        <priority>0.7</priority>
+    </url>
+    
+</urlset>

@@ -9,8 +9,10 @@ from processors import *
 from watch import watch_files
 from server import base_url, serve_forever
 from utils import *
+import requests
 import sass
 import typer
+import xml.etree.ElementTree as ET
 
 
 config = load_config()
@@ -30,7 +32,8 @@ processors: list[Type[Processor]] = [
     Blog,
     Assets,
     Downloads,
-    CName
+    CName,
+    SiteMap # Has to be the last one
 ]
 
 
@@ -44,9 +47,12 @@ def build_all(develop_mode: bool):
     print('Compiling...', end='')
 
     reset_output()
+
+    sitemap_data = SiteMapData()
+    
     try:
         for processor_class in processors:
-            processor_class(env, config).run()
+            processor_class(env, config).run(sitemap_data)
         print(' [Done]')
     except (TemplateError, sass.CompileError):
         console.print_exception(show_locals=True)
@@ -87,6 +93,28 @@ def serve(watch: bool = typer.Option(False, help="Watch for changes."), addr: st
             observer.stop()
             observer.join()
 
+
+@app.command()
+def test_sitemap():
+    build()
+
+    tree = ET.parse('docs/sitemap.xml')
+    root = tree.getroot()
+    for url_element in root:
+        loc = url_element.findtext('./{*}loc')
+        lastmod = url_element.findtext('./{*}lastmod')
+        resp = requests.get(loc)
+        print(loc, end=' ')
+        status_ok = resp.status_code == 200
+        content_ok = not loc.endswith('.pdf') and '<title>Amir Karimi' in str(resp.content)
+        if status_ok and content_ok:
+            console.print('[OK]', style='green')
+        else:
+            console.print('[ERROR]', end=' ', style='red')
+            if not status_ok:
+                print(f'status: {resp.status_code}')
+            else:
+                print(f'content: {resp.content[:100]}...')
 
 if __name__ == "__main__":
     app()
