@@ -137,7 +137,7 @@
                 
                 {{ section_header("projects", "Featured Projects", "fa-solid fa-hammer") }}
                 {% for project in config.data.projects %}
-                    {% if not project.hide %}
+                    {% if project.hide is not defined or not project.hide %}
                         {% include 'resume/project.html' %}
                     {% endif %}
                 {% endfor %}

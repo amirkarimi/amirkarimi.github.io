@@ -2,7 +2,7 @@ from typing import Type
 
 from markupsafe import Markup
 from config import load_config
-from jinja2 import Environment, PackageLoader, TemplateError, select_autoescape
+from jinja2 import Environment, PackageLoader, StrictUndefined, TemplateError, select_autoescape
 from rich.console import Console
 from markdown_parser import build_markdown
 from processors import *
@@ -20,7 +20,8 @@ console = Console()
 app = typer.Typer()
 env = Environment(
     loader=PackageLoader(config.package_name),
-    autoescape=select_autoescape()
+    autoescape=select_autoescape(),
+    undefined=StrictUndefined
 )
 md = build_markdown()
 env.filters['markdown'] = lambda text: Markup(md.convert(text))

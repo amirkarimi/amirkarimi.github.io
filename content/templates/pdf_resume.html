@@ -59,7 +59,7 @@
         <div class="subsection-header">
             <div>{{ position.title }}</div>
             <div>{{ position.company }} - {{ position.location }}</div>
-            <div>{{ position.start }} {% if position.end %}-{% endif %} {{ position.end }}</div>
+            <div>{{ position.start }}{% if position.end is defined and position.end %} - {{ position.end }}{% endif %}</div>
         </div>
 
         {{ position.description | markdown }}
@@ -79,7 +79,7 @@
                 <span class="item-endnote">(Scala, Play, MongoDB, JS/HTML/CSS)</span>
             </li>
             {% for project in config.data.projects %}
-                {% if project.pdf_resume %}
+                {% if project.pdf_resume is defined and project.pdf_resume %}
                 <li>
                     <strong>{{ project.title }}</strong> ({{ project.date[-4:] }}) - {{ project.description}}
                     <span class="item-endnote">

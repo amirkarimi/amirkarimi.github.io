@@ -37,15 +37,15 @@
         <div class="font-normal">
             {{ page.content|safe }}
         </div>
-        {% if page.older_link or page.newer_link %}
+        {% if page.older_link is defined or page.newer_link is defined %}
         <div class="mt-5 mb-4 gap-2 d-flex justify-content-between">
-            {% if page.older_link %}
+            {% if page.older_link is defined and page.older_link %}
             <a class="btn btn-outline-secondary" href="{{ page.older_link.url }}">
                 <span aria-hidden="true">&laquo;</span>
                 {{ page.older_link.title }}
             </a>
             {% endif %}
-            {% if page.newer_link %}
+            {% if page.newer_link is defined and page.newer_link %}
             <a class="btn btn-outline-secondary" href="{{ page.newer_link.url }}">
                 {{ page.newer_link.title }}
                 <span aria-hidden="true">&raquo;</span>
