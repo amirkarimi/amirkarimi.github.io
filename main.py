@@ -106,7 +106,7 @@ def test_sitemap():
         resp = requests.get(loc)
         print(loc, end=' ')
         status_ok = resp.status_code == 200
-        content_ok = not loc.endswith('.pdf') and '<title>Amir Karimi' in str(resp.content)
+        content_ok = '<title>Amir Karimi' in str(resp.content) or loc.endswith('.pdf')
         if status_ok and content_ok:
             console.print('[OK]', style='green')
         else:
