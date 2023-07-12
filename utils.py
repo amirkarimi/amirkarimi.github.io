@@ -13,3 +13,9 @@ def write_file(output_file_path: str, content: str):
 
 def truncate_title(title):
     return (title[:50] + '...') if len(title) > 50 else title
+
+
+def add_trailing_slash(url: str) -> str:
+    if not url.endswith('/'):
+        return url + '/'
+    return url

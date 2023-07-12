@@ -69,7 +69,7 @@ class CustomPages(Processor):
                 # Add sitemap data
                 sitemap.records.append(
                     SiteMapRecord(
-                        relative_path=input_file.stem,
+                        relative_path=add_trailing_slash(input_file.stem),
                         updated_at=self.config.now,
                         priority=0.9
                     )
@@ -122,7 +122,7 @@ class Blog(Processor):
             # Add sitemap data
             sitemap.records.append(
                 SiteMapRecord(
-                    relative_path=post.navigation.path,
+                    relative_path=add_trailing_slash(post.navigation.path),
                     updated_at=datetime.combine(post.markdown_page.date, time(0, 0)),
                     priority=0.8
                 )
