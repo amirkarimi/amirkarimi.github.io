@@ -1,2 +1,6 @@
 {% extends "page.html" %}
 {% block title %}{{ config.data.name }} - Blog - {{ page.title }}{% endblock %}
+{% block content_footer %}
+    <div class="my-5"></div>
+    {% include 'comments.html' %}
+{% endblock %}
