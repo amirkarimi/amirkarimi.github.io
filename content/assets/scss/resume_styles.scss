@@ -43,11 +43,9 @@ ul:last-child {
   flex-flow: row;
   align-items: stretch;
 
-  & > div {
-    width: 50%;
-  }
-
   .main {
+    width: 60%;
+
     .title {
       font-size: 20pt;
       text-transform: uppercase;
@@ -67,6 +65,8 @@ ul:last-child {
   }
 
   .info {
+    width: 40%;
+
     font-style: italic;
     text-align: right;
 

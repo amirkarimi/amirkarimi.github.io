@@ -29,20 +29,21 @@ ul:last-child {
   display: flex;
   flex-flow: row;
   align-items: stretch; }
-  .doc-header > div {
-    width: 50%; }
-  .doc-header .main .title {
-    font-size: 20pt;
-    text-transform: uppercase; }
-  .doc-header .main .subtitle {
-    font-size: 12pt;
-    color: #727272; }
-  .doc-header .main .intro {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    padding-left: 0.5em;
-    border-left: 1px solid lightgray; }
+  .doc-header .main {
+    width: 60%; }
+    .doc-header .main .title {
+      font-size: 20pt;
+      text-transform: uppercase; }
+    .doc-header .main .subtitle {
+      font-size: 12pt;
+      color: #727272; }
+    .doc-header .main .intro {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      padding-left: 0.5em;
+      border-left: 1px solid lightgray; }
   .doc-header .info {
+    width: 40%;
     font-style: italic;
     text-align: right; }
     .doc-header .info .last-update {

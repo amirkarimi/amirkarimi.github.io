@@ -1,5 +1,5 @@
 name: Amir Karimi
-title: Senior Software Engineer
+title: Fractional VP of Engineering for early-stage startups
 intro: 20 years of experience in end-to-end project delivery, team building, and consultancy services to diverse clients, ranging from small startups to Disney and Amazon.
 phone: +1 778 680 2525
 email: info@amirkarimi.dev
@@ -10,7 +10,7 @@ twitter: https://twitter.com/4m1rk
 location: Vancouver, BC
 keywords: amir karimi, software engineer, software developer, consultant, contractor, software architect, python, go, javascript, scala, rust
 positions:
-  - title: Independent Senior Software Engineer
+  - title: Fractional VP of Engineering
     company: Self Employed
     location: Vancouver, Canada
     start: Jun 2023
@@ -127,8 +127,8 @@ projects:
   - title: Exercise and Workout Coaching App
     hide: true
     date: Aug 2015 - Nov 2016
-    description: Built the entire backend for a health and fitness application that connects the specialist to clients to coach them for exercise and diet. Released the first version to production within 2 months and then shaped and led the backend team.
-    problem: My client was a new startup in the health and wellbeing section building an app that was connecting exercise and diet specialists to users. They already had some progress in building the mobile app but they were struggling to find resources for their backend side. My client was looking for a full-time employee but I assured them that I can fill the gap as a fractional engineer and even help them build the backend team.
+    description: Built the entire backend for a health and fitness application that connects the specialist to clients to coach them for exercise and diet as a fractional lead of engineering. Released the first version to production within 2 months. At the same time, built and coached the backend team to an independent mature team of 5.
+    problem: My client was a new startup in the health and wellbeing section building an app that was connecting exercise and diet specialists to users. They already had some progress in building the mobile app but they were struggling to find resources for their backend side. My client was looking for a full-time employee but I assured them that I can fill the gap as a fractional lead engineer and even help them build the backend team.
     action: I requested my client to give me one day a week and asses the result in 4 weeks, if there were not happy with the result they don't need to pay anything. I designed and built the backend features within the first few weeks to the point that the backend features were ahead of the front end.
     result: My client was satisfied with the result. Within the next few months, I also built a backend team that continued building and launched the next versions of the product within the next 2 years.
     associated_with: Self-employed
