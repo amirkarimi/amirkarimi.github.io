@@ -53,7 +53,7 @@ class Post:
 class SiteMapRecord:
     relative_path: str
     updated_at: datetime
-    priority: float
+    priority: float = 1.0
 
     @property
     def lastmod(self):

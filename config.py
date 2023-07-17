@@ -25,8 +25,8 @@ class Config:
     year: int = datetime.now().year
     now: datetime = datetime.now()
     menu: list[NavItem] = field(default_factory=lambda :[
-        NavItem('About', '/about'),
-        NavItem('Blog', '/blog')
+        NavItem('About', '/about/'),
+        NavItem('Blog', '/blog/')
     ])
 
     @property

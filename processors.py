@@ -38,8 +38,7 @@ class HomePage(Processor):
         sitemap.records.append(
             SiteMapRecord(
                 relative_path="",
-                updated_at=self.config.now,
-                priority=1.0
+                updated_at=self.config.now
             )
         )
 
@@ -70,14 +69,14 @@ class CustomPages(Processor):
                 sitemap.records.append(
                     SiteMapRecord(
                         relative_path=add_trailing_slash(input_file.stem),
-                        updated_at=self.config.now,
-                        priority=0.9
+                        updated_at=self.config.now
                     )
                 )
 
 
 class Blog(Processor):
     def run(self, sitemap: SiteMapData):
+        last_update = None
         posts: list[Post] = []
         prev_post = None
         input_files = sorted(
@@ -89,7 +88,7 @@ class Blog(Processor):
                 post = Post(
                     markdown_page=markdown_page,
                     navigation=Navigation(
-                        f'blog/{markdown_page.date.strftime("%Y/%m/%d")}/{markdown_page.slug}'
+                        f'blog/{markdown_page.date.strftime("%Y/%m/%d")}/{markdown_page.slug}/'
                     ),
                 )
                 posts.append(post)
@@ -119,19 +118,21 @@ class Blog(Processor):
             page_output_dir.mkdir(parents=True, exist_ok=True)
             write_file(page_output_dir.joinpath("index.html"), output_content)
 
+            post_date = datetime.combine(post.markdown_page.date, time(0, 0))
+            if not last_update or last_update < post_date:
+                last_update = post_date
             # Add sitemap data
             sitemap.records.append(
                 SiteMapRecord(
-                    relative_path=add_trailing_slash(post.navigation.path),
-                    updated_at=datetime.combine(post.markdown_page.date, time(0, 0)),
-                    priority=0.8
+                    relative_path=post.navigation.path,
+                    updated_at=post_date
                 )
             )
 
             # Backward compatible URL redirection
             redirect_output_dir = Path(
                 self.config.output_path,
-                post.navigation.path.lstrip("blog/").rstrip(post.markdown_page.slug),
+                post.navigation.path.lstrip("blog/").rstrip(post.markdown_page.slug + "/"),
             )
             redirect_output_dir.mkdir(parents=True, exist_ok=True)
             redirect_output_file_path = redirect_output_dir.joinpath(
@@ -149,6 +150,14 @@ class Blog(Processor):
             posts=(p.as_view_context for p in posts), config=self.config
         )
         write_file(blog_index_page_path, blog_index_content)
+
+        # Blog root page
+        sitemap.records.append(
+            SiteMapRecord(
+                relative_path="blog/",
+                updated_at=last_update,
+            )
+        )
 
 
 class Assets(Processor):
@@ -201,8 +210,7 @@ class Downloads(Processor):
                 sitemap.records.append(
                     SiteMapRecord(
                         relative_path=Path("downloads").joinpath(file.name),
-                        updated_at=self.config.now,
-                        priority=0.7
+                        updated_at=self.config.now
                     )
                 )
 
