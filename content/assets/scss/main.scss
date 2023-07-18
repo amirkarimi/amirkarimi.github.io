@@ -113,8 +113,12 @@ blockquote {
 }
 
 .blog-index {
+    > h1 {
+        margin-bottom: 1em;
+    }
+
     .post {
-        @extend .my-5;
+        margin-bottom: 2em;
     }
 
     .date {
@@ -143,10 +147,6 @@ blockquote {
             @extend .table-dark;
         }
     }
-}
-
-.page-content, .blog-index .summary {
-    font-size: 1.1em;
 }
 
 code {

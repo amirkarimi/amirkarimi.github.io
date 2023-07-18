@@ -6079,7 +6079,7 @@ textarea.form-control-lg {
   margin-top: 1.5rem !important;
   margin-bottom: 1.5rem !important; }
 
-.my-5, .blog-index .post {
+.my-5 {
   margin-top: 3rem !important;
   margin-bottom: 3rem !important; }
 
@@ -8432,6 +8432,12 @@ blockquote {
       line-height: 1.2;
       margin-top: 0.5em; }
 
+.blog-index > h1, .blog-index > .h1 {
+  margin-bottom: 1em; }
+
+.blog-index .post {
+  margin-bottom: 2em; }
+
 .blog-index .date {
   color: #6c757d; }
 
@@ -8439,9 +8445,6 @@ blockquote {
   color: black; }
   .blog-index .title a:not(:hover) {
     text-decoration: none; }
-
-.page-content, .blog-index .summary {
-  font-size: 1.1em; }
 
 code {
   font-family: 'Roboto Mono', monospace; }
