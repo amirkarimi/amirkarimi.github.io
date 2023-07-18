@@ -6135,7 +6135,7 @@ textarea.form-control-lg {
 .mb-1 {
   margin-bottom: 0.25rem !important; }
 
-.mb-2 {
+.mb-2, .blog-index .title {
   margin-bottom: 0.5rem !important; }
 
 .mb-3 {
@@ -8439,6 +8439,9 @@ blockquote {
   color: black; }
   .blog-index .title a:not(:hover) {
     text-decoration: none; }
+
+.page-content, .blog-index .summary {
+  font-size: 1.1em; }
 
 code {
   font-family: 'Roboto Mono', monospace; }

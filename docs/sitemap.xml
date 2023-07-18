@@ -4,13 +4,19 @@
     
     <url>
         <loc>https://amirkarimi.dev</loc>
-        <lastmod>2023-07-17T16:29:35Z</lastmod>
+        <lastmod>2023-07-18T16:18:56Z</lastmod>
         <priority>1.0</priority>
     </url>
     
     <url>
         <loc>https://amirkarimi.dev/about/</loc>
-        <lastmod>2023-07-17T16:29:35Z</lastmod>
+        <lastmod>2023-07-18T16:18:56Z</lastmod>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2023/07/17/what-is-a-fractional-head-of-engineering/</loc>
+        <lastmod>2023-07-17T07:00:00Z</lastmod>
         <priority>1.0</priority>
     </url>
     
@@ -160,13 +166,13 @@
     
     <url>
         <loc>https://amirkarimi.dev/blog/</loc>
-        <lastmod>2020-10-18T07:00:00Z</lastmod>
+        <lastmod>2023-07-17T07:00:00Z</lastmod>
         <priority>1.0</priority>
     </url>
     
     <url>
         <loc>https://amirkarimi.dev/downloads/amirkarimi-resume-202307-05.pdf</loc>
-        <lastmod>2023-07-17T16:29:35Z</lastmod>
+        <lastmod>2023-07-18T16:18:56Z</lastmod>
         <priority>1.0</priority>
     </url>
     

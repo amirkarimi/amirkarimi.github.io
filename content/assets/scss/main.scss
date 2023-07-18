@@ -120,7 +120,10 @@ blockquote {
     .date {
         color: $text-muted;
     }
+
     .title {
+        @extend .mb-2;
+
         a {
             color: black;
 
@@ -140,6 +143,10 @@ blockquote {
             @extend .table-dark;
         }
     }
+}
+
+.page-content, .blog-index .summary {
+    font-size: 1.1em;
 }
 
 code {
