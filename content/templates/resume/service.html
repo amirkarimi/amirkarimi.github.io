@@ -1,0 +1,5 @@
+{% extends 'resume/_expandable.html' %}
+{% block title %}
+    {{ service.title }}
+{% endblock %}
+{% block body %}{{ service.description | markdown }}{% endblock %}

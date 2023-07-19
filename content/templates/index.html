@@ -60,8 +60,8 @@
 {% endmacro %}
 
 {% macro section_header(id, title, icon) %}
-<div class="d-flex flex-row mt-4">
-    <h4 class="section-header" id="{{id}}"><i class="{{icon}}"></i> {{title}}</h4>
+<div class="d-flex flex-row section-header">
+    <h4 id="{{id}}"><i class="{{icon}} section-header-icon"></i> {{title}}</h4>
     <hr class="flex-fill ms-2"/>
 </div>
 {% endmacro %}
@@ -103,25 +103,46 @@
                     <div id="title">
                         {{ config.data.title }}
                     </div>
-                    <div class="my-2">
-                        {{ config.data.intro }}
+                    <div id="intro-text" class="my-2">
+                        {{ config.data.intro_html|safe }}
                     </div>
                 </div>
 
+                <!-- SERVICES -->
+                
+                {{ section_header("services", "Services", "fa-solid fa-handshake-angle") }}
+                {% for service in config.data.services %}
+                    {% include 'resume/service.html' %}
+                {% endfor %}
+
+                {#
+                <div class="mb-1">
+                    {% for service in config.data.services %}
+                        <div class="d-flex flex-row align-items-center my-2">
+                            <i class="fa-solid fa-circle-chevron-right item-icon text-muted"></i>
+                            <span class="text-truncate">{{service}}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+                #}
+
                 <!-- SKILLS -->
 
-                <div class="row mt-4">
+                {{ section_header("skills", "Skills", "fa-solid fa-hammer") }}
+
+                <div class="row">
                     {% for skillset in config.data.skills %}
                     <div class="col-md-3 col-sm-6 mb-3 mb-md-0">
-                        <h5 class="mb-3">{{skillset}}</h5>
-                            {% for skill in config.data.skills[skillset] %}
-                            <div class="text-muted text-truncate my-1">
-                                {% with stack = config.data.stacks[skill] %}
+                        {% for skill in config.data.skills[skillset] %}
+                        <div class="text-muted my-1">
+                            {% with stack = config.data.stacks[skill] %}
+                                <div class="d-flex flex-row align-items-center">
                                     <i class="{{stack.icon}} item-icon"></i>
-                                    {{stack.title}}
-                                {% endwith %}
-                            </div>
-                            {% endfor %}
+                                    <span class="text-truncate">{{stack.title}}</span>
+                                </div>
+                            {% endwith %}
+                        </div>
+                        {% endfor %}
                     </div>
                     {% endfor %}
                 </div>
@@ -135,7 +156,7 @@
 
                 <!-- PROJECTS -->
                 
-                {{ section_header("projects", "Featured Projects", "fa-solid fa-hammer") }}
+                {{ section_header("projects", "Featured Projects", "fa-solid fa-star") }}
                 {% for project in config.data.projects %}
                     {% if project.hide is not defined or not project.hide %}
                         {% include 'resume/project.html' %}

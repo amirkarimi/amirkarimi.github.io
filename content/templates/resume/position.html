@@ -1,5 +1,8 @@
 {% extends 'resume/_expandable.html' %}
-{% block title %}{{ position.title }} <span class="text-muted"> | {{ position.company }}{% endblock %}
+{% block title %}
+    {{ position.title }}
+    <span class="text-muted"> | {{ position.company }}</span>
+{% endblock %}
 {% block side %}{{ position.start }} {% if position.end is defined and position.end %}- {{ position.end }}{% endif %}
 {% endblock %}
 {% block subtitle %}{{ position.location }}{% endblock %}

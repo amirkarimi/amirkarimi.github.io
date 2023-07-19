@@ -1,6 +1,7 @@
 name: Amir Karimi
 title: Fractional Head of Engineering for early-stage startups
 intro: 20 years of experience in end-to-end project delivery, team building, and consultancy services to diverse clients, ranging from small startups to Disney and Amazon.
+intro_html: 20 years of experience in end-to-end project delivery, team building, and consultancy services to diverse clients, ranging from small startups to <img id="disney-logo" src="/assets/img/disney_logo.svg" title="Disney"/> and <img id="amazon-logo" src="/assets/img/amazon_logo.svg" title="Amazon"/>.
 phone: +1 778 680 2525
 email: info@amirkarimi.dev
 calendar: https://calendly.com/amir_karimi
@@ -9,6 +10,28 @@ github: https://github.com/amirkarimi
 twitter: https://twitter.com/4m1rk
 location: Vancouver, BC
 keywords: amir karimi, fractional vp of engineering, fractional head of engineering, director of engineering, software engineer, software developer, consultant, contractor, software architect, big data, python, go, javascript, typescript, scala, c++
+services:
+  - title: Technical Leadership
+    description: Provide strategic guidance and leadership to engineering teams, helping them align their efforts with business objectives, optimize processes, and make informed technical decisions.
+  - title: Software Architecture, Design and Implementation
+    description: Analyze business requirements and translate them into robust software architectures and designs. Contribute to the implementation of the critical components and modules. Apply best practices and industry standards to create scalable, maintainable, and efficient software systems.
+  - title: Team Management and Mentoring
+    description: Oversee and manage engineering teams, ensuring effective collaboration, productivity, and high-quality deliverables. Mentor and coach team members to enhance their skills and professional growth.
+  - title: Stakeholder Communication
+    description: Effectively communicate with clients, project stakeholders, and cross-functional teams to manage expectations, provide project updates, and address any technical concerns or challenges.
+  - title: Software Development Process Improvement
+    description: Implement and optimize agile development methodologies such as Scrum or Kanban. Streamline processes, improve team efficiency, and foster continuous improvement through retrospectives and feedback loops.
+  - title: Technology Evaluation and Selection
+    description: Assist in evaluating and selecting appropriate technologies, frameworks, and tools for projects, considering factors such as scalability, performance, security, and future extensibility.
+  - title: Code Review and Quality Assurance
+    description: Conduct thorough code reviews to ensure adherence to coding standards, best practices, and maintainable codebases. Implement quality assurance processes to identify and resolve bugs, performance issues, and security vulnerabilities.
+  - title: Technical Hiring and Talent Acquisition
+    description: Assist in the recruitment and hiring of engineering talent. Participate in candidate screening, technical interviews, and evaluating skill sets to build high-performing teams.
+skills:
+  Principals: [functional_programming, distributed_systems, etl, serverless, tdd, oop, solid, agile, kanban]
+  Languages: [python, go, ts, js, scala, java, ruby, c_c++, html, css]
+  Frameworks: [spark, django, fast_api, flask, rails, play, akka, vue, react, selenium]
+  Tools: [linux, docker, aws, kubernetes, terraform, postgres, mysql, mongodb, kafka]
 positions:
   - title: Fractional Head of Engineering
     company: Self Employed
@@ -341,11 +364,6 @@ education:
       - Developed a boot loader in an effort to develop a basic operating system. Learned working with IO, direct screen memory access handling, memory management (used linked-list data structure), re-implementing some functions of the C standard library from scratch.
       - Was selected as the top 3 students to participate in ACM Asian regional contest.
       - The youngest student attending this university at age 17.
-skills:
-  Principals: [functional_programming, distributed_systems, etl, serverless, tdd, oop, solid, agile, kanban]
-  Languages: [python, go, ts, js, scala, java, ruby, c_c++, html_css]
-  Frameworks: [spark, django, fast_api, flask, rails, play, akka, vue, react, selenium]
-  Tools: [linux, docker, aws, kubernetes, terraform, postgres, mysql, mongodb, kafka]
 stacks:
   python:
     title: Python
@@ -371,9 +389,12 @@ stacks:
   c_c++:
     title: C/C++
     icon: devicon-cplusplus-plain
-  html_css:
-    title: HTML/CSS
+  html:
+    title: HTML
     icon: devicon-html5-plain
+  css:
+    title: CSS
+    icon: devicon-css3-plain
   functional_programming:
     title: Functional Programming
     icon: devicon-haskell-plain

@@ -35,7 +35,7 @@ class Config:
 
     @property
     def pdf_resume_path(self):
-        path = next(Path('content/downloads').iterdir())
+        path = sorted(Path('content/downloads').iterdir(), reverse=True)[0]
         return '/downloads/' + path.name
 
 def load_config():
