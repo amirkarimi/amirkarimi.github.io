@@ -61,7 +61,10 @@
 
 {% macro section_header(id, title, icon) %}
 <div class="d-flex flex-row section-header">
-    <h4 id="{{id}}"><i class="{{icon}} section-header-icon"></i> {{title}}</h4>
+    <h4 id="{{id}}">
+        {#<i class="{{icon}} section-header-icon"></i>#}
+        {{title}}
+    </h4>
     <hr class="flex-fill ms-2"/>
 </div>
 {% endmacro %}
