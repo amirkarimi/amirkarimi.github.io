@@ -31,6 +31,18 @@
     </div>
 
     <div class="section">
+        <div class="header" id="projects">Services</div>
+
+        <ul>
+            {% for service in config.data.services %}
+                <li>
+                    {{ service.title }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section">
         <div class="header">Technical Skills</div>
             {% for skillset in config.data.skills %}
             <div class="skillset">

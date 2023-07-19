@@ -1,4 +1,5 @@
 ---
+date: 2023-07-01
 template: page.html
 title: About
 hide_toc: True

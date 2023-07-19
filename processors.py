@@ -60,7 +60,6 @@ class CustomPages(Processor):
                 context = parse_markdown(read_file(input_file))
                 template = self.env.get_template(context.template)
                 output_content = template.render(page=context, config=self.config)
-
                 page_output_dir = Path(f"{self.config.output_path}/{input_file.stem}")
                 page_output_dir.mkdir(exist_ok=True)
                 write_file(page_output_dir.joinpath("index.html"), output_content)
@@ -69,7 +68,7 @@ class CustomPages(Processor):
                 sitemap.records.append(
                     SiteMapRecord(
                         relative_path=add_trailing_slash(input_file.stem),
-                        updated_at=self.config.now
+                        updated_at=datetime(context.date.year, context.date.month, context.date.day) if context.date else self.config.now
                     )
                 )
 
@@ -206,11 +205,12 @@ class Downloads(Processor):
 
         for file in input_downloads_path.iterdir():
             if file.is_file():
+                
                 # Add sitemap data
                 sitemap.records.append(
                     SiteMapRecord(
                         relative_path=Path("downloads").joinpath(file.name),
-                        updated_at=self.config.now
+                        updated_at=datetime.fromtimestamp(file.lstat().st_mtime)
                     )
                 )
 
