@@ -1,5 +1,3 @@
 {% extends 'resume/_expandable.html' %}
-{% block title %}
-    {{ service.title }}
-{% endblock %}
-{% block body %}{{ service.description }}{% endblock %}
+{% block title %}{{ service.title }}{% endblock %}
+{% block body %}<p>{{ service.description }}</p>{% endblock %}
