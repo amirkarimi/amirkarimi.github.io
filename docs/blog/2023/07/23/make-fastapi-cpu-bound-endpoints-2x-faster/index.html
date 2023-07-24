@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    
+
+    <title>Amir Karimi - Blog - Make FastAPI CPU-bound Endpoints 2X Faster</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/assets/css/main.css?v=3" rel="stylesheet">
+    <link href="/assets/css/highlight.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-38DSNZVGYF"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-38DSNZVGYF');
+        </script>
+    
+    
+
+    <meta name="keywords" content="fastapi, starletter, anyio, python, performance improvement, async, non-blocking, cpu-bound, threads" />
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <!-- Begin page content -->
+    
+<nav class="navbar navbar-expand-lg bg-light mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="https://amirkarimi.dev">Amir Karimi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/blog/" >
+                            Blog
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/about/" >
+                            About
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="flex-grow-1 mb-3">
+    <div class="container">
+        
+<div class="row gx-5 page">
+    
+    <div class="col-lg-3 order-lg-3 mb-1">
+        <div class="page-toc">
+            <h6>On this page</h6>
+            <hr class="my-2"/>
+            
+        <ul>
+        
+            <li>
+                <a href="#why">Why?</a>
+                
+            </li>
+        
+            <li>
+                <a href="#use-more-cpu">Use More CPU</a>
+                
+            </li>
+        
+            <li>
+                <a href="#multi-worker">Multi-worker</a>
+                
+            </li>
+        
+            <li>
+                <a href="#conclusion">Conclusion</a>
+                
+            </li>
+        
+        </ul>
+    
+        </div>
+    </div>
+    
+    <div class="col-lg-9">
+        <h1 class="text-2xl font-bold mb-4">Make FastAPI CPU-bound Endpoints 2X Faster</h1>
+        <div class="page-content">
+            <p><a href="https://fastapi.tiangolo.com/">FastAPI</a> is built on top of <a href="https://www.starlette.io/">Starlette</a>, which is an ASGI framework. That makes it ideal for building async web services in Python.</p>
+<p>Async code can be more efficient only when it comes to IO operations like reading from a database – that's like 99% of web use cases. But you might be surprised to know that even for non-IO operations, async functions will perform better in FastAPI.</p>
+<!--more-->
+
+<p>Consider this application:</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/nonasync&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">nonasync_endpoint</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello Non-Async&quot;</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/async&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">async_endpoint</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello Async&quot;</span>
+</code></pre></div>
+
+<p>The <code>/nonasync</code> endpoint is bound to a regular Python function, and the <code>/async</code> endpoint is bound to a coroutine.</p>
+<p>I'm running the Uvicorn server in production mode:</p>
+<div class="codehilite"><pre><span></span><code>uvicorn main:app --port <span class="m">3000</span>
+</code></pre></div>
+
+<p>And load test using Apache HTTP server benchmarking tool:</p>
+<div class="codehilite"><pre><span></span><code>$ ab -n 1000 -c 100 http://localhost:3000/async
+
+Requests per second:    13190.52
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>$ ab -n 1000 -c 100 http://localhost:3000/nonasync
+
+Requests per second:    7103.43
+</code></pre></div>
+
+<blockquote>
+<p>I ran these tests on an Intel i9-13900K CPU.</p>
+</blockquote>
+<p>The async endpoint is 85% faster than non-async, even though there's no IO.</p>
+<p><img alt="Async vs non-async comparison" class="center-image" src="/assets/img/fastapi_async_cpu_bound.jpg" /></p>
+<h2 id="why">Why?</h2>
+<p>We keep hearing there's no benefit in using async code when there's no IO. Why isn't it true here?</p>
+<p>This is a call chain starting from a FastAPI route handler when the endpoint is not a coroutine:</p>
+<ul>
+<li>FastAPI: <a href="https://github.com/tiangolo/fastapi/blob/0976185af96ab2ee39c949c0456be616b01f8669/fastapi/routing.py#L500">get_route_handler</a><ul>
+<li>FastAPI: <a href="https://github.com/tiangolo/fastapi/blob/0976185af96ab2ee39c949c0456be616b01f8669/fastapi/routing.py#L195">get_request_handler</a><ul>
+<li>FastAPI: <a href="https://github.com/tiangolo/fastapi/blob/0976185af96ab2ee39c949c0456be616b01f8669/fastapi/routing.py#L182">run_endpoint_function</a><ul>
+<li>Starlette: <a href="https://github.com/encode/starlette/blob/3f6d4f5969d8c153477c534a31fc50925843f7b0/starlette/concurrency.py#L35">run_in_threadpool</a><ul>
+<li>AnyIO: <a href="https://anyio.readthedocs.io/en/stable/api.html#anyio.to_thread.run_sync">anyio.to_thread.run_sync</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The answer is <code>anyio.to_thread.run_sync</code>. It allows running a blocking function in a worker thread. It lets the event loop continue running other tasks while the worker thread runs the blocking call. When a function is not a coroutine, FastAPI uses Starlette's <code>run_in_threadpool</code> to execute the endpoint function, which ultimately uses <code>anyio.to_thread.run_sync</code>.</p>
+<p>Running a function in a worker thread and waiting until it's done adds overhead for each API call.</p>
+<h2 id="use-more-cpu">Use More CPU</h2>
+<p>I added some dummy operations to make sure the endpoints represent a real CPU-intensive task:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">cpu_intensive_task</span><span class="p">():</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">):</span>
+        <span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/nonasync&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">nonasync_endpoint</span><span class="p">():</span>
+    <span class="n">cpu_intensive_task</span><span class="p">()</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello Non-Async&quot;</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/async&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">async_endpoint</span><span class="p">():</span>
+    <span class="n">cpu_intensive_task</span><span class="p">()</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello Async&quot;</span>
+</code></pre></div>
+
+<p>And the result is even more surprising:</p>
+<div class="codehilite"><pre><span></span><code>$ ab -n 1000 -c 100 http://localhost:3000/async
+
+Requests per second:    31.47
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>$ ab -n 1000 -c 100 http://localhost:3000/nonasync
+
+Requests per second:    15.56
+</code></pre></div>
+
+<p>The async endpoint is more than 2 times faster in this case.</p>
+<h2 id="multi-worker">Multi-worker</h2>
+<p>Out of curiosity, I ran Uvicorn with 32 workers since my CPU has 32 threads.</p>
+<div class="codehilite"><pre><span></span><code>uvicorn main:app --port <span class="m">3000</span> --workers <span class="m">32</span>
+</code></pre></div>
+
+<p>And the results are:</p>
+<div class="codehilite"><pre><span></span><code>$ ab -n 1000 -c 100 http://localhost:3000/async
+
+Requests per second:    454.22
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>$ ab -n 1000 -c 100 http://localhost:3000/nonasync
+
+Requests per second:    367.90
+</code></pre></div>
+
+<p>The async endpoint is 23% faster this time. The reason is that there are more worker processes available, and given the number of concurrent requests is the same, fewer threads are needed per process. With fewer threads, there's less context switching and overhead for each process, which ultimately reduces the cumulative overhead of <code>run_in_threadpool</code>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Always use <code>async</code> functions to define your FastAPI endpoints unless you're dealing with blocking IO, no matter if they're CPU-bound or IO.</p>
+        </div>
+        
+        <div class="mt-5 mb-4 gap-2 d-flex justify-content-between">
+            
+            <a class="btn btn-outline-secondary" href="/blog/2023/07/17/what-is-a-fractional-head-of-engineering/">
+                <span aria-hidden="true">&laquo;</span>
+                What&#39;s a Fractional Head of Engineering
+            </a>
+            
+            
+        </div>
+        
+        
+    <div class="my-5"></div>
+    <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://amir-karimi.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    </div>
+</div>
+
+    </div>
+</main>
+
+
+    <footer class="footer mt-auto py-3">
+        
+        <div class="container d-flex flex-wrap justify-content-between">
+            <div>
+                <span class="mb-3 mb-md-0 text-muted">
+                    &copy; 2023
+                    <a href="https://amirkarimi.dev" class="text-muted">Amir Karimi</a>.
+                    All Rights Reserved.
+                </span>
+            </div>
+
+            
+            <div>
+                <div class="hstack gap-2 social-icons">
+    <a href="https://twitter.com/4m1rk">
+        <svg role="img" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/amirkarimi">
+        <svg role="img"  width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://github.com/amirkarimi">
+        <svg role="img"  width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+</div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>

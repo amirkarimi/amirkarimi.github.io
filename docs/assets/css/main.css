@@ -8442,6 +8442,13 @@ blockquote {
   .blog-index .title a:not(:hover) {
     text-decoration: none; }
 
+.blog-index img, .page img {
+  max-width: 90%; }
+  .blog-index img.center-image, .page img.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
 code {
   font-family: 'Roboto Mono', monospace; }
 

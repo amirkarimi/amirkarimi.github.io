@@ -4,13 +4,19 @@
     
     <url>
         <loc>https://amirkarimi.dev</loc>
-        <lastmod>2023-07-19T20:51:51Z</lastmod>
+        <lastmod>2023-07-24T01:36:59Z</lastmod>
         <priority>1.0</priority>
     </url>
     
     <url>
         <loc>https://amirkarimi.dev/about/</loc>
         <lastmod>2023-07-01T07:00:00Z</lastmod>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2023/07/23/make-fastapi-cpu-bound-endpoints-2x-faster/</loc>
+        <lastmod>2023-07-23T07:00:00Z</lastmod>
         <priority>1.0</priority>
     </url>
     
@@ -166,7 +172,7 @@
     
     <url>
         <loc>https://amirkarimi.dev/blog/</loc>
-        <lastmod>2023-07-17T07:00:00Z</lastmod>
+        <lastmod>2023-07-23T07:00:00Z</lastmod>
         <priority>1.0</priority>
     </url>
     
