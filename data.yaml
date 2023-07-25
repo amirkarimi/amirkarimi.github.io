@@ -28,7 +28,7 @@ services:
   - title: Technical Hiring and Talent Acquisition
     description: Assist in the recruitment and hiring of engineering talent. Participate in candidate screening, technical interviews, and evaluating skill sets to build high-performing teams.
 skills:
-  Principals: [functional_programming, distributed_systems, etl, serverless, tdd, oop, solid, agile, kanban]
+  Principals: [technical_leadership, system_design, distributed_systems, etl, functional_programming, tdd, oop, solid, agile, kanban]
   Languages: [python, go, ts, js, scala, java, ruby, c_c++, html, css]
   Frameworks: [spark, django, fast_api, flask, rails, play, akka, vue, react, selenium]
   Tools: [linux, docker, aws, kubernetes, terraform, postgres, mysql, mongodb, kafka]
@@ -395,6 +395,13 @@ stacks:
   css:
     title: CSS
     icon: devicon-css3-plain
+  technical_leadership:
+    title: Technical Leadership
+    # icon: fa-solid fa-people-group
+    icon: fa-solid fa-route
+  system_design:
+    title: System Design
+    icon: fa-regular fa-object-group
   functional_programming:
     title: Functional Programming
     icon: devicon-haskell-plain
@@ -412,7 +419,7 @@ stacks:
     icon: fa-solid fa-sitemap
   solid:
     title: SOLID
-    icon: fa-regular fa-object-group
+    icon: fa-solid fa-cubes
   agile:
     title: Agile
     icon: fa-solid fa-arrows-spin
