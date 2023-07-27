@@ -517,20 +517,21 @@ stacks:
     title: Fortran
     icon: fa-solid fa-f
 certificates:
+  - title: Stripe Certified Professional Developer
+    date: Jul 2023
+    source: Stripe
+    url: https://stripecertifications.credential.net/540532dd-2fdb-4b51-8df7-32c9d617b029
+    description: "Credential ID: 76849733"
   - title: Neural Networks and Deep Learning
     date: Sep 2017
     source: Coursera
+    url: https://www.coursera.org/account/accomplishments/verify/UQH3GDCTTGTH
     description: "License: UQH3GDCTTGTH"
-  - title: AWS Certified Developer - Associate
+  - title: AWS Certified Developer
     date: Jun 2017
     source: AWS
     description: "License: F4YBGRB2KNV11PWB"
   - title: Principle of Reactive Programming
     date: Dec 2013
     source: Coursera
-    description: "License: Accomplishment with distinction"
-  - title: Stripe Certified Professional Developer
-    date:
-    source: Stripe
-    url: https://stripecertifications.credential.net/540532dd-2fdb-4b51-8df7-32c9d617b029
-    description: "Credential ID: 76849733"
+    description: "Accomplishment with distinction"

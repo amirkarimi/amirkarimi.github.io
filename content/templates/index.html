@@ -172,6 +172,13 @@
                 {% for degree in config.data.education %}
                     {% include 'resume/degree.html' %}
                 {% endfor %}
+
+                <!-- CERTIFICATIONS -->
+                
+                {{ section_header("certifications", "Certifications", "fa-solid fa-stamp") }}
+                {% for certificate in config.data.certificates %}
+                    {% include 'resume/certificate.html' %}
+                {% endfor %}
             </div>
         </div>
     </div>

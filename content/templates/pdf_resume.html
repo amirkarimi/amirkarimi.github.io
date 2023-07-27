@@ -108,21 +108,16 @@
         {% endfor %}
     </div>
 
-    <!--
-  <div class="section">
-    <div class="header">Certifications</div>
-    <ul>
-      <li>
-        <strong>Neural Networks and Deep Learning</strong> (Sep 2017) - Coursera - License: UQH3GDCTTGTH
-      </li>
-      <li>
-        <strong>AWS Certified Developer - Associate</strong> (Jun 2017) - AWS - License: F4YBGRB2KNV11PWB
-      </li>
-      <li>
-        <strong>Principle of Reactive Programming</strong> (Dec 2013) - Coursera - Accomplishment with distinction
-      </li>
-    </ul>
-  </div> -->
+    <div class="section">
+        <div class="header">Certifications</div>
+        <ul>
+            {% for certificate in config.data.certificates %}
+            <li>
+                <strong>{{ certificate.title }}</strong> ({{ certificate.date }}) - {{ certificate.source }} - {{ certificate.description }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 
 </body>
 

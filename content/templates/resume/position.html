@@ -3,7 +3,8 @@
     {{ position.title }}
     <span class="text-muted"> | {{ position.company }}</span>
 {% endblock %}
-{% block side %}{{ position.start }} {% if position.end is defined and position.end %}- {{ position.end }}{% endif %}
+{% block side %}
+    {{ position.start }} {% if position.end is defined and position.end %}- {{ position.end }}{% endif %}
 {% endblock %}
 {% block subtitle %}{{ position.location }}{% endblock %}
 {% block body %}{{ position.description | markdown }}{% endblock %}

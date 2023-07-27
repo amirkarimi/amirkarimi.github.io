@@ -1,0 +1,10 @@
+{% extends 'resume/_expandable.html' %}
+{% block title %}
+    {{ certificate.title }}
+    <span class="text-muted"> | {{ certificate.source }}</span>
+    {% if certificate.url is defined %}
+        <a href="{{ certificate.url }}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    {% endif %}
+{% endblock %}
+{% block side %}{{ certificate.date }}{% endblock %}
+{% block body %}{{ certificate.description | markdown }}{% endblock %}
