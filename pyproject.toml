@@ -36,6 +36,7 @@ types-pyyaml = "6.0.12.1"
 typing-extensions = "4.4.0"
 watchdog = "2.1.9"
 requests = "^2.31.0"
+pdfkit = "^1.0.0"
 
 
 [build-system]

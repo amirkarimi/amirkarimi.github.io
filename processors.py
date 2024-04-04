@@ -36,10 +36,7 @@ class HomePage(Processor):
 
         # Add sitemap data
         sitemap.records.append(
-            SiteMapRecord(
-                relative_path="",
-                updated_at=self.config.now
-            )
+            SiteMapRecord(relative_path="", updated_at=self.config.now)
         )
 
 
@@ -50,6 +47,11 @@ class PdfResume(Processor):
         write_file(
             f"{self.config.output_path}/{template_file}",
             template.render(config=self.config),
+        )
+        sitemap.records.append(
+            SiteMapRecord(
+                relative_path=self.config.pdf_resume_path, updated_at=self.config.now
+            )
         )
 
 
@@ -68,7 +70,13 @@ class CustomPages(Processor):
                 sitemap.records.append(
                     SiteMapRecord(
                         relative_path=add_trailing_slash(input_file.stem),
-                        updated_at=datetime(context.date.year, context.date.month, context.date.day) if context.date else self.config.now
+                        updated_at=(
+                            datetime(
+                                context.date.year, context.date.month, context.date.day
+                            )
+                            if context.date
+                            else self.config.now
+                        ),
                     )
                 )
 
@@ -122,16 +130,15 @@ class Blog(Processor):
                 last_update = post_date
             # Add sitemap data
             sitemap.records.append(
-                SiteMapRecord(
-                    relative_path=post.navigation.path,
-                    updated_at=post_date
-                )
+                SiteMapRecord(relative_path=post.navigation.path, updated_at=post_date)
             )
 
             # Backward compatible URL redirection
             redirect_output_dir = Path(
                 self.config.output_path,
-                post.navigation.path.lstrip("blog/").rstrip(post.markdown_page.slug + "/"),
+                post.navigation.path.lstrip("blog/").rstrip(
+                    post.markdown_page.slug + "/"
+                ),
             )
             redirect_output_dir.mkdir(parents=True, exist_ok=True)
             redirect_output_file_path = redirect_output_dir.joinpath(
@@ -205,12 +212,12 @@ class Downloads(Processor):
 
         for file in input_downloads_path.iterdir():
             if file.is_file():
-                
+
                 # Add sitemap data
                 sitemap.records.append(
                     SiteMapRecord(
                         relative_path=Path("downloads").joinpath(file.name),
-                        updated_at=datetime.fromtimestamp(file.lstat().st_mtime)
+                        updated_at=datetime.fromtimestamp(file.lstat().st_mtime),
                     )
                 )
 

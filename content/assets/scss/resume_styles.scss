@@ -5,22 +5,22 @@ $color-light-gray: #aaa;
 
 body {
   font-weight: 400;
-  font-size: 10pt;
+  font-size: 12pt;
   font-family: 'Roboto', sans-serif;
   line-height: normal;
-  margin: 0;
+  margin: 1em;
 }
 
 .section > ul {
-  margin-top: 0.6em;
-  margin-bottom: 0.6em;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
 }
 
 ul {
-  padding-left: 1.6em;
+  padding-left: 1.8em;
 
   li {
-    line-height: 1.3em;
+    line-height: 1.4em;
   }
 }
 
@@ -29,12 +29,12 @@ ul:last-child {
 }
 
 .content-list {
-  margin-block-start: 0.5em;
-  margin-block-end: 0.5em;
+  margin-block-start: 0.6em;
+  margin-block-end: 0.6em;
   padding-inline-start: 2em;
 
   + p {
-    margin-top: 0.5em;
+    margin-top: 0.6em;
   }
 }
 
@@ -47,12 +47,12 @@ ul:last-child {
     width: 60%;
 
     .title {
-      font-size: 20pt;
+      font-size: 21pt;
       text-transform: uppercase;
     }
 
     .subtitle {
-      font-size: 12pt;
+      font-size: 13pt;
       color: $color-gray;
     }
 
@@ -80,7 +80,7 @@ ul:last-child {
 .section {
   .header {
     margin: 10px 0;
-    font-size: 11pt;
+    font-size: 13pt;
     border-bottom: 1px solid;
     text-transform: uppercase;
   }
@@ -88,7 +88,7 @@ ul:last-child {
   .subsection-header {
     display: flex;
     font-weight: 500;
-    font-size: 10pt;
+    font-size: 12pt;
     white-space: nowrap;
 
     & > div:first-child {

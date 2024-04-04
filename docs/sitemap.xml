@@ -4,7 +4,13 @@
     
     <url>
         <loc>https://amirkarimi.dev</loc>
-        <lastmod>2024-03-07T20:24:51Z</lastmod>
+        <lastmod>2024-04-04T21:45:26Z</lastmod>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/downloads/amirkarimi-resume-2024-04-04.pdf</loc>
+        <lastmod>2024-04-04T21:45:26Z</lastmod>
         <priority>1.0</priority>
     </url>
     
@@ -173,18 +179,6 @@
     <url>
         <loc>https://amirkarimi.dev/blog/</loc>
         <lastmod>2023-07-23T07:00:00Z</lastmod>
-        <priority>1.0</priority>
-    </url>
-    
-    <url>
-        <loc>https://amirkarimi.dev/downloads/amirkarimi-resume-202308.pdf</loc>
-        <lastmod>2024-01-15T03:01:58Z</lastmod>
-        <priority>1.0</priority>
-    </url>
-    
-    <url>
-        <loc>https://amirkarimi.dev/downloads/amirkarimi-resume-202307-11.pdf</loc>
-        <lastmod>2023-07-27T19:10:54Z</lastmod>
         <priority>1.0</priority>
     </url>
     
