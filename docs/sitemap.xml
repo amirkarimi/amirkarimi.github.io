@@ -4,19 +4,25 @@
     
     <url>
         <loc>https://amirkarimi.dev</loc>
-        <lastmod>2024-04-04T21:45:26Z</lastmod>
+        <lastmod>2024-04-12T18:36:45Z</lastmod>
         <priority>1.0</priority>
     </url>
     
     <url>
-        <loc>https://amirkarimi.dev/downloads/amirkarimi-resume-2024-04-04.pdf</loc>
-        <lastmod>2024-04-04T21:45:26Z</lastmod>
+        <loc>https://amirkarimi.dev/downloads/amirkarimi-resume-2024-03-01.pdf</loc>
+        <lastmod>2024-04-12T18:36:45Z</lastmod>
         <priority>1.0</priority>
     </url>
     
     <url>
         <loc>https://amirkarimi.dev/about/</loc>
         <lastmod>2023-07-01T07:00:00Z</lastmod>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2024/04/12/evolution-of-programming-resources/</loc>
+        <lastmod>2024-04-12T07:00:00Z</lastmod>
         <priority>1.0</priority>
     </url>
     
@@ -178,7 +184,7 @@
     
     <url>
         <loc>https://amirkarimi.dev/blog/</loc>
-        <lastmod>2023-07-23T07:00:00Z</lastmod>
+        <lastmod>2024-04-12T07:00:00Z</lastmod>
         <priority>1.0</priority>
     </url>
     

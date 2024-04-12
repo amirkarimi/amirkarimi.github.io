@@ -75,11 +75,11 @@ def on_change(event):
 
 
 def export_resume_pdf():
-    server_thread, httpd = serve_until("localhost", 8000, config, lambda: keep_running)
+    server_thread, httpd = serve_until("localhost", 8090, config, lambda: keep_running)
     sleep(1)
     print("Exporting the PDF...")
     pdfkit.from_url(
-        "http://localhost:8000/pdf_resume.html",
+        "http://localhost:8090/pdf_resume.html",
         f"{config.output_path}/{config.pdf_resume_path}",
     )
     print("Stopping the server...")

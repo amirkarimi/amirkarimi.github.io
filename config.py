@@ -25,6 +25,7 @@ class Config:
     base_url: str = f"https://{domain}"
     year: int = datetime.now().year
     now: datetime = datetime.now()
+    last_update: datetime = datetime(2024, 3, 1)
     menu: list[NavItem] = field(
         default_factory=lambda: [
             NavItem("Blog", "/blog/"),
@@ -38,7 +39,7 @@ class Config:
 
     @property
     def pdf_resume_path(self):
-        return f"/downloads/amirkarimi-resume-{self.now.date().isoformat()}.pdf"
+        return f"/downloads/amirkarimi-resume-{self.last_update.date().isoformat()}.pdf"
 
 
 def load_config():
