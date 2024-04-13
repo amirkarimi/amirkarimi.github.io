@@ -31,16 +31,31 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16529255328">
-        </script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16529255328">
+    </script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-        gtag('config', 'AW-16529255328');
-        </script>
+    gtag('config', 'AW-16529255328');
+    </script>
+
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16529255328/fmM1CK7RqKYZEKDX4ck9',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
     
 </head>
 
@@ -75,7 +90,7 @@
         <a class="nav-link" href="tel:+17786802525">
             <i class="fa-solid fa-phone"></i> +1 778 680 2525
         </a>
-        <a class="nav-link" href="https://calendly.com/amir_karimi">
+        <a class="nav-link link-pointer" onclick="gtag_report_conversion('https://calendly.com/amir_karimi')">
             <i class="fa-solid fa-calendar"></i> Schedule a Meeting
         </a>
         <hr/>
@@ -127,7 +142,7 @@
         <a class="nav-link" href="tel:+17786802525">
             <i class="fa-solid fa-phone"></i> +1 778 680 2525
         </a>
-        <a class="nav-link" href="https://calendly.com/amir_karimi">
+        <a class="nav-link link-pointer" onclick="gtag_report_conversion('https://calendly.com/amir_karimi')">
             <i class="fa-solid fa-calendar"></i> Schedule a Meeting
         </a>
         <hr/>
@@ -1908,6 +1923,14 @@
     </div>
 </div>
                 
+
+
+                <!-- Schedule a meeting -->
+                <div class="text-center mt-3">
+                    <a class="btn btn-primary" onclick="gtag_report_conversion('https://calendly.com/amir_karimi')">
+                        <i class="fa-solid fa-calendar"></i> Schedule a Meeting
+                    </a>
+                </div>
             </div>
         </div>
     </div>

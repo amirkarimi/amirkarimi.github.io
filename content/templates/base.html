@@ -28,13 +28,19 @@
     gtag('config', 'AW-16529255328');
     </script>
 
-    <!-- Event snippet for Page view conversion page -->
     <script>
-        gtag('event', 'conversion', {
-            'send_to': 'AW-16529255328/kVGCCMHni6YZEKDX4ck9',
-            'value': 1.0,
-            'currency': 'CAD'
-        });
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16529255328/fmM1CK7RqKYZEKDX4ck9',
+          'event_callback': callback
+      });
+      return false;
+    }
     </script>
     {% endif %}
 </head>
