@@ -19,19 +19,15 @@ services:
     description: Oversee and manage engineering teams, ensuring effective collaboration, productivity, and high-quality deliverables. Mentor and coach team members to enhance their skills and professional growth.
   - title: Stakeholder Communication
     description: Effectively communicate with clients, project stakeholders, and cross-functional teams to manage expectations, provide project updates, and address any technical concerns or challenges.
-  - title: Software Development Process Improvement
-    description: Implement and optimize agile development methodologies such as Scrum or Kanban. Streamline processes, improve team efficiency, and foster continuous improvement through retrospectives and feedback loops.
   - title: Technology Evaluation and Selection
     description: Assist in evaluating and selecting appropriate technologies, frameworks, and tools for projects, considering factors such as scalability, performance, security, and future extensibility.
-  - title: Code Review and Quality Assurance
-    description: Conduct thorough code reviews to ensure adherence to coding standards, best practices, and maintainable codebases. Implement quality assurance processes to identify and resolve bugs, performance issues, and security vulnerabilities.
   - title: Technical Hiring and Talent Acquisition
     description: Assist in the recruitment and hiring of engineering talent. Participate in candidate screening, technical interviews, and evaluating skill sets to build high-performing teams.
 skills:
-  Principals: [technical_leadership, system_design, distributed_systems, etl, functional_programming, tdd, oop, solid, agile, kanban]
-  Languages: [python, go, ts, js, scala, java, ruby, c_c++, html, css]
-  Frameworks: [spark, django, fast_api, flask, rails, play, akka, vue, react, selenium]
-  Tools: [linux, docker, aws, kubernetes, terraform, postgres, mysql, mongodb, kafka]
+  Principals: [technical_leadership, system_design, distributed_systems, etl, functional_programming]
+  Languages: [python, go, ts, scala, java]
+  Frameworks: [spark, django, fast_api, flask, react]
+  Tools: [linux, docker, aws, cdk, terraform]
 positions:
   - title: Fractional Head of Engineering
     company: Self Employed
@@ -463,6 +459,9 @@ stacks:
   aws:
     title: AWS
     icon: devicon-amazonwebservices-original
+  cdk:
+    title: CDK
+    icon: fa-solid fa-cubes
   kubernetes:
     title: Kubernetes
     icon: devicon-kubernetes-plain
