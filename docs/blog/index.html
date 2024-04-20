@@ -17,6 +17,42 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-38DSNZVGYF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-38DSNZVGYF');
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16529255328">
+    </script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-16529255328');
+    </script>
+
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16529255328/fmM1CK7RqKYZEKDX4ck9',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -55,6 +91,18 @@
         
 <div class="blog-index">
     <h1>Blog</h1>
+    
+        <div class="post">
+            <div class="date">2024-04-12</div>
+            <h2 class="title">
+                <a href="/blog/2024/04/12/browser-hub/">Browser Hub</a>
+            </h2>
+
+            <div class="summary">
+                <p>Open sourcing a small utility that made my life easier.</p>
+
+            </div>
+        </div>
     
         <div class="post">
             <div class="date">2024-04-12</div>

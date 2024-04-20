@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>Amir Karimi - Blog - Chromium to Firefox Experience (Setup Multiple Profiles)</title>
+    <title>Amir Karimi - Blog - Browser Hub</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +14,7 @@
     
 
 
-    <meta name="keywords" content="Chrome, Firefox, migrate to Firefox, Chrome vs Firefox, Chromium, firefox multiple profiles, multi-profile, browser performance, browser RAM usage, Gnome, Linux" />
+    <meta name="keywords" content="browser wrapper, multiple profiles, multiple browser instances, multiple browser shortcuts" />
 
 
 
@@ -101,93 +101,28 @@
             <h6>On this page</h6>
             <hr class="my-2"/>
             
-        <ul>
-        
-            <li>
-                <a href="#multiple-profiles">Multiple Profiles</a>
-                
-            </li>
-        
-            <li>
-                <a href="#update-1-april-18-2019">Update 1 - April 18, 2019</a>
-                
-            </li>
-        
-        </ul>
-    
         </div>
     </div>
     
     <div class="col-lg-9">
-        <h1 class="text-2xl font-bold mb-4">Chromium to Firefox Experience (Setup Multiple Profiles)</h1>
+        <h1 class="text-2xl font-bold mb-4">Browser Hub</h1>
         <div class="page-content">
-            <p>A while ago, I decided to give Firefox a try. Here I'm going to share why and how it happened. Also I'll share how I configured my work and personal browser profiles on my Gnome desktop.</p>
-<p><img alt="Screenshot of Firefox profile launchers" class="center-image" src="/assets/img/2018-11-13-chrome-ff-screen-shot.png" /></p>
+            <p>Open sourcing a small utility that made my life easier.</p>
 <!--more-->
 
-<p>As I use my personal laptop at work, I have a separate browser profile for work. After all, 99% of non-development works happen inside the browser.</p>
-<p>It's been long enough that I don't remember when I started using Chromium exactly but it's been my favorite browser for a long time. Chromium is quite similar to Chrome so I'm not going to compare them. One of the most valuable features of Chromium/Chrome is its seamless sync and integration. Not only between your machines but also your phone. Also the form and password autocompletions stay out of your way.</p>
-<p>Obviously the biggest issue with Chromium/Chrome is its RAM usage. But I'm also experiencing some performance issues. Specially during the start up time or when switching profiles. Having lots of tabs open and keep the session saved, makes it even worse. After releasing Firefox Quantum I started thinking to move to Firefox as it was noticeably faster. Not only start up time but also page rendering and everything else. It also has a better support of those weird corporate ancient websites which still using Flash or any other infamous tool.</p>
-<p>Finally, I decided to give it a try. As the first step, I moved my passwords to LastPass so that I can share them between the browsers in case I wanted to switch back. Also setup a sync account on FF and migrated the browser history from Chromium.</p>
-<p>Now not only the browsing experience got much faster but also the whole system works smoother. The RAM usage has gone down significantly and the swap is less engaged (although it was fast enough because of SSD). Moreover, switching profiles has never been smoother.</p>
-<p>I had two issues with Firefox though. Dark theme control rendering and not being able to switch tabs with mouse scroll wheel. Firefox renders the controls as native OS components so with a dark them you won't be able to see the text on a textbox with an explicit light background for instance. Fortunately, Firefox is customizable enough that there are a couple of <a href="https://www.reddit.com/r/Ubuntu/comments/8su4lm/fix_firefox_dark_text_input_on_ubuntu_18_when/">workarounds</a>. I simply overrode the theme to a light one by setting <code>widget.content.gtk-theme-override</code>. Finally, the only thing that I missed is switching between tabs using mouse wheel. Although it could be enabled by addons, seems that the latest version doesn't provide the required API. Again <a href="https://forum.manjaro.org/t/howto-enable-tab-switching-in-firefox-using-mouse-wheel/39954">nothing is impossible</a>.</p>
-<h2 id="multiple-profiles">Multiple Profiles</h2>
-<p>Now let's see how I switch between profiles in Firefox.</p>
-<p>First of all, you need to create a new profile. You can navigate to <code>about:profiles</code>, click on <code>Create New Profile</code> and follow the instruction. Firefox doesn't have a default GUI for switching profiles in the toolbar or menu. Instead, you can launch Firefox with a specific profile by running <code>firefox -p &lt;profile-name&gt;</code>.</p>
-<p>If you're using Gnome, you can make it easier to launch a specific profile directly from the desktop by updating the Firefox launcher at <code>/usr/share/applications/firefox.desktop</code>. Define two new actions by adding the following lines at the end of the file:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">[Desktop Action default-profile]</span><span class="w"></span>
-<span class="na">Name</span><span class="o">=</span><span class="s">Open Default Profile</span><span class="w"></span>
-<span class="na">Exec</span><span class="o">=</span><span class="s">firefox -p default</span><span class="w"></span>
-
-<span class="k">[Desktop Action work-profile]</span><span class="w"></span>
-<span class="na">Name</span><span class="o">=</span><span class="s">Open Work Profile</span><span class="w"></span>
-<span class="na">Exec</span><span class="o">=</span><span class="s">firefox -p work</span><span class="w"></span>
-</code></pre></div>
-
-<p>Then update the line starting with <code>Actions=</code> from this:</p>
-<div class="codehilite"><pre><span></span><code>Actions=new-window;new-private-window;
-</code></pre></div>
-
-<p>to </p>
-<div class="codehilite"><pre><span></span><code>Actions=new-window;new-private-window;default-profile;work-profile;
-</code></pre></div>
-
-<p>Now restart Gnome shell (by pressing <code>ALT + F2</code> and executing <code>r</code>) then you'll be able to launch your profile directly from the desktop. Those action items will appear on context menu when you right click on Firefox launcher as you can see in the screenshot. I just tested it on Gnome 3.30 but I guess it works on almost all desktop environments.</p>
-<h2 id="update-1-april-18-2019">Update 1 - April 18, 2019</h2>
-<p>You can use this script to update the Firefox desktop file automatically:</p>
-<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="nv">LAST_LINE</span><span class="o">=</span><span class="k">$(</span>tail -n1 /usr/share/applications/firefox.desktop<span class="k">)</span>
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$LAST_LINE</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;Exec=firefox -p work&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Already updated!&quot;</span>
-    <span class="nb">exit</span> <span class="m">1</span>
-<span class="k">fi</span>
-
-<span class="nb">echo</span> <span class="s2">&quot;</span>
-<span class="s2">[Desktop Action default-profile]</span>
-<span class="s2">Name=Open Default Profile</span>
-<span class="s2">Exec=firefox -p default</span>
-
-<span class="s2">[Desktop Action work-profile]</span>
-<span class="s2">Name=Open Work Profile</span>
-<span class="s2">Exec=firefox -p work&quot;</span> &gt;&gt; /usr/share/applications/firefox.desktop
-
-sed -i <span class="s1">&#39;s/Actions=new-window;new-private-window;/Actions=new-window;new-private-window;default-profile;work-profile;/&#39;</span> /usr/share/applications/firefox.desktop
-</code></pre></div>
+<p>As consultants, we usually work with multiple clients. Separating the work isn't difficult until you start using the browser. For example, they might have different Google/Outlook accounts. Add to that your personal account, and it quickly becomes a mess to handle in the same browser. </p>
+<p>Another thing is the browser extensions. Imagine you and all your clients are using Toggl extension to track the time, and you should use a different account for each.</p>
+<p>You would be able to use multiple profiles in Chrome and Firefox. But there's another problem. Let's say you click on a link from outside the browser (e.g., VSCode). In which profile should it be opened?</p>
+<p>I implemented a solution that has been working very well for me. You can now check it out here: <a href="https://github.com/amirkarimi/browser-hub">https://github.com/amirkarimi/browser-hub</a></p>
         </div>
         
         <div class="mt-5 mb-4 gap-2 d-flex justify-content-between">
             
-            <a class="btn btn-outline-secondary" href="/blog/2018/01/29/dont-listen-to-them-learn-cats-this-way/">
+            <a class="btn btn-outline-secondary" href="/blog/2024/04/12/evolution-of-programming-resources/">
                 <span aria-hidden="true">&laquo;</span>
-                Don’t listen to them, learn Cats this way
+                Evolution of Programming Resources
             </a>
             
-            
-            <a class="btn btn-outline-secondary" href="/blog/2018/12/15/kubernetes-translation-to-aws/">
-                Kubernetes translated to AWS
-                <span aria-hidden="true">&raquo;</span>
-            </a>                
             
         </div>
         
