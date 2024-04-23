@@ -9,7 +9,7 @@ linkedin: https://www.linkedin.com/in/amirkarimi
 github: https://github.com/amirkarimi
 twitter: https://twitter.com/4m1rk
 location: Vancouver, BC
-keywords: amir karimi, fractional vp of engineering, fractional head of engineering, director of engineering, software engineer, software developer, consultant, contractor, software architect, big data, python, go, javascript, typescript, scala, c++
+keywords: amir karimi, fractional vp of engineering, fractional head of engineering, director of engineering, software engineer, software developer, consultant, contractor, software architect, big data, devops, SRE, python, go, javascript, typescript, scala
 services:
   - title: Technical Leadership
     description: Provide strategic guidance and leadership to engineering teams, helping them align their efforts with business objectives, optimize processes, and make informed technical decisions.
@@ -24,7 +24,7 @@ services:
   - title: Technical Hiring and Talent Acquisition
     description: Assist in the recruitment and hiring of engineering talent. Participate in candidate screening, technical interviews, and evaluating skill sets to build high-performing teams.
 skills:
-  Principals: [technical_leadership, system_design, distributed_systems, etl, functional_programming]
+  Principals: [technical_leadership, system_design, distributed_systems, etl, devops]
   Languages: [python, go, ts, scala, java]
   Frameworks: [spark, django, fast_api, flask, react]
   Tools: [linux, docker, aws, cdk, terraform]
