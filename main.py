@@ -2,7 +2,7 @@ from time import sleep
 from typing import Type
 
 from markupsafe import Markup
-from config import load_config
+from config import load_config, DATA_FILE
 from jinja2 import (
     Environment,
     PackageLoader,
@@ -75,6 +75,7 @@ def on_change(event):
 
 
 def export_resume_pdf():
+    keep_running = True
     server_thread, httpd = serve_until("localhost", 8090, config, lambda: keep_running)
     sleep(1)
     print("Exporting the PDF...")
@@ -83,6 +84,7 @@ def export_resume_pdf():
         f"{config.output_path}/{config.pdf_resume_path}",
     )
     print("Stopping the server...")
+    keep_running = False
     httpd.shutdown()
     server_thread.join()
 
@@ -108,7 +110,7 @@ def serve(
         print("Monitoring for changes...")
         observer = watch_files(
             on_change,
-            ignore_regexes=[r"\./.+\.py", r"\./docs(/.+)?"],
+            regexes=[rf"\.\/{DATA_FILE}"],
             ignore_directories=True,
         )
 

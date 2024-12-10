@@ -39,6 +39,8 @@ positions:
       - They require rapid product development and seek the expertise of a fractional seasoned engineer.
       - They are outsourcing development and need someone to bridge the gap between their team and developers.
       - Their in-house team requires extra senior support or a boost in efficiency for writing scalable code.
+
+      Refer to the <a href="https://amirkarimi.dev/#projects">Projects</a> section for detailed information on successfully executed projects.
   - title: Software Engineer
     company: Amazon
     location: Vancouver, Canada
@@ -85,7 +87,7 @@ positions:
     start: Jan 2006
     end: Mar 2017
     description: |
-      - Designed and developed more than 40 custom-built software projects, from high-performance desktop applications written in C++ to highly scalable web applications written in Scala. Technologies: C#, .NET, Scala, Play, Akka, Python, Ruby, Java, Javascript, HTML/CSS, and more. See some of my works done as a solo developer under <a href="#projects">Projects</a> section.
+      - Designed and developed more than 40 custom-built software projects, from high-performance desktop applications written in C++ to highly scalable web applications written in Scala. Technologies: C#, .NET, Scala, Play, Akka, Python, Ruby, Java, Javascript, HTML/CSS, and more. See some of my works done as an individual contributor under <a href="https://amirkarimi.dev/#projects">Projects</a> section.
       - Worked directly with clients from corporate to individual entrepreneurs as a contractor or partner.
       - Built and managed a network of developers by setting up a transparent system to share the project's financial value with the whole team based on the value each member adds. It was a successful alternative to the traditional employment structure of corporations to attract the best talents.
   - title: Software Developer
@@ -98,6 +100,20 @@ positions:
       - Designed and implemented dozens of applications using C#, .NET, and MSSQL.
       - Mentored and led a team of junior developers.
 projects:
+  - title: SiriusXM commerce nextgen platform infrastructure
+    pdf_resume: true
+    date: Aug 2023 - Dec 2024
+    description: |
+      - Designed and implemented platform infrastructure supporting 13 microservices in the commerce domain.
+      - Provided technical guidance on platform and cloud infrastructure to 5 teams comprising over 20 members, enabling seamless adoption and scalability.
+      - Led and mentored a team of two DevOps engineers, fostering skill development and efficient delivery.
+    stack: [cdk, ts, python, scala, github_actions, aws]
+  - title: Human-like audio generation for Shortform.com
+    pdf_resume: true
+    date: Nov 2023 - Feb 2024
+    description: Developed and deployed an advanced audio generation system for Shortform.com, leveraging ElevenLabs TTS to create natural, human-like narrations for text articles. Designed a pipeline to process and chunk Markdown files into optimized text formats, enhancing the quality and flow of the audio output. This feature significantly improved user engagement by delivering a seamless auditory experience that complements the written content.
+    associated_with: Self-employed
+    stack: [python, flask, vue, aws]
   - title: Re-architecture of the ML big-data data pipelines
     date: Dec 2022 - Jun 2023
     description: One of the main contributors out of the two, to re-design and implement a new version of the data pipeline that simplifies the architecture and allows faster evolutions. This pipeline is handling petabytes of data daily and used in one of the strategic products of Amazon Advertisement organization. My team leveraged Iceberg and other technologies and refactored the existing Spark jobs to a cleaner and simpler design. This project reduced the number of job applications from 15 to 1 for a module.
@@ -458,7 +474,7 @@ stacks:
     icon: devicon-docker-plain
   aws:
     title: AWS
-    icon: devicon-amazonwebservices-original
+    icon: devicon-amazonwebservices-plain-wordmark
   cdk:
     title: CDK
     icon: fa-solid fa-cubes
@@ -516,6 +532,9 @@ stacks:
   fortran:
     title: Fortran
     icon: fa-solid fa-f
+  github_actions:
+    title: GitHub Actions
+    icon: devicon-githubactions-plain
 certificates:
   - title: Stripe Certified Professional Developer
     date: Jul 2023
