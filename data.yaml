@@ -102,7 +102,7 @@ positions:
 projects:
   - title: SiriusXM commerce nextgen platform infrastructure
     pdf_resume: true
-    date: Aug 2023 - Dec 2024
+    date: Aug 2023
     description: |
       - Designed and implemented platform infrastructure supporting 13 microservices in the commerce domain.
       - Provided technical guidance on platform and cloud infrastructure to 5 teams comprising over 20 members, enabling seamless adoption and scalability.
