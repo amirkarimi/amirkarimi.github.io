@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <title>Amir Karimi - Blog - The Startup Stack: What I Recommend to Teams Building from Scratch in 2025</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/assets/css/main.css?v=4" rel="stylesheet">
+    <link href="/assets/css/highlight.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    
+
+
+    <meta name="keywords" content="startup tech stack 2025, recommended startup stack, best tech stack for startups, Django for startups, HTMX frontend, Python web development, simple web stack, PostgreSQL database, Docker Compose deployment, Caddy server HTTPS, early stage startup tools, full stack for MVP, tech stack for founders, Django HTMX stack, no SPA frontend" />
+
+
+
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-38DSNZVGYF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-38DSNZVGYF');
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16529255328">
+    </script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-16529255328');
+    </script>
+
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-16529255328/fmM1CK7RqKYZEKDX4ck9',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <!-- Begin page content -->
+    
+<nav class="navbar navbar-expand-lg bg-light mb-4">
+    <div class="container">
+        <a class="navbar-brand" href="https://amirkarimi.dev">Amir Karimi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/blog/" >
+                            Blog
+                        </a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/about/" >
+                            About
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<main class="flex-grow-1 mb-3">
+    <div class="container">
+        
+<div class="row gx-5 page">
+    
+    <div class="col-lg-3 order-lg-3 mb-1">
+        <div class="page-toc">
+            <h6>On this page</h6>
+            <hr class="my-2"/>
+            
+        <ul>
+        
+            <li>
+                <a href="#backend-python-django">Backend: Python + Django</a>
+                
+            </li>
+        
+            <li>
+                <a href="#frontend-server-side-rendering-htmx">Frontend: Server-side rendering + HTMX</a>
+                
+            </li>
+        
+            <li>
+                <a href="#database-postgresql">Database: PostgreSQL</a>
+                
+            </li>
+        
+            <li>
+                <a href="#dev-environment-and-deployment-docker-compose-caddy">Dev Environment and Deployment: Docker Compose + Caddy</a>
+                
+            </li>
+        
+            <li>
+                <a href="#cicd-and-ops">CI/CD and Ops</a>
+                
+            </li>
+        
+            <li>
+                <a href="#summary-the-2025-startup-stack">Summary: The 2025 Startup Stack</a>
+                
+            </li>
+        
+            <li>
+                <a href="#final-thoughts">Final Thoughts</a>
+                
+            </li>
+        
+        </ul>
+    
+        </div>
+    </div>
+    
+    <div class="col-lg-9">
+        <h1 class="text-2xl font-bold mb-4">The Startup Stack: What I Recommend to Teams Building from Scratch in 2025</h1>
+        <div class="page-content">
+            <p>When you’re building a product from scratch at an early-stage startup, your tech stack choices matter. A lot. You want speed, reliability, maintainability, and above all, focus. That means avoiding hype-driven development and sticking to tools that get out of your way.</p>
+<!--more-->
+
+<p>As someone who's worked as a software engineer and fractional CTO for small startups, I’ve learned that simplicity scales better than you think. Below is the stack I recommend in 2025 to teams who want to ship fast and stay sane.</p>
+<h2 id="backend-python-django">Backend: Python + Django</h2>
+<p>Python remains the king of pragmatic programming languages. It's readable, batteries-included, and has a mature ecosystem. For most startups, Django is the best web framework to pair it with.</p>
+<p>Why Django?</p>
+<ul>
+<li><strong>Rapid development</strong>: You can go from idea to MVP in days, not weeks.</li>
+<li><strong>Out-of-the-box admin</strong>: Django's admin console is gold. Non-technical team members can manage content and data with zero developer involvement.</li>
+<li><strong>Built-in security and best practices</strong>: CSRF, XSS, SQL injection, Django handles the heavy lifting.</li>
+<li><strong>Scalable</strong>: When your traffic grows, Django can handle it.</li>
+</ul>
+<p>If you're building a CRUD-heavy web app (which most early-stage products are), Django is hard to beat.</p>
+<h2 id="frontend-server-side-rendering-htmx">Frontend: Server-side rendering + HTMX</h2>
+<p>Many teams default to React or Vue without asking if they actually need a single-page application (SPA). Truth is, for most MVPs and even production apps, you don’t.</p>
+<p>Start with Django’s server-side templates (Jinja or Django Template Language), sprinkle in a bit of CSS and vanilla JS, and layer on <a href="https://htmx.org/">HTMX</a> for interactivity.</p>
+<p>HTMX gives you AJAX, CSS transitions, WebSockets, and more, all declaratively, without the SPA overhead. It integrates beautifully with Django and keeps your frontend logic close to the backend.</p>
+<p>Benefits:</p>
+<ul>
+<li><strong>Faster to build and debug</strong></li>
+<li><strong>No frontend build step</strong></li>
+<li><strong>No need to manage a separate frontend repo</strong></li>
+<li><strong>Great UX without going full SPA</strong></li>
+</ul>
+<p>Unless you’re building something like a design tool or complex dashboard, you likely don’t need a heavy frontend framework.</p>
+<h2 id="database-postgresql">Database: PostgreSQL</h2>
+<p>Use SQL. Use PostgreSQL.</p>
+<p>It’s stable, mature, well-documented, and battle-tested. You get:</p>
+<ul>
+<li>ACID compliance</li>
+<li>Rich data types (JSON, arrays, full-text search)</li>
+<li>Window functions and CTEs</li>
+<li>Excellent tooling and ecosystem</li>
+</ul>
+<p>Avoid NoSQL unless you have a very specific need (e.g. hierarchical documents or unstructured data). PostgreSQL has evolved so much that most “NoSQL use cases” can now be handled natively inside it.</p>
+<p>And Django’s ORM works seamlessly with PostgreSQL.</p>
+<h2 id="dev-environment-and-deployment-docker-compose-caddy">Dev Environment and Deployment: Docker Compose + Caddy</h2>
+<p>Your dev environment should mirror production. That’s where Docker Compose shines. It makes local dev setup repeatable and portable.</p>
+<p>Compose lets you spin up your app, database, caching, and any other services in one go. No more “it works on my machine” issues.</p>
+<p>For deployment, you can stick with Docker Compose on a small VM (DigitalOcean, Hetzner, EC2, etc.). It’s dead simple and gets the job done.</p>
+<p>As your frontend web server, use <strong>Caddy</strong>:</p>
+<ul>
+<li>Automatic HTTPS via Let’s Encrypt</li>
+<li>Clean, readable config</li>
+<li>Lightweight and fast</li>
+</ul>
+<p>You don’t need to mess with nginx or Certbot anymore. Caddy handles it all out of the box.</p>
+<p>I’ll write a dedicated post about how to configure Caddy soon, but just know it takes a lot of pain out of deployment.</p>
+<h2 id="cicd-and-ops">CI/CD and Ops</h2>
+<p>Keep it simple. Use GitHub Actions or whatever’s built into your Git host. Don’t spend a week setting up fancy pipelines, just make sure you can build, test, and deploy reliably.</p>
+<p>For monitoring and logs, start with basic tools:</p>
+<ul>
+<li><strong>Uptime monitoring</strong>: UptimeRobot or BetterStack</li>
+<li><strong>Error tracking</strong>: Sentry (Django has a plugin)</li>
+<li><strong>Logging</strong>: Start with file logs, then move to something like Loki or Papertrail if needed</li>
+</ul>
+<p>Don’t build a full DevOps stack unless your app demands it. Most don’t.</p>
+<h2 id="summary-the-2025-startup-stack">Summary: The 2025 Startup Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Language</td>
+<td>Python</td>
+</tr>
+<tr>
+<td>Web Framework</td>
+<td>Django</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>Server-side templates + HTMX</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td>Deployment</td>
+<td>Docker Compose + Caddy</td>
+</tr>
+<tr>
+<td>Hosting</td>
+<td>Small VM (e.g. Hetzner, DO)</td>
+</tr>
+<tr>
+<td>CI/CD</td>
+<td>GitHub Actions</td>
+</tr>
+<tr>
+<td>Monitoring</td>
+<td>UptimeRobot, Sentry, file logs</td>
+</tr>
+</tbody>
+</table>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Startups are not FAANG. You don’t need bleeding-edge tools to ship quality products. In fact, overengineering is a silent killer in early-stage teams. You burn time, introduce bugs, and make hiring harder.</p>
+<p>What you need is clarity and speed. This stack gives you both. It’s battle-tested, team-friendly, and simple enough to be maintained by a single engineer.</p>
+<p>Ship early. Stay lean. Iterate fast.</p>
+<p>And remember: boring tech is beautiful when it works.</p>
+<hr />
+<p><em>I’ll follow up soon with a step-by-step post on setting up Caddy for automated HTTPS and routing with Docker Compose.</em></p>
+        </div>
+        
+        <div class="mt-5 mb-4 gap-2 d-flex justify-content-between">
+            
+            <a class="btn btn-outline-secondary" href="/blog/2024/04/12/browser-hub/">
+                <span aria-hidden="true">&laquo;</span>
+                Browser Hub
+            </a>
+            
+            
+        </div>
+        
+        
+    <div class="my-5"></div>
+    <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://amir-karimi.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    </div>
+</div>
+
+    </div>
+</main>
+
+
+    <footer class="footer mt-auto py-3">
+        
+        <div class="container d-flex flex-wrap justify-content-between">
+            <div>
+                <span class="mb-3 mb-md-0 text-muted">
+                    &copy; 2025
+                    <a href="https://amirkarimi.dev" class="text-muted">Amir Karimi</a>.
+                    All Rights Reserved.
+                </span>
+            </div>
+
+            
+            <div>
+                <div class="hstack gap-2 social-icons">
+    <a href="https://twitter.com/4m1rk">
+        <svg role="img" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/amirkarimi">
+        <svg role="img"  width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://github.com/amirkarimi">
+        <svg role="img"  width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+</div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>

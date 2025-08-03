@@ -4,19 +4,25 @@
     
     <url>
         <loc>https://amirkarimi.dev</loc>
-        <lastmod>2025-07-10T17:57:39Z</lastmod>
+        <lastmod>2025-08-03T22:12:41Z</lastmod>
         <priority>1.0</priority>
     </url>
     
     <url>
         <loc>https://amirkarimi.dev/downloads/amirkarimi-resume-2024-03-01.pdf</loc>
-        <lastmod>2025-07-10T17:57:39Z</lastmod>
+        <lastmod>2025-08-03T22:12:41Z</lastmod>
         <priority>1.0</priority>
     </url>
     
     <url>
         <loc>https://amirkarimi.dev/about/</loc>
         <lastmod>2023-07-01T07:00:00Z</lastmod>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+        <loc>https://amirkarimi.dev/blog/2024/08/03/startup-tech-stack-2025/</loc>
+        <lastmod>2024-08-03T07:00:00Z</lastmod>
         <priority>1.0</priority>
     </url>
     
@@ -190,7 +196,7 @@
     
     <url>
         <loc>https://amirkarimi.dev/blog/</loc>
-        <lastmod>2024-04-12T07:00:00Z</lastmod>
+        <lastmod>2024-08-03T07:00:00Z</lastmod>
         <priority>1.0</priority>
     </url>
     
