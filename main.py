@@ -2,7 +2,7 @@ from time import sleep
 from typing import Type
 
 from markupsafe import Markup
-from config import load_config, DATA_FILE
+from config import load_config, DATA_FILE, INFRA_DATA_FILE
 from jinja2 import (
     Environment,
     PackageLoader,
@@ -20,7 +20,7 @@ import requests
 import sass
 import typer
 import xml.etree.ElementTree as ET
-import pdfkit
+from playwright.sync_api import sync_playwright
 
 
 config = load_config()
@@ -36,6 +36,7 @@ env.filters["markdown"] = lambda text: Markup(md.convert(text))
 
 processors: list[Type[Processor]] = [
     HomePage,
+    InfrastructurePage,
     PdfResume,
     CustomPages,
     Blog,
@@ -79,10 +80,18 @@ def export_resume_pdf():
     server_thread, httpd = serve_until("localhost", 8090, config, lambda: keep_running)
     sleep(1)
     print("Exporting the PDF...")
-    pdfkit.from_url(
-        "http://localhost:8090/pdf_resume.html",
-        f"{config.output_path}/{config.pdf_resume_path}",
-    )
+    output_file = Path(config.output_path) / config.pdf_resume_path.lstrip("/")
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        page.goto("http://localhost:8090/pdf_resume.html", wait_until="networkidle")
+        page.pdf(
+            path=str(output_file),
+            format="A4",
+            print_background=True,
+        )
+        browser.close()
     print("Stopping the server...")
     keep_running = False
     httpd.shutdown()
@@ -110,7 +119,7 @@ def serve(
         print("Monitoring for changes...")
         observer = watch_files(
             on_change,
-            regexes=[rf"\.\/{DATA_FILE}"],
+            regexes=[rf"\.\/{DATA_FILE}", rf"\.\/{INFRA_DATA_FILE}"],
             ignore_directories=True,
         )
 

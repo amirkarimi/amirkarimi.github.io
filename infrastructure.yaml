@@ -1,0 +1,335 @@
+name: Amir Karimi
+title: Infrastructure & DevOps Consultant for cloud-native teams
+intro: 20 years of engineering experience with a deep focus on cloud infrastructure, DevOps, and Site Reliability Engineering, building scalable and highly available systems for clients ranging from early-stage startups to Disney and Amazon.
+intro_html: 20 years of engineering experience with a deep focus on cloud infrastructure, DevOps, and Site Reliability Engineering, building scalable and highly available systems for clients ranging from early-stage startups to <img id="disney-logo" src="/assets/img/disney_logo.svg" title="Disney"/> and <img id="amazon-logo" src="/assets/img/amazon_logo.svg" title="Amazon"/>.
+phone: +1 778 680 2525
+email: me@amirkarimi.dev
+calendar: https://calendly.com/amir_karimi
+linkedin: https://www.linkedin.com/in/amirkarimi
+github: https://github.com/amirkarimi
+twitter: https://twitter.com/4m1rk
+location: Vancouver, BC
+keywords: amir karimi, devops consultant, sre, site reliability engineer, platform engineer, infrastructure engineer, cloud architect, aws, terraform, cdk, kubernetes, docker, ci/cd, github actions, observability, cloud migration, infrastructure as code, disaster recovery, distributed systems, chaos engineering, python, go
+services:
+  - title: Cloud Infrastructure & Infrastructure as Code
+    description: Design and implement scalable, secure, and reproducible cloud infrastructure using Infrastructure as Code tools such as Terraform and AWS CDK. Establish well-structured AWS accounts, networking, and environments that teams can evolve safely.
+  - title: Site Reliability & Observability
+    description: Establish SRE practices, define SLOs and error budgets, and build observability into systems through metrics, logging, alerting, and dashboards. Improve incident response and reduce mean time to recovery.
+  - title: CI/CD & Release Automation
+    description: Build and optimize continuous integration and delivery pipelines that make releases fast, repeatable, and low-risk. Automate testing, builds, and deployments so teams can ship confidently and frequently.
+  - title: Cloud Migration & Cost Optimization
+    description: Plan and execute migrations to the cloud with minimal disruption, including multi-region disaster recovery. Review existing infrastructure to improve scalability, reliability, and cost efficiency.
+  - title: Platform Engineering & Developer Enablement
+    description: Build internal platforms, shared infrastructure, and tooling that let product teams self-serve and move quickly. Provide technical guidance on platform and cloud infrastructure across multiple teams.
+  - title: Architecture Review & Scalability
+    description: Analyze system architectures and prepare them for high-throughput launches through capacity planning, performance testing, and chaos engineering. Identify and remove reliability and scalability bottlenecks.
+skills:
+  Practices: [devops, sre, system_design, distributed_systems, serverless]
+  Cloud & IaC: [aws, cdk, terraform, docker, kubernetes]
+  CI/CD & Tooling: [github_actions, linux, etl]
+  Languages: [python, go, scala, ts]
+positions:
+  - title: Fractional Head of Engineering
+    company: Self Employed
+    location: Vancouver, Canada
+    start: Jun 2023
+    description: |
+      I help startups build and operate reliable cloud infrastructure, often as a fractional infrastructure or DevOps lead:
+
+      - Designing cloud architectures and Infrastructure as Code foundations that small teams can own and evolve.
+      - Setting up CI/CD pipelines, deployment automation, and observability so teams can ship quickly and safely.
+      - Bridging the gap between product teams and infrastructure work, and mentoring in-house engineers on DevOps and SRE practices.
+
+      Refer to the <a href="https://amirkarimi.dev/infrastructure#projects">Projects</a> section for detailed information on successfully executed projects.
+  - title: Software Engineer
+    company: Amazon
+    location: Vancouver, Canada
+    start: Nov 2022
+    end: Jun 2023
+    description: |
+      - One of the main contributors to re-architecting and improving large-scale data processing pipelines processing petabytes of data daily, reducing the number of jobs from around 15 to 1.
+      - Became a project lead within two months of joining, driving the infrastructure and platform decisions for the team.
+      - Worked within strict privacy and compliance constraints while keeping data infrastructure scalable and maintainable.
+  - title: Tech Lead / Principal Software Architecture
+    company: Acceptto
+    location: Vancouver, Canada
+    start: May 2019
+    end: Nov 2022
+    description: |
+      - Increased the availability and scalability of the company's core services by leading the migration to AWS and adding multi-region disaster recovery support, implemented with Terraform.
+      - Led the redesign of the next generation of Acceptto's SSO microservice to make it horizontally scalable and highly available in the cloud.
+      - Built a horizontally scalable, full-duplex communication service for the customer directory agent, reducing customer onboarding time from days to hours.
+      - Promoted to lead the core engineering team of 5 engineers, owning architecture and infrastructure decisions.
+      - Acceptto was acquired by SecureAuth in Nov 2021.
+  - title: Site Reliability Engineer
+    company: Disney Streaming Services
+    location: Manchester, UK
+    start: Mar 2018
+    end: Mar 2019
+    description: |
+      - One of the main contributors to establishing SRE practices within Disney Streaming Services as the 4th member of the newly formed SRE team.
+      - Increased service availability by implementing transparent cross-region replication for AWS Kinesis resources (Kinesis did not offer such a capability at the time).
+      - Helped three different teams within a year prepare for large launches handling thousands of requests per second through architecture reviews, high-throughput performance testing, chaos engineering, and reliability tooling.
+  - title: Software Engineer
+    company: Disney Streaming Services
+    location: Manchester, UK
+    start: Apr 2017
+    end: Mar 2018
+    description: |
+      - Developed scalable microservices capable of handling tens of thousands of requests per second on AWS, using Scala, Play, DynamoDB, AWS Lambda, Kinesis, SQS, and S3.
+      - Contributed to the design and implementation, including the AWS infrastructure, of a new subscription system for BAMTech Media, later used in Disney+.
+      - The original company name was Cake Solutions. It was acquired by BAMTech and then Disney in 2017.
+  - title: Independent Software Engineer / Consultant
+    company: Self Employed
+    location: Tehran, Iran
+    start: Jan 2006
+    end: Mar 2017
+    description: |
+      - Designed, built, and operated more than 40 custom software projects, including highly scalable web applications and the infrastructure they ran on.
+      - Built and deployed systems serving tens of thousands of users per day on modest hardware by leveraging non-blocking IO and async programming.
+      - Worked directly with clients from corporations to individual entrepreneurs as a contractor and partner.
+  - title: Software Developer
+    company: Behsad
+    location: Arak, Iran
+    start: Feb 2003
+    end: Dec 2005
+    description: |
+      - Software developer in a small team building desktop and database applications using C++, C#, .NET, and MSSQL.
+      - Mentored and led a team of junior developers.
+projects:
+  - title: SiriusXM commerce nextgen platform infrastructure
+    date: Aug 2023
+    description: |
+      - Designed and implemented platform infrastructure supporting 13 microservices in the commerce domain.
+      - Provided technical guidance on platform and cloud infrastructure to 5 teams comprising over 20 members, enabling seamless adoption and scalability.
+      - Led and mentored a team of two DevOps engineers, fostering skill development and efficient delivery.
+    stack: [cdk, ts, python, scala, github_actions, aws]
+  - title: Re-architecting the SSO and migrate to cloud
+    date: Nov 2020 - Jun 2021
+    description: Led the redesign and implementation of the next generation of Acceptto's SSO microservice to make it horizontally scalable and highly available. The old SSO module was a web server that had to be run and maintained on the customer site. The new version was designed to run in the cloud and connect to the customer's user directory using an agent. This project reduced customer onboarding time from days to hours.
+    associated_with: Acceptto Corporation
+    stack: [aws, terraform, ruby, vue, js]
+  - title: AWS migration and multi-region disaster recovery
+    date: Jan 2020 - Nov 2020
+    description: Increased the availability and scalability of Acceptto's core services by leading the migration to AWS and adding multi-region disaster recovery support. The entire infrastructure was defined and managed as code using Terraform, making environments reproducible and the platform resilient to regional outages.
+    associated_with: Acceptto Corporation
+    stack: [aws, terraform, docker, ruby]
+  - title: LDAP Agent and Switchboard
+    date: Sep 2020 - Feb 2021
+    description: Created a solution for Acceptto that allowed their cloud backend to communicate securely with customers' Active Directory. I managed the project (team of two) and contributed to the development directly. It was delivered in two phases and the final architecture removed the need for firewall configurations and load balancing on the customer side.
+    associated_with: Acceptto Corporation
+    stack: [go, ruby, vue, ts, js]
+  - title: Re-architecture of the ML big-data data pipelines
+    date: Dec 2022 - Jun 2023
+    description: One of the two main contributors to re-designing and implementing a new version of a data pipeline that simplified the architecture and enabled faster evolution. The pipeline handles petabytes of data daily for a strategic Amazon Advertising product. The team leveraged Iceberg and other technologies and refactored existing Spark jobs into a cleaner design, reducing the number of jobs from 15 to 1 for a module.
+    problem: The existing data ingestion pipeline consisted of more than 20 jobs that were hard to maintain and expand, while strict privacy regulations prohibited capturing or storing user identity. I was assigned to integrate the AI/ML pipeline with a new Amazon advertising product.
+    action: Expansion to the new product required changes to the pipeline jobs. I used this opportunity to drive the team's focus toward re-architecting the pipelines using a data-lake technology and simplifying them, building the new product expansion on the new architecture while planning the migration of the existing pipeline.
+    result: I became one of the two main contributors to the pipeline re-architecture. In one case we reduced the number of jobs from 15 to 1, making debugging and changes significantly easier.
+    associated_with: Amazon
+    stack: [python, scala, aws, spark, etl, pytorch]
+  - title: Launch SRE
+    date: Apr 2018 - Apr 2019
+    description: As the 4th member of the newly founded SRE team at Disney Streaming Services, helped three different development teams within a year prepare for large launches that required handling thousands of requests per second. This involved reviewing the architecture, building high-throughput performance tests, chaos engineering, and building the tools and processes needed to improve reliability.
+    associated_with: Disney Streaming Services
+    stack: [python, go, scala, kafka, ruby]
+  - title: Subscription system
+    date: Apr 2017 - Apr 2018
+    description: As part of a team of four, contributed directly to the design and implementation of a new subscription system for BAMTech Media, as well as its AWS infrastructure. The system was later used in Disney+ and handled tens of thousands of requests per second.
+    problem: BAMTech Media's (now a Disney company) user subscription system was outdated and hard to manage. They needed to rewrite this system from scratch to improve performance, code readability, and maintainability.
+    action: I was a software engineer in a team of four responsible for implementing the new subscription service as well as the infrastructure on AWS.
+    result: The system handled tens of thousands of requests per second successfully. The same system was later used in Disney+ services.
+    associated_with: Disney Streaming Services
+    stack: [scala, aws, docker]
+  - title: Pluggable Authentication Module (PAM) to add MFA support to Linux services
+    date: Jan 2014 - Mar 2014
+    description: Implemented a Pluggable Authentication Module (PAM) that integrates with a multi-factor authentication service. It allows adding MFA to all Linux services supporting PAM, such as SSH or local user logins.
+    associated_with: Self-employed
+    stack: [c_c++, linux]
+education:
+  - university: Azad
+    location: Arak, Iran
+    degree: BSc in Computer Science
+    start: 2005
+    end: 2007
+    description: |
+      - Created a full-featured messenger system from scratch, including a custom binary protocol written in C++.
+      - Gave a few talks about Computer Networks & Socket Programming.
+  - university: Elmi-Karbordi
+    location: Arak, Iran
+    degree: AEng in Computer Software
+    start: 2003
+    end: 2005
+    description: |
+      - Developed a boot loader in an effort to develop a basic operating system. Learned working with IO, direct screen memory access handling, memory management (used linked-list data structure), re-implementing some functions of the C standard library from scratch.
+      - Was selected as the top 3 students to participate in ACM Asian regional contest.
+      - The youngest student attending this university at age 17.
+stacks:
+  python:
+    title: Python
+    icon: devicon-python-plain
+  go:
+    title: Go
+    icon: devicon-go-original-wordmark
+  ts:
+    title: TypeScript
+    icon: devicon-typescript-plain
+  js:
+    title: JavaScript
+    icon: devicon-javascript-plain
+  scala:
+    title: Scala
+    icon: devicon-scala-plain
+  java:
+    title: Java
+    icon: devicon-java-plain
+  ruby:
+    title: Ruby
+    icon: devicon-ruby-plain
+  c_c++:
+    title: C/C++
+    icon: devicon-cplusplus-plain
+  html:
+    title: HTML
+    icon: devicon-html5-plain
+  css:
+    title: CSS
+    icon: devicon-css3-plain
+  technical_leadership:
+    title: Technical Leadership
+    icon: fa-solid fa-route
+  system_design:
+    title: System Design
+    icon: fa-regular fa-object-group
+  functional_programming:
+    title: Functional Programming
+    icon: devicon-haskell-plain
+  distributed_systems:
+    title: Distributed Systems
+    icon: fa-solid fa-network-wired
+  serverless:
+    title: Serverless
+    icon: fa-solid fa-server
+  sre:
+    title: SRE
+    icon: fa-solid fa-shield-heart
+  tdd:
+    title: TDD
+    icon: fa-solid fa-vial-circle-check
+  oop:
+    title: OOP
+    icon: fa-solid fa-sitemap
+  solid:
+    title: SOLID
+    icon: fa-solid fa-cubes
+  agile:
+    title: Agile
+    icon: fa-solid fa-arrows-spin
+  kanban:
+    title: Kanban
+    icon: fa-brands fa-flipboard
+  spark:
+    title: Spark/PySpark
+    icon: fa-regular fa-star
+  django:
+    title: Django
+    icon: devicon-django-plain
+  fast_api:
+    title: FastAPI
+    icon: devicon-fastapi-plain
+  flask:
+    title: Flask
+    icon: devicon-flask-original
+  rails:
+    title: Rails
+    icon: devicon-rails-plain
+  play:
+    title: Play
+    icon: fa-solid fa-play
+  akka:
+    title: Akka
+    icon: fa-solid fa-mountain
+  vue:
+    title: VueJS
+    icon: devicon-vuejs-plain
+  react:
+    title: React
+    icon: devicon-react-original
+  linux:
+    title: Linux
+    icon: devicon-linux-plain
+  docker:
+    title: Docker
+    icon: devicon-docker-plain
+  aws:
+    title: AWS
+    icon: devicon-amazonwebservices-plain-wordmark
+  cdk:
+    title: CDK
+    icon: fa-solid fa-cubes
+  kubernetes:
+    title: Kubernetes
+    icon: devicon-kubernetes-plain
+  terraform:
+    title: Terraform
+    icon: devicon-terraform-plain
+  selenium:
+    title: Selenium
+    icon: devicon-selenium-original
+  postgres:
+    title: Postgres
+    icon: devicon-postgresql-plain
+  mysql:
+    title: MySQL
+    icon: devicon-mysql-plain
+  mongodb:
+    title: MongoDB
+    icon: devicon-mongodb-plain
+  kafka:
+    title: Kafka
+    icon: devicon-apachekafka-original
+  etl:
+    title: ETL
+    icon: fa-solid fa-faucet-drip
+  pytorch:
+    title: PyTorch
+    icon: devicon-pytorch-original
+  devops:
+    title: DevOps
+    icon: fa-solid fa-gears
+  assembly:
+    title: Assembly
+    icon: fa-solid fa-terminal
+  php:
+    title: PHP
+    icon: devicon-php-plain
+  pl_sql:
+    title: Oracle PL/SQL
+    icon: devicon-oracle-original
+  wpf:
+    title: WPF
+    icon: devicon-windows8-original
+  c_sharp:
+    title: C#
+    icon: devicon-csharp-plain
+  asp_net:
+    title: ASP.NET
+    icon: devicon-dot-net-plain
+  silverlight:
+    title: Silverlight
+    icon: devicon-dot-net-plain
+  fortran:
+    title: Fortran
+    icon: fa-solid fa-f
+  github_actions:
+    title: GitHub Actions
+    icon: devicon-githubactions-plain
+certificates:
+  - title: AWS Certified Developer
+    date: Jun 2017
+    source: AWS
+    description: "License: F4YBGRB2KNV11PWB"
+  - title: Stripe Certified Professional Developer
+    date: Jul 2023
+    source: Stripe
+    url: https://stripecertifications.credential.net/540532dd-2fdb-4b51-8df7-32c9d617b029
+    description: "Credential ID: 76849733"

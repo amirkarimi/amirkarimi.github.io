@@ -6,6 +6,7 @@ import yaml
 from yaml import Loader
 
 DATA_FILE = "data.yaml"
+INFRA_DATA_FILE = "infrastructure.yaml"
 
 
 @dataclass
@@ -42,8 +43,10 @@ class Config:
         return f"/downloads/amirkarimi-resume-{self.last_update.date().isoformat()}.pdf"
 
 
+def load_yaml(path):
+    with open(path, "r") as f:
+        return yaml.load(f, Loader=Loader)
+
+
 def load_config():
-    with open(DATA_FILE, "r") as f:
-        data = yaml.load(f, Loader=Loader)
-        config = Config(data)
-        return config
+    return Config(load_yaml(DATA_FILE))

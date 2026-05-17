@@ -1,3 +1,4 @@
+from dataclasses import replace
 from datetime import datetime, time
 import shutil
 from abc import ABC, abstractmethod
@@ -6,7 +7,7 @@ from pathlib import Path
 import sass
 from jinja2 import Environment
 
-from config import Config
+from config import Config, INFRA_DATA_FILE, load_yaml
 from markdown_parser import parse_markdown
 from models import LinkInfo, Navigation, Post, SiteMapData, SiteMapRecord
 from utils import *
@@ -37,6 +38,29 @@ class HomePage(Processor):
         # Add sitemap data
         sitemap.records.append(
             SiteMapRecord(relative_path="", updated_at=self.config.now)
+        )
+
+
+class InfrastructurePage(Processor):
+    """Renders the Infrastructure/DevOps/SRE-focused variant of the home page.
+
+    Reuses the index.html template, rendered with a Config whose `data` points
+    at infrastructure.yaml instead of data.yaml.
+    """
+
+    def run(self, sitemap: SiteMapData):
+        infra_config = replace(self.config, data=load_yaml(INFRA_DATA_FILE))
+        template = self.env.get_template("index.html")
+        output_dir = Path(self.config.output_path, "infrastructure")
+        output_dir.mkdir(parents=True, exist_ok=True)
+        write_file(
+            output_dir.joinpath("index.html"),
+            template.render(config=infra_config),
+        )
+
+        # Add sitemap data
+        sitemap.records.append(
+            SiteMapRecord(relative_path="infrastructure/", updated_at=self.config.now)
         )
 
 
