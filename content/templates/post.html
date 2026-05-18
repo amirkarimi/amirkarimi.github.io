@@ -1,5 +1,53 @@
 {% extends "page.html" %}
 {% block title %}{{ config.data.name }} - Blog - {{ page.title }}{% endblock %}
+{% block og_type %}article{% endblock %}
+
+{% block page_meta %}
+{% if page.date %}
+<p class="text-muted mb-4">
+    <time datetime="{{ page.date.isoformat() }}">{{ page.date.strftime('%B %-d, %Y') }}</time>
+</p>
+{% endif %}
+{% endblock %}
+
+{% block structured_data %}
+<script type="application/ld+json">
+{{ {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": page.title,
+    "description": page.description,
+    "datePublished": page.date.isoformat(),
+    "dateModified": page.date.isoformat(),
+    "url": config.base_url ~ page.url,
+    "mainEntityOfPage": config.base_url ~ page.url,
+    "image": config.base_url ~ "/assets/img/amir4.jpg",
+    "keywords": page.keywords,
+    "author": {
+        "@type": "Person",
+        "name": config.data.name,
+        "url": config.base_url ~ "/"
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": config.data.name,
+        "url": config.base_url ~ "/"
+    }
+} | tojson(indent=2) }}
+</script>
+<script type="application/ld+json">
+{{ {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": config.base_url ~ "/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": config.base_url ~ "/blog/"},
+        {"@type": "ListItem", "position": 3, "name": page.title, "item": config.base_url ~ page.url}
+    ]
+} | tojson(indent=2) }}
+</script>
+{% endblock %}
+
 {% block content_footer %}
     <div class="my-5"></div>
     {% include 'comments.html' %}

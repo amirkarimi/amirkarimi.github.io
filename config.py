@@ -27,6 +27,9 @@ class Config:
     year: int = datetime.now().year
     now: datetime = datetime.now()
     last_update: datetime = datetime(2024, 3, 1)
+    # Relative path (no leading slash, trailing slash) used to build the
+    # canonical URL of pages rendered from the shared index.html template.
+    canonical_path: str = ""
     menu: list[NavItem] = field(
         default_factory=lambda: [
             NavItem("Blog", "/blog/"),

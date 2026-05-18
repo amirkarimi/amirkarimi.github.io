@@ -1,5 +1,7 @@
 {% extends "internal.html" %}
 {% block title %}{{ config.data.name }} - {{ page.title }}{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+{% block canonical %}{{ config.base_url }}{{ page.url }}{% endblock %}
 
 {% block head %}
 {{ super() }}
@@ -34,6 +36,7 @@
     {% endif %}
     <div class="col-lg-{{ '12' if page.hide_toc else '9' }}">
         <h1 class="text-2xl font-bold mb-4">{{ page.title }}</h1>
+        {% block page_meta %}{% endblock %}
         <div class="page-content">
             {{ page.content|safe }}
         </div>

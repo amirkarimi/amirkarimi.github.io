@@ -2,14 +2,85 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>Amir Karimi - Blog - Make FastAPI CPU-bound Endpoints 2X Faster</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO -->
+    <title>Amir Karimi - Blog - Make FastAPI CPU-bound Endpoints 2X Faster</title>
+    <meta name="description" content="FastAPI is built on top of Starlette, which is an ASGI framework. That makes it ideal for building async web services in Python. Async code can be more…">
+    <meta name="author" content="Amir Karimi">
+    <link rel="canonical" href="https://amirkarimi.dev/blog/2023/07/23/make-fastapi-cpu-bound-endpoints-2x-faster/">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:site_name" content="Amir Karimi">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Amir Karimi - Blog - Make FastAPI CPU-bound Endpoints 2X Faster">
+    <meta property="og:description" content="FastAPI is built on top of Starlette, which is an ASGI framework. That makes it ideal for building async web services in Python. Async code can be more…">
+    <meta property="og:url" content="https://amirkarimi.dev/blog/2023/07/23/make-fastapi-cpu-bound-endpoints-2x-faster/">
+    <meta property="og:image" content="https://amirkarimi.dev/assets/img/amir4.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@4m1rk">
+    <meta name="twitter:creator" content="@4m1rk">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link href="/assets/css/main.css?v=4" rel="stylesheet">
     <link href="/assets/css/highlight.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "Amir Karimi",
+    "url": "https://amirkarimi.dev/"
+  },
+  "dateModified": "2023-07-23",
+  "datePublished": "2023-07-23",
+  "description": "FastAPI is built on top of Starlette, which is an ASGI framework. That makes it ideal for building async web services in Python. Async code can be more\u2026",
+  "headline": "Make FastAPI CPU-bound Endpoints 2X Faster",
+  "image": "https://amirkarimi.dev/assets/img/amir4.jpg",
+  "keywords": "fastapi, starletter, anyio, python, performance improvement, async, non-blocking, cpu-bound, threads",
+  "mainEntityOfPage": "https://amirkarimi.dev/blog/2023/07/23/make-fastapi-cpu-bound-endpoints-2x-faster/",
+  "publisher": {
+    "@type": "Person",
+    "name": "Amir Karimi",
+    "url": "https://amirkarimi.dev/"
+  },
+  "url": "https://amirkarimi.dev/blog/2023/07/23/make-fastapi-cpu-bound-endpoints-2x-faster/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": "https://amirkarimi.dev/",
+      "name": "Home",
+      "position": 1
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://amirkarimi.dev/blog/",
+      "name": "Blog",
+      "position": 2
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://amirkarimi.dev/blog/2023/07/23/make-fastapi-cpu-bound-endpoints-2x-faster/",
+      "name": "Make FastAPI CPU-bound Endpoints 2X Faster",
+      "position": 3
+    }
+  ]
+}
+</script>
 
     
 
@@ -130,6 +201,13 @@
     
     <div class="col-lg-9">
         <h1 class="text-2xl font-bold mb-4">Make FastAPI CPU-bound Endpoints 2X Faster</h1>
+        
+
+<p class="text-muted mb-4">
+    <time datetime="2023-07-23">July 23, 2023</time>
+</p>
+
+
         <div class="page-content">
             <p><a href="https://fastapi.tiangolo.com/">FastAPI</a> is built on top of <a href="https://www.starlette.io/">Starlette</a>, which is an ASGI framework. That makes it ideal for building async web services in Python.</p>
 <p>Async code can be more efficient only when it comes to IO operations like reading from a database – that's like 99% of web use cases. But you might be surprised to know that even for non-IO operations, async functions will perform better in FastAPI.</p>

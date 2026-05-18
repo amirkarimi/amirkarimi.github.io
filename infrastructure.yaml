@@ -10,6 +10,7 @@ github: https://github.com/amirkarimi
 twitter: https://twitter.com/4m1rk
 location: Vancouver, BC
 keywords: amir karimi, devops consultant, sre, site reliability engineer, platform engineer, infrastructure engineer, cloud architect, aws, terraform, cdk, kubernetes, docker, ci/cd, github actions, observability, cloud migration, infrastructure as code, disaster recovery, distributed systems, chaos engineering, python, go
+show_pdf_link: false
 services:
   - title: Cloud Infrastructure & Infrastructure as Code
     description: Design and implement scalable, secure, and reproducible cloud infrastructure using Infrastructure as Code tools such as Terraform and AWS CDK. Establish well-structured AWS accounts, networking, and environments that teams can evolve safely.

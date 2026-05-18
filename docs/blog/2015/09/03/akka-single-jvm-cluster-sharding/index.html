@@ -2,14 +2,85 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>Amir Karimi - Blog - Akka: Integration Tests for Single Node Cluster Sharding</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO -->
+    <title>Amir Karimi - Blog - Akka: Integration Tests for Single Node Cluster Sharding</title>
+    <meta name="description" content="Multi-JVM tests are the default way of testing an Akka cluster sharding application. But sometimes you just need the sharding functionality where…">
+    <meta name="author" content="Amir Karimi">
+    <link rel="canonical" href="https://amirkarimi.dev/blog/2015/09/03/akka-single-jvm-cluster-sharding/">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:site_name" content="Amir Karimi">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Amir Karimi - Blog - Akka: Integration Tests for Single Node Cluster Sharding">
+    <meta property="og:description" content="Multi-JVM tests are the default way of testing an Akka cluster sharding application. But sometimes you just need the sharding functionality where…">
+    <meta property="og:url" content="https://amirkarimi.dev/blog/2015/09/03/akka-single-jvm-cluster-sharding/">
+    <meta property="og:image" content="https://amirkarimi.dev/assets/img/amir4.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@4m1rk">
+    <meta name="twitter:creator" content="@4m1rk">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link href="/assets/css/main.css?v=4" rel="stylesheet">
     <link href="/assets/css/highlight.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "Amir Karimi",
+    "url": "https://amirkarimi.dev/"
+  },
+  "dateModified": "2015-09-03",
+  "datePublished": "2015-09-03",
+  "description": "Multi-JVM tests are the default way of testing an Akka cluster sharding application. But sometimes you just need the sharding functionality where\u2026",
+  "headline": "Akka: Integration Tests for Single Node Cluster Sharding",
+  "image": "https://amirkarimi.dev/assets/img/amir4.jpg",
+  "keywords": null,
+  "mainEntityOfPage": "https://amirkarimi.dev/blog/2015/09/03/akka-single-jvm-cluster-sharding/",
+  "publisher": {
+    "@type": "Person",
+    "name": "Amir Karimi",
+    "url": "https://amirkarimi.dev/"
+  },
+  "url": "https://amirkarimi.dev/blog/2015/09/03/akka-single-jvm-cluster-sharding/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": "https://amirkarimi.dev/",
+      "name": "Home",
+      "position": 1
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://amirkarimi.dev/blog/",
+      "name": "Blog",
+      "position": 2
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://amirkarimi.dev/blog/2015/09/03/akka-single-jvm-cluster-sharding/",
+      "name": "Akka: Integration Tests for Single Node Cluster Sharding",
+      "position": 3
+    }
+  ]
+}
+</script>
 
     
 
@@ -113,6 +184,13 @@
     
     <div class="col-lg-9">
         <h1 class="text-2xl font-bold mb-4">Akka: Integration Tests for Single Node Cluster Sharding</h1>
+        
+
+<p class="text-muted mb-4">
+    <time datetime="2015-09-03">September 3, 2015</time>
+</p>
+
+
         <div class="page-content">
             <p><a href="https://github.com/typesafehub/activator-akka-cluster-sharding-scala/tree/master/src/multi-jvm/scala/sample/blog">Multi-JVM tests</a> are the default way of testing an Akka cluster sharding application. But sometimes you just need the sharding functionality where multi-JVM tests are just overkill. I didn't find any sample or guide describing the best practices for this situation.</p>
 <!--more-->

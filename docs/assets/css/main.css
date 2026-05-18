@@ -8396,7 +8396,8 @@ blockquote {
 #intro #name {
   font-size: 2rem;
   font-weight: 600;
-  color: #495057; }
+  color: #495057;
+  margin: 0; }
 
 #intro #title {
   font-size: 1.75rem;
@@ -8477,7 +8478,7 @@ code {
 .section-header {
   margin-top: 1.3em;
   margin-bottom: 1.2em; }
-  .section-header h4, .section-header .h4 {
+  .section-header h2, .section-header .h2 {
     font-size: 1.5rem;
     margin: 0; }
   .section-header .section-header-icon {

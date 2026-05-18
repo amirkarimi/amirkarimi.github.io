@@ -1,5 +1,7 @@
 {% extends "internal.html" %}
 {% block title %}{{ config.data.name }} - Blog{% endblock %}
+{% block description %}Articles by {{ config.data.name }} on software engineering, infrastructure, DevOps, and the craft of building software.{% endblock %}
+{% block canonical %}{{ config.base_url }}/blog/{% endblock %}
 
 {% block content %}
 <div class="blog-index">

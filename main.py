@@ -43,6 +43,7 @@ processors: list[Type[Processor]] = [
     Assets,
     Downloads,
     CName,
+    RobotsTxt,
     SiteMap,  # Has to be the last one
 ]
 

@@ -57,6 +57,7 @@ blockquote {
         font-size: $h2-font-size;
         font-weight: $font-weight-semibold;
         color: $gray-700;
+        margin: 0;
     }
 
     #title {
@@ -193,7 +194,7 @@ code {
     margin-top: 1.3em;
     margin-bottom: 1.2em;
 
-    h4 {
+    h2 {
         font-size: $h4-font-size;
         margin: 0;
     }

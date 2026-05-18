@@ -1,9 +1,20 @@
+import re
 from datetime import date, datetime
 from models import MarkdownPage
 import yaml
 import markdown
 
 SUMMARY_SEPARATOR = "<!--more-->"
+DESCRIPTION_LIMIT = 155
+
+
+def make_description(html: str, limit: int = DESCRIPTION_LIMIT) -> str:
+    """Build a plain-text meta description from rendered HTML."""
+    text = re.sub(r"<[^>]+>", "", html)
+    text = re.sub(r"\s+", " ", text).strip()
+    if len(text) <= limit:
+        return text
+    return text[:limit].rsplit(" ", 1)[0].rstrip(".,;:") + "…"
 
 def build_markdown():
     return markdown.Markdown(extensions=[
@@ -34,17 +45,22 @@ def parse_markdown(markdown_content: str) -> MarkdownPage:
     html_content = md.convert(markdown_content)
 
     summary_separator_index = html_content.find(SUMMARY_SEPARATOR)
+    summary = (
+        html_content
+        if summary_separator_index == -1
+        else html_content[:summary_separator_index]
+    )
 
     return MarkdownPage(
         template=metadata.get('template', 'page.html'),
         content=html_content,
-        summary=html_content if summary_separator_index == -
-        1 else html_content[:summary_separator_index],
+        summary=summary,
         title=metadata.get('title'),
         date=parse_date(metadata.get('date')),
         keywords=metadata.get('keywords'),
         slug=metadata.get('slug'),
         toc=md.toc_tokens, # type: ignore
         category=metadata.get('category'),
-        hide_toc=metadata.get('hide_toc', False)
+        hide_toc=metadata.get('hide_toc', False),
+        description=metadata.get('description') or make_description(summary),
     )

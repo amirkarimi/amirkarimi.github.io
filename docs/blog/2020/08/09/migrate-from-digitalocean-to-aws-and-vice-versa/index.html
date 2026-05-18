@@ -2,14 +2,85 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>Amir Karimi - Blog - Quick Guide for Migrating a DigitalOcean Droplet to AWS EC2</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO -->
+    <title>Amir Karimi - Blog - Quick Guide for Migrating a DigitalOcean Droplet to AWS EC2</title>
+    <meta name="description" content="I needed to move a DigitalOcean Droplet to AWS which was running a Docker application using Docker Compose and had its SSL configured using Let&#39;s Encrypt…">
+    <meta name="author" content="Amir Karimi">
+    <link rel="canonical" href="https://amirkarimi.dev/blog/2020/08/09/migrate-from-digitalocean-to-aws-and-vice-versa/">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:site_name" content="Amir Karimi">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Amir Karimi - Blog - Quick Guide for Migrating a DigitalOcean Droplet to AWS EC2">
+    <meta property="og:description" content="I needed to move a DigitalOcean Droplet to AWS which was running a Docker application using Docker Compose and had its SSL configured using Let&#39;s Encrypt…">
+    <meta property="og:url" content="https://amirkarimi.dev/blog/2020/08/09/migrate-from-digitalocean-to-aws-and-vice-versa/">
+    <meta property="og:image" content="https://amirkarimi.dev/assets/img/amir4.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@4m1rk">
+    <meta name="twitter:creator" content="@4m1rk">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link href="/assets/css/main.css?v=4" rel="stylesheet">
     <link href="/assets/css/highlight.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "Amir Karimi",
+    "url": "https://amirkarimi.dev/"
+  },
+  "dateModified": "2020-08-09",
+  "datePublished": "2020-08-09",
+  "description": "I needed to move a DigitalOcean Droplet to AWS which was running a Docker application using Docker Compose and had its SSL configured using Let\u0027s Encrypt\u2026",
+  "headline": "Quick Guide for Migrating a DigitalOcean Droplet to AWS EC2",
+  "image": "https://amirkarimi.dev/assets/img/amir4.jpg",
+  "keywords": "cloud migration, cheat sheet, digital ocean to aws, aws to digitalocean, docker, docker-compose, volumes, development",
+  "mainEntityOfPage": "https://amirkarimi.dev/blog/2020/08/09/migrate-from-digitalocean-to-aws-and-vice-versa/",
+  "publisher": {
+    "@type": "Person",
+    "name": "Amir Karimi",
+    "url": "https://amirkarimi.dev/"
+  },
+  "url": "https://amirkarimi.dev/blog/2020/08/09/migrate-from-digitalocean-to-aws-and-vice-versa/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": "https://amirkarimi.dev/",
+      "name": "Home",
+      "position": 1
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://amirkarimi.dev/blog/",
+      "name": "Blog",
+      "position": 2
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://amirkarimi.dev/blog/2020/08/09/migrate-from-digitalocean-to-aws-and-vice-versa/",
+      "name": "Quick Guide for Migrating a DigitalOcean Droplet to AWS EC2",
+      "position": 3
+    }
+  ]
+}
+</script>
 
     
 
@@ -178,6 +249,13 @@
     
     <div class="col-lg-9">
         <h1 class="text-2xl font-bold mb-4">Quick Guide for Migrating a DigitalOcean Droplet to AWS EC2</h1>
+        
+
+<p class="text-muted mb-4">
+    <time datetime="2020-08-09">August 9, 2020</time>
+</p>
+
+
         <div class="page-content">
             <p>I needed to move a DigitalOcean Droplet to AWS which was running a Docker application using Docker Compose and had its SSL configured using Let's Encrypt. I couldn't find an easy way to convert the DigitalOcean disk snapshots to AWS EBS ones, otherwise, the whole disk could be cloned in AWS with much less effort since Linux configuration is all about the filesystem. I ended up installing needed packages on the target machine and move the configurations. Since I tested everything and it was successful I figured it might be useful to put all the commands and steps in the same place as a quick step-by-step guide. Also, the exact same steps apply to any other cloud as well as the other way around, from AWS to DigitalOcean.</p>
 <!--more-->

@@ -1,0 +1,8 @@
+# Amir Karimi — https://amirkarimi.dev
+# All crawlers are welcome, including AI assistants
+# (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot,
+# PerplexityBot, Google-Extended, etc.).
+User-agent: *
+Allow: /
+
+Sitemap: https://amirkarimi.dev/sitemap.xml

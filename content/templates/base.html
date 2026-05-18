@@ -2,15 +2,35 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>{% block title %}{% endblock %}</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO -->
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{{ config.data.intro }}{% endblock %}">
+    <meta name="author" content="{{ config.data.name }}">
+    <link rel="canonical" href="{% block canonical %}{{ config.base_url }}/{% endblock %}">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:site_name" content="{{ config.data.name }}">
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:title" content="{{ self.title() }}">
+    <meta property="og:description" content="{{ self.description() }}">
+    <meta property="og:url" content="{{ self.canonical() }}">
+    <meta property="og:image" content="{% block og_image %}{{ config.base_url }}/assets/img/amir4.jpg{% endblock %}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@4m1rk">
+    <meta name="twitter:creator" content="@4m1rk">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link href="/assets/css/main.css?v=4" rel="stylesheet">
     <link href="/assets/css/highlight.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
+    {% block structured_data %}{% endblock %}
     {% block head %}{% endblock %}
 
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>

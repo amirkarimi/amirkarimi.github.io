@@ -17,6 +17,7 @@ class MarkdownPage():
     toc: list
     category: str | None
     hide_toc: bool
+    description: str | None
 
 
 @dataclass

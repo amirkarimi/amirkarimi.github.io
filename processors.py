@@ -1,4 +1,4 @@
-from dataclasses import replace
+from dataclasses import asdict, replace
 from datetime import datetime, time
 import shutil
 from abc import ABC, abstractmethod
@@ -49,7 +49,11 @@ class InfrastructurePage(Processor):
     """
 
     def run(self, sitemap: SiteMapData):
-        infra_config = replace(self.config, data=load_yaml(INFRA_DATA_FILE))
+        infra_config = replace(
+            self.config,
+            data=load_yaml(INFRA_DATA_FILE),
+            canonical_path="infrastructure/",
+        )
         template = self.env.get_template("index.html")
         output_dir = Path(self.config.output_path, "infrastructure")
         output_dir.mkdir(parents=True, exist_ok=True)
@@ -85,7 +89,11 @@ class CustomPages(Processor):
             if input_file.is_file() and input_file.suffix == ".md":
                 context = parse_markdown(read_file(input_file))
                 template = self.env.get_template(context.template)
-                output_content = template.render(page=context, config=self.config)
+                page_context = asdict(context)
+                page_context["url"] = add_trailing_slash(f"/{input_file.stem}")
+                output_content = template.render(
+                    page=page_context, config=self.config
+                )
                 page_output_dir = Path(f"{self.config.output_path}/{input_file.stem}")
                 page_output_dir.mkdir(exist_ok=True)
                 write_file(page_output_dir.joinpath("index.html"), output_content)
@@ -249,6 +257,22 @@ class Downloads(Processor):
 class CName(Processor):
     def run(self, sitemap: SiteMapData):
         write_file(Path(self.config.output_path, "CNAME"), self.config.domain)
+
+
+class RobotsTxt(Processor):
+    def run(self, sitemap: SiteMapData):
+        lines = [
+            f"# {self.config.data['name']} — {self.config.base_url}",
+            "# All crawlers are welcome, including AI assistants",
+            "# (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot,",
+            "# PerplexityBot, Google-Extended, etc.).",
+            "User-agent: *",
+            "Allow: /",
+            "",
+            f"Sitemap: {self.config.base_url}/sitemap.xml",
+            "",
+        ]
+        write_file(Path(self.config.output_path, "robots.txt"), "\n".join(lines))
 
 
 class SiteMap(Processor):

@@ -2,14 +2,85 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>Amir Karimi - Blog - Running SBT on a Linux encrypted home</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO -->
+    <title>Amir Karimi - Blog - Running SBT on a Linux encrypted home</title>
+    <meta name="description" content="If you use Linux and encrypt your home folder, you may get the following error when compiling a SBT project: [error] File name too long [error] one error…">
+    <meta name="author" content="Amir Karimi">
+    <link rel="canonical" href="https://amirkarimi.dev/blog/2016/02/26/sbt-on-a-linux-encrypted-home/">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:site_name" content="Amir Karimi">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Amir Karimi - Blog - Running SBT on a Linux encrypted home">
+    <meta property="og:description" content="If you use Linux and encrypt your home folder, you may get the following error when compiling a SBT project: [error] File name too long [error] one error…">
+    <meta property="og:url" content="https://amirkarimi.dev/blog/2016/02/26/sbt-on-a-linux-encrypted-home/">
+    <meta property="og:image" content="https://amirkarimi.dev/assets/img/amir4.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@4m1rk">
+    <meta name="twitter:creator" content="@4m1rk">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link href="/assets/css/main.css?v=4" rel="stylesheet">
     <link href="/assets/css/highlight.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "Amir Karimi",
+    "url": "https://amirkarimi.dev/"
+  },
+  "dateModified": "2016-02-26",
+  "datePublished": "2016-02-26",
+  "description": "If you use Linux and encrypt your home folder, you may get the following error when compiling a SBT project: [error] File name too long [error] one error\u2026",
+  "headline": "Running SBT on a Linux encrypted home",
+  "image": "https://amirkarimi.dev/assets/img/amir4.jpg",
+  "keywords": "sbt, linux, encrypted home, scala, File name too long, java.lang.NoSuchMethodError",
+  "mainEntityOfPage": "https://amirkarimi.dev/blog/2016/02/26/sbt-on-a-linux-encrypted-home/",
+  "publisher": {
+    "@type": "Person",
+    "name": "Amir Karimi",
+    "url": "https://amirkarimi.dev/"
+  },
+  "url": "https://amirkarimi.dev/blog/2016/02/26/sbt-on-a-linux-encrypted-home/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "item": "https://amirkarimi.dev/",
+      "name": "Home",
+      "position": 1
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://amirkarimi.dev/blog/",
+      "name": "Blog",
+      "position": 2
+    },
+    {
+      "@type": "ListItem",
+      "item": "https://amirkarimi.dev/blog/2016/02/26/sbt-on-a-linux-encrypted-home/",
+      "name": "Running SBT on a Linux encrypted home",
+      "position": 3
+    }
+  ]
+}
+</script>
 
     
 
@@ -115,6 +186,13 @@
     
     <div class="col-lg-9">
         <h1 class="text-2xl font-bold mb-4">Running SBT on a Linux encrypted home</h1>
+        
+
+<p class="text-muted mb-4">
+    <time datetime="2016-02-26">February 26, 2016</time>
+</p>
+
+
         <div class="page-content">
             <p>If you use Linux and encrypt your home folder, you may get the following error when compiling a SBT project:</p>
 <div class="codehilite"><pre><span></span><code>[error] File name too long

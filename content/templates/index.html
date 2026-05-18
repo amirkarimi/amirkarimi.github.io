@@ -1,13 +1,44 @@
 {% extends "base.html" %}
 {% block title %}{{ config.data.name }} - {{ config.data.title }}{% endblock %}
+{% block canonical %}{{ config.base_url }}/{{ config.canonical_path }}{% endblock %}
 
 {# No social_links in footer in the landing page #}
 {% block footer_links %}
 {% endblock %}
 
+{% block structured_data %}
+<script type="application/ld+json">
+{{ {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": config.data.name,
+    "url": config.base_url ~ "/",
+    "image": config.base_url ~ "/assets/img/amir4.jpg",
+    "jobTitle": config.data.title,
+    "description": config.data.intro,
+    "email": "mailto:" ~ config.data.email,
+    "telephone": config.data.phone,
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": config.data.location,
+        "addressCountry": "CA"
+    },
+    "sameAs": [config.data.linkedin, config.data.github, config.data.twitter],
+    "knowsAbout": config.data.keywords.split(",") | map("trim") | list
+} | tojson(indent=2) }}
+</script>
+<script type="application/ld+json">
+{{ {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": config.data.name,
+    "url": config.base_url ~ "/"
+} | tojson(indent=2) }}
+</script>
+{% endblock %}
+
 {% block head %}
 {{ super() }}
-<meta name="description" content="{{ config.data.name }} - {{ config.data.title }}">
 <meta name="keywords" content="{{ config.data.keywords }}" />
 
 <style>
@@ -27,9 +58,11 @@
         <a class="nav-link" href="/blog">
             <i class="fa-solid fa-pen-to-square"></i> Blog
         </a>
+        {% if config.data.show_pdf_link %}
         <a class="nav-link" href="{{ config.pdf_resume_path }}">
             <i class="fa-regular fa-file-pdf"></i> PDF Version
         </a>
+        {% endif %}
         <hr/>
         <a class="nav-link">
             <i class="fa-solid fa-location-dot"></i> {{config.data.location}}
@@ -40,7 +73,7 @@
         <a class="nav-link" href="tel:{{config.data.phone.replace(' ', '')}}">
             <i class="fa-solid fa-phone"></i> {{config.data.phone}}
         </a>
-        <a class="nav-link link-pointer" onclick="gtag_report_conversion('{{ config.data.calendar }}')">
+        <a class="nav-link link-pointer" href="{{ config.data.calendar }}" target="_blank">
             <i class="fa-solid fa-calendar"></i> Schedule a Meeting
         </a>
         <hr/>
@@ -61,10 +94,10 @@
 
 {% macro section_header(id, title, icon) %}
 <div class="d-flex flex-row section-header">
-    <h4 id="{{id}}">
+    <h2 id="{{id}}">
         {#<i class="{{icon}} section-header-icon"></i>#}
         {{title}}
-    </h4>
+    </h2>
     <hr class="flex-fill ms-2"/>
 </div>
 {% endmacro %}
@@ -100,9 +133,9 @@
         <div class="flex-fill">
             <div>
                 <div id="intro">
-                    <div id="name">
+                    <h1 id="name">
                         {{ config.data.name }}
-                    </div>
+                    </h1>
                     <div id="title">
                         {{ config.data.title }}
                     </div>
@@ -183,7 +216,7 @@
 
                 <!-- Schedule a meeting -->
                 <div class="text-center mt-3">
-                    <a class="btn btn-primary" onclick="gtag_report_conversion('{{ config.data.calendar }}')">
+                    <a class="btn btn-primary" href="{{ config.data.calendar }}" target="_blank">
                         <i class="fa-solid fa-calendar"></i> Schedule a Meeting
                     </a>
                 </div>
